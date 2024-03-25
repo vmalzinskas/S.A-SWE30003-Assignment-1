@@ -1,7 +1,19 @@
 \documentclass{article}
 \usepackage{graphicx} % Required for inserting images
 \usepackage[smartEllipses]{markdown}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Adjust margins as needed
+\usepackage{geometry}
+
+% Set the text width
+\geometry{
+    a4paper,
+    left=2cm,
+    right=2cm,
+    top=2cm,
+    bottom=2cm,
+    marginparwidth=1.5cm,
+    headheight=2cm
+}
+
 \usepackage{array}
 \usepackage{makecell}
 
@@ -132,6 +144,7 @@ The Cosy Koala has identified multiple ideas they would like to include in the O
     \item Payments
     \item Customer
     \item Front of House Staff
+    \item Seat
     \item Table
     \item Dining Room
     \item Receipts
@@ -139,6 +152,7 @@ The Cosy Koala has identified multiple ideas they would like to include in the O
     \item Order
     \item Marketing Data, i.e. Menu lists, JPGs etc.
     \item Point of Sales
+    \item Kitchen
 \end{enumerate}
 
 
@@ -151,6 +165,7 @@ The Cosy Koala has identified multiple ideas they would like to include in the O
     \item Admin
     \item Website
     \item Delivery System
+    \item EFTPOS or Banking System
 \end{enumerate}
 
 \subsection{Task - Brief}
@@ -191,30 +206,68 @@ A number of assumptions are made in relation to the implementation of this OIS i
 
 \subsection{Data model \normalsize\textbf{Author: Vincent}}
 
-\clearpage
+
 \subsubsection{Domain model \normalsize\textbf{Author: Vincent}}
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=15cm]{Domain_Model.jpg}
     \caption{Cosy Koala Domain Model}
     \label{fig:Domain_Model}
 \end{figure}
-\subsubsection{Entity Descriptions}
-Customer: Is a person dining on food or beverages prepared by Cosy Koala. This can be on site or take away (TA).\\\\
-Front of House: This is a staff member who has direct contact with the customer. They take orders from customers. Take orders to the Kitchen. Bring customers their food. They are responsible for maintaining the orders integrity (Making sure the customer gets what they pay for). The take customer transactions. Communicate with Admin.\\\\
-Back of House: Prepare the customers food order. Responsible for making sure front of house receive the food order with correct information i.e. order number etc. Communicate with Admin.\\\\
-Admin: Get the logged data from the Point of Sales Machine.
-Generate analytics from the Sales data.
-Web Site: Display general information about the restaurant.\\\\
-Dining Room: Containerizes and organizes customers orders i.e. If the restaurant has a multiple rooms this can be used to better locate customers for orders.\\\\
-Dining Table: Creates a sub container for organizing customers orders.\\\\
-Point of Sales Machine: Facilitates payment transactions. Issues receipts.\\ Logs sales data. Is operated be a front of house staff member.
-Kitchen: Containerizes and organizes customers food order for pick up.\\\\
-Terminal: Allows for the manipulation and reading of logged Sales Data.\\\\
 
+\subsubsection{Entity Descriptions - Detailed}
+\textbf{Meal:} To group together items for payment, delivery, or dropping at a table it would be helpful to place them into a unit of a meal. This way a meal can be paid for as one, or moved to a new table as one etc.
+
+\textbf{Payments:} This will model the owed amounts for a meal, capable of of dividing payments based on a number of divisions, i.e. by item, by table, by room for functions. It will interact with receipts and and the Payment System (Actor).
+
+\textbf{Customer:} This will model both the onsite and offsite customers, it will interact with bookings, tables, dining rooms, sales Data. It will contain customer specific data like meal, sales data.
+
+\textbf{Front of House:} This will be a model for anyone interacting with customers capable of creating orders, bookings, taking payment and issuing receipts etc.
+
+\textbf{Seat:} A customer can be assigned a seat to locate a meal or part of a meal to the correct customer.
+
+\textbf{Table:} Contains seats and can be used for grouping meals into a larger single unit for booking or payment.
+
+\textbf{Dining Room:} Containerizes and organizes customers orders i.e. If the restaurant has a multiple rooms this can be used to better locate customers for orders. It will contain tables which contain seats and customers.
+
+\textbf{Receipts:} Will be a record for Sales data and Customers of a meal including its expense, items, time, location. Will be issues by the payment entity.
+
+\textbf{Sales Data:} This is a aggregation of the Receipts data.
+
+\textbf{Order:} (Onsite) Contains the meal order items, seat, table, dining room, that is ordered by a customer. \\(Offsite) Contains the meal order items, customer that is ordered by a customer.
+
+\textbf{Marketing Data:} This will be the data that can be sent to the Website (Actor) in order to update the website.
+
+\textbf{Point of Sales Machine:} Facilitates payment transactions. Issues receipts. Logs sales data. Is operated be a front of house staff member. Interacts with the payment entity and the payment system (Actor)
+
+\textbf{Kitchen:} Containerizes and organizes customers food order for pick up by front of house.
+
+
+
+\subsection{Actors Descriptions - Detailed}
+
+\textbf{Onsite Customer:} Is a person dining on food or beverages prepared by Cosy Koala. This is done on site in a dining room at a table. .
+
+\textbf{Offsite Customer:} Is a person dining on food or beverages prepared by Cosy Koala. This is done off site at any location other than Cosy Koala dining rooms.
+
+\textbf{Front of House:} This is a staff member who has direct contact with the customer. They take orders from customers. Take orders to the Kitchen. Bring customers their food. They are responsible for maintaining the orders integrity (Making sure the customer gets what they pay for). The take customer transactions. Communicate with Admin.
+
+\textbf{Back of House:} Prepare the customers food order. Responsible for making sure front of house receive the food order with correct information i.e. order number etc. Communicate with Admin.
+
+\textbf{Website:} Displays the restaurant information for customers.
+
+\textbf{Admin:} Get the logged data from the Point of Sales Machine.
+Generate analytics from the Sales data.
+Web Site: Display general information about the restaurant.
+
+\textbf{EFTPOS or Banking System:} This is the outside system that will have to interact with the POS entity in order to facilitate payments.
+
+\textbf{Delivery System:} This the outside system that facilitates delivery, like Uber, or menulog etc.
+
+\clearpage
 \subsection{Tasks}
 
-\subsection{}
+\subsection{Complete Payment transaction onsite.}
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
@@ -224,7 +277,7 @@ Terminal: Allows for the manipulation and reading of logged Sales Data.\\\\
         \textbf{Frequency:} Up to 150 times a breakfast, lunch or dinner service.}}\\
         \hline
         % Row 1
-        \textbf{Sub task 1} & \textbf{Example Solution 1} \\
+        \textbf{Sub task} & \textbf{Example Solution} \\
         \hline
         % Row 2
         Locate the meal in system. & Enter the table number, and dining room name in order to find the meal. \\
@@ -251,9 +304,235 @@ Terminal: Allows for the manipulation and reading of logged Sales Data.\\\\
         \hline
     \end{tabular}
     \caption{Taking Payment}
-    \label{tab:example}
+    \label{tab:Complete Payment transaction onsite.}
 \end{table}
 
+\clearpage
+\subsection{Take a booking}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Take a customers booking. \\
+        \textbf{Purpose:} To pre-allocate a customer to a table in order to make sure the customer can dine when arriving. \\
+        \textbf{Frequency:} Up to 150 time a service, 3 services a day.}}\\
+        \hline
+        % Row 1
+        \textbf{Sub task} & \textbf{Example Solution} \\
+        \hline
+        % Row 2
+        Receive customers correspondance - email, phone call & Each day the admin will check the restaurant email and collect any bookings that have been sent.  \\
+        \hline
+        % Row 3
+        For each booking review availability. & If some one wants to book a table for 4 at 8pm on Friday, the admin will first check if there is space for a table of 4 at that date and time. \\
+        \hline
+        % Row 4
+        Enter booking into record. & The admin will make a recording of the booking so that the resources cannot be double booked. \\
+        \hline
+        Inform the Front of house staff & The admin will transfer the bookings for today to a sheet for the front of house to organise the dining room to host. \\
+        \hline
+        Return confirmation correspondence to the customer & The admin will send a return email with the confirmation details.\\
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+        \hline
+        The Admin receives a phone call. & This booking will need to be reviewed on the spot in order to make confirmation. \\
+        \hline
+        The booking is made on short notice & After the bookings and confirmation have already been made for the day. A new booking comes in. The admin will need to directly confirm and inform front of house to accommodate the booking. \\
+        \hline
+        The booking cannot be made. & The admin must reject the booking and offer a possible alternative.\\
+        \hline
+    \end{tabular}
+    \caption{Take a booking}
+    \label{tab:Take a booking}
+\end{table}
+
+\clearpage
+\subsection{Take an tables order}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
+        \textbf{Purpose:} \\
+        \textbf{Frequency:}}}\\
+        \hline
+        % Row 1
+        Sub task 1 & Example Solution 1 \\
+        \hline
+        % Row 2
+        ? & ? \\
+        \hline
+        % Row 3
+        ? & ? \\
+        \hline
+        % Row 4
+        ? & ? \\
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+        \hline
+        ? & ? \\
+        \hline
+    \end{tabular}
+    \caption{Take a tables order}
+    \label{tab:Take a tables order}
+\end{table}
+
+\clearpage
+\subsection{Cook Food}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
+        \textbf{Purpose:} \\
+        \textbf{Frequency:}}}\\
+        \hline
+        % Row 1
+        Sub task 1 & Example Solution 1 \\
+        \hline
+        % Row 2
+        ? & ? \\
+        \hline
+        % Row 3
+        ? & ? \\
+        \hline
+        % Row 4
+        ? & ? \\
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+        \hline
+        ? & ? \\
+        \hline
+    \end{tabular}
+    \caption{Cook Food}
+    \label{tab:Cook Food}
+\end{table}
+
+\clearpage
+\subsection{Create Analytics}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
+        \textbf{Purpose:} \\
+        \textbf{Frequency:}}}\\
+        \hline
+        % Row 1
+        Sub task 1 & Example Solution 1 \\
+        \hline
+        % Row 2
+        ? & ? \\
+        \hline
+        % Row 3
+        ? & ? \\
+        \hline
+        % Row 4
+        ? & ? \\
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+        \hline
+        ? & ? \\
+        \hline
+    \end{tabular}
+    \caption{Create Analytics}
+    \label{tab:Create Analytics}
+\end{table}
+
+\clearpage
+\subsection{Update Website}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
+        \textbf{Purpose:} \\
+        \textbf{Frequency:}}}\\
+        \hline
+        % Row 1
+        Sub task 1 & Example Solution 1 \\
+        \hline
+        % Row 2
+        ? & ? \\
+        \hline
+        % Row 3
+        ? & ? \\
+        \hline
+        % Row 4
+        ? & ? \\
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+        \hline
+        ? & ? \\
+        \hline
+    \end{tabular}
+    \caption{Update Website}
+    \label{tab:Update Website}
+\end{table}
+
+\clearpage
+\subsection{Drops food to table}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
+        \textbf{Purpose:} \\
+        \textbf{Frequency:}}}\\
+        \hline
+        % Row 1
+        Sub task 1 & Example Solution 1 \\
+        \hline
+        % Row 2
+        ? & ? \\
+        \hline
+        % Row 3
+        ? & ? \\
+        \hline
+        % Row 4
+        ? & ? \\
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+        \hline
+        ? & ? \\
+        \hline
+    \end{tabular}
+    \caption{Drops food to table}
+    \label{tab:Drops food to table}
+\end{table}
+
+\clearpage
+\subsection{Share information Admin-Front of house, Admin-Back of house.}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
+        \textbf{Purpose:} \\
+        \textbf{Frequency:}}}\\
+        \hline
+        % Row 1
+        Sub task 1 & Example Solution 1 \\
+        \hline
+        % Row 2
+        ? & ? \\
+        \hline
+        % Row 3
+        ? & ? \\
+        \hline
+        % Row 4
+        ? & ? \\
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+        \hline
+        ? & ? \\
+        \hline
+    \end{tabular}
+    \caption{Admin communication}
+    \label{tab:Admin communication}
+\end{table}
+
+\clearpage
 \subsection{}
 \begin{table}[htbp]
     \centering
@@ -290,7 +569,7 @@ Terminal: Allows for the manipulation and reading of logged Sales Data.\\\\
 
 
 \subsection{Functional Requirements and Task Descriptions}
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=15cm]{Domain_product_diagram.jpg}
     \caption{Cosy Koala Domain Requirements}
