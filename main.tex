@@ -112,6 +112,8 @@ The Cosy Koala has identified multiple ideas they would like to include in the O
 \subsection{Domain Vocabulary}
 \begin{enumerate}
     \item OIS : Operation Information System.
+    \item FOH : Front of house.
+    \item BOH : Back of house.
 \end{enumerate}
 \subsection{Pain Points}
 \begin{enumerate}
@@ -199,14 +201,14 @@ Cosy Koala is interested in the possibility of supporting the arrangement of del
 \subsection{Assumptions \normalsize\textbf{Author: Vincent}}
 A number of assumptions are made in relation to the implementation of this OIS is that manual scaling of operations are impossible. Whether that means no more staff will be available. Or whether staff will be expected to have other duties.
 
+The system should model closely as possible to the current practices.
+
 
 \clearpage
 
 \section{Problem Domain}
 
 \subsection{Data model \normalsize\textbf{Author: Vincent}}
-
-
 \subsubsection{Domain model \normalsize\textbf{Author: Vincent}}
 \begin{figure}[!ht]
     \centering
@@ -263,6 +265,117 @@ Web Site: Display general information about the restaurant.
 \textbf{EFTPOS or Banking System:} This is the outside system that will have to interact with the POS entity in order to facilitate payments.
 
 \textbf{Delivery System:} This the outside system that facilitates delivery, like Uber, or menulog etc.
+
+
+\clearpage
+\subsection{Workflows \normalsize\textbf{Author: Vincent}}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task: Administrate the restaurant} \\
+        \textbf{Actor: Admin} \\
+        \textbf{Purpose:} To manage the technical administration tasks so that everything from bookings\\
+        to invoices are completed in a timely correct manner.}}\\
+        \hline
+        % Row 1
+        Sub task  & Example Solution  \\
+        \hline
+        % Row 2
+        1. Review past data, including sales, costs, etc, particular attention is paid to the past day of service.
+        
+        \textbf{Problem:} Records are not accurate. & Communicate directly with staff from the previous day about the data generated. Automate data entry. \\
+        \hline
+        % Row 3
+        2. Update restaurant bookings, and communicate with customers. 
+        
+        \textbf{Problem:} Bookings are unavailable for guest. & Communicate with the guest about an alternative date to book. Make the available dates and services on a given date accessible to customers. \\
+        \hline
+        % Row 4
+        3. Communicate and inform the FOH and BOH staff about upcoming customer demands, bookings and general workload. 
+        
+        \textbf{Problem:} The bookings are changing rapidly or give short notice & Auto update FOH and BOH staff about bookings etc. \\
+        \hline
+    \end{tabular}
+    \caption{Workflow: 1}
+    \label{tab:example_wf_1}
+\end{table}
+
+\clearpage
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task: Prepare the kitchen} \\
+        \textbf{Actor: Back of House} \\
+        \textbf{Purpose:} To prepare enough food or drink for the upcoming guest, planning at the service, \\day and week level is appropriate.}}\\
+        \hline
+        % Row 1
+        Sub task  & Example Solution  \\
+        \hline
+        % Row 2
+        1. Review bookings for today and tomorrow in close detail as well as a week ahead in brief detail. 
+        
+        \textbf{Problem:} Records are not accurate. Bookings have change but kitchen doesn't know. & Automate directly live data to the kitchen. \\
+        \hline
+        % Row 3
+        2. Receive orders and cook food. 
+        
+        \textbf{Problem:} Orders are not accurate to items and customers & Deliver orders to kitchen directly from order entry at POS machine, - no hand written dockets. \\
+        \hline
+        % Row 4
+        3. Order needed food for upcoming bookings. 
+        
+        \textbf{Problem:} Bookings have not been updated. & Automate directly live data to the kitchen. \\
+        \hline
+    \end{tabular}
+    \caption{Workflow: 2}
+    \label{tab:example_wf_2}
+\end{table}
+
+
+\clearpage
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task: Receive and dine guests} \\
+        \textbf{Actor: Front of House} \\
+        \textbf{Purpose:} To prepare the room/s fro upcoming guest, planning at the service\\ and day is appropriate.}}\\
+        \hline
+        % Row 1
+        Sub task  & Example Solution  \\
+        \hline
+        % Row 2
+        1. Review bookings for today in close detail. 
+        
+        \textbf{Problem:} Records are not accurate. Bookings have change but front of house staff don't know. & Automate directly live data to the front of house staff. \\
+        \hline
+        % Row 3
+        2. Set tables and places for bookings and expected walk ins. 
+        
+        \textbf{Problem:} Bookings have change but front of house staff don't know. & Automate directly live data to the front of house staff. \\
+        \hline
+        % Row 4
+        3. Receive guest/s. Take to booked seating.
+        
+        \textbf{Problem:} Guest/s has not booked & Find the available tables and seats.\\
+        \hline
+        4. Take orders from guests. 
+        
+        \textbf{Problem:} The guest changes meal order, guest changes table or seat, guests leave, more guest come. & Have flexible table and meal placement that can be altered.\\
+        \hline
+        5. Take payment. 
+        
+        \textbf{Problem: } Payment is to be split by meal, item, guest, table or some other way. & Make a flexible payment option.\\
+        \hline
+    \end{tabular}
+    \caption{Workflow: 3}
+    \label{tab:example_wf_3}
+\end{table}
+
+
 
 \clearpage
 \subsection{Tasks}
@@ -347,7 +460,7 @@ Web Site: Display general information about the restaurant.
 \end{table}
 
 \clearpage
-\subsection{Take an tables order}
+\subsection{Take a tables order}
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
@@ -564,8 +677,8 @@ Web Site: Display general information about the restaurant.
 \end{table}
 
 
-\subsection{Workflows \normalsize\textbf{Author: Vincent}}
-\subsubsection{}
+
+
 
 
 \subsection{Functional Requirements and Task Descriptions}
