@@ -1,0 +1,178 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\title{Software Architecture Development}
+\author{Your Name}
+\date{\today}
+
+\maketitle
+
+\section{Validation}
+\subsection{Development Approach: Working with the Client}
+Ensuring that we closely align with a client's requirements at the early stages of the software development life-cycle is crucial in creating a robust and thoughtful software architecture. We are mindful that any problems faced now are much easier to tackle earlier rather than later on when they are "baked-in." Any changes that are made to later in the software's development can be costly and time consuming since some systems are likely to need re-programming or re-designing which can have a cascading effect on other system, which can lead to a larger restructuring. 
+
+The back and forth between the two parties; the client and producer (us) is a proven methodology (Validation) for creating a software system's architecture as we invest more time early to iron out any projected issues in partnership with the client. We consider all levels of domains: societal, environmental, global,business,customer and methodically come up with strategies that we come up tacitly from a high level and systematically decompose the ideas from the abstract all the way down to the software's design. Source: IEEE's standards for software architecture documentation and the Software Engineering Institute's (SEI) Architecture Trade-off Analysis Method (ATAM).
+
+The key is EARLY Validation.
+
+\subsection{Identifying Actors}
+
+As Software engineers we have a deep understanding of what is needed to create a successfully, effective and functional application; Versus what the client thinks the software needs in order to have those quality's. This statement implies we have the knowledge and skills to design and execute the development of some software, but a client or a group of stakeholders may have some tacit understanding of what needs to be done, which may have some Merritt, but is ultimately uniformed and may be inaccurate. By that same token, we software engineers may also have a tacit understanding of the roles of the client and stake holders. We attempt to bridge the gap by presenting some ideas and questions of what the client may need, what we expect of them and what their roles entail. 
+
+The first approach is coming up with a list of Actors; Defined as broad group of entities interacting within our business domain, like stakeholders, authorities and land-lord. We also list some functionality we assume they need from the program.
+
+In this Scenario the team has identified , the stake holder in Koala Cafe to be:
+\begin{itemize}
+    \item {Business Operations}
+    \begin{itemize}
+        \item {Finances}
+        \item {Roster}
+        \item {Web Portal}
+        \item {Admin Privileges}
+        \item {Marketing}
+        \item {Statistics/Analytics}
+        \item Pay bills
+        \item Pay Salary
+    \end{itemize}
+    \item {Management}
+    \begin{itemize}
+        \item {Set Roster}
+        \item {Alter Menu}
+        \item {Alter table data}
+        \begin{itemize}
+            \item {Arrange seating positions}
+            \item {Alter table numbers}
+        \end{itemize}
+        \item {Approve Refunds}
+        \item {Order Stock}
+        \item {Have access to wait staff functionality}
+        \item View feedback
+    \end{itemize}
+    \item {Barista}
+    \begin{itemize}
+        \item {Request Stock}
+        \item view and print coffee orders
+        \item alert stock running low
+        \item {Have access to wait staff functionality}
+    \end{itemize}
+    \item {Wait Staff}
+    \begin{itemize}
+        \item {Take Order}
+        \item {Process Payment}
+        \item {Reserve Table}
+        \item {Special meal Requests}
+        \item See roster
+        \item Record feedback
+        \item Receive Tips
+    \end{itemize}
+    \item {Chef}
+    \begin{itemize}
+        \item Alter Menu
+        \item Alter Menu Items
+        \item Receive Order and print ticket
+        \item Confirm Order
+        \item Order Up
+        \item Order Stock
+        \item Alter kitchen roster
+        \item View Feedback
+    \end{itemize}
+    \item {Kitchen Staff}
+    \begin{itemize}
+        \item Request stock
+        \item Request Supply's
+        \item See Roster
+        \item Alert stock running low
+    \end{itemize}
+    \item {Maintenance}
+    \begin{itemize}
+        \item Order Supply's
+        \item track tasks
+        \item alter to-do list
+    \end{itemize}
+    \item {Customer}
+    \begin{itemize}
+        \item make booking online or via phone
+        \item order online via phone
+        \item order or book via App
+        \item order via QR code
+        \item order via Digital Kiosk
+        \item 
+    \end{itemize}
+\end{itemize}
+Other Actors:
+\begin{itemize}
+    \item {Health and Safety}
+    \item {Land Lord}
+    \item {Suppliers}
+\end{itemize}
+
+\subsection{Acquiring Knowledge using a Tacit Questionnaire}(Quality Requirements)
+Careful construction of a tacit questionnaire allows us to extract data from stakeholders without requiring them to understand deep technical details. Instead, we are more focused on discovering what they expect or would like from the system, drawing from their experience and implicit knowledge of their role within their domain.
+
+Here we are looking to extract some data about the nonfunctional and functional requirements
+\subsection{Task Descriptions}
+\subsubsection{Work Area 1:Front of House}
+Greet guests, seat them, bring water to table. 
+Standing, assume medium-high frequency of traffic.
+Have responsibility over several tables occasionally helping when larger party's enter,
+Users: IT Novice, high school level education
+\paragraph{Task 1.1}
+Find Table:
+Purpose: Find a free table for walk-in customers, write it as occupied.
+Trigger: Customers walk-in without booking
+Frequency:Average 1 customers every 1.5 minutes during breakfast and 3 customer every 1.5 minutes during a lunch rush (1 hour period, 3 times more)
+Critical: Large Bookings(7>).
+\paragraph{Task 1.2}
+Seating a group with a booking
+\paragraph{Task 1.3}
+Take Order
+\paragraph{Task 1.4}
+Server Food and Drink
+\paragraph{Task 1.5}
+Process Payments
+\paragraph{Sub-tasks}
+\begin{itemize}
+    \item read/write table booking
+    \item send order
+    \item process payment
+    \item edit bill
+    \item print bill
+    \item look up pick-up and delivery orders
+\end{itemize}
+
+\subsubsection{Work are 2.Back of House}
+
+\subsection{Task and Support}
+
+\begin{tabular}{ |p{6cm}||p{6cm}|p{6cm}|p{6cm}|  }
+ \hline
+ \multicolumn{2}{|c|}
+ {
+Task:     1.1 Seat Guests
+Purpose: } \\
+ \hline
+ Sub-task & Example solution    \\
+ \hline
+ 1.)Take Order.
+    Problem: Customer has a custom order& System allows ingredient items to be added on at extra cost   \\
+    \hline
+ 2.)&   AX  \\
+    \hline
+ 3.) &AL \\
+    \hline
+ Variants: &DZ \\
+    \hline
+ 1a.)&   AS  \\
+    \hline
+
+ \hline
+\end{tabular}
+
+
+\subsection{CRUD}
+create, read, update, Delete
+
+
+\end{document}
