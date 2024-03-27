@@ -1,0 +1,592 @@
+
+Wed, Mar 13, 2024 10:40AM • 48:48
+SUMMARY KEYWORDS
+customer, requirements, orders, restaurant, system, guess, upscaling, website, working, handle, business, qr code, means, steaks, hardware, pos, google docs, automation, statistics, write
+
+00:01
+Nice to see you.
+
+00:06
+Yeah
+
+00:09
+we got the signings here and a case study here is
+
+00:15
+relaxing Kualoa cafe restaurant. Yeah, it seems pretty straightforward. They're just upscaling from 50 to 150 From what I remember yeah and then want to add more staff
+
+00:28
+we look this was pushed out pretty quick as you can see let's change the name to cozy kangaroo by the end of the document. Yeah.
+
+00:35
+I didn't even notice that. Maybe Maybe they're rebranding. Sir, I guess from So correct me if I'm wrong, but it sounds like everything we've been covering in class so far. Is kind of prepping us for this right. Yes. So from that perspective, I mean, we could go through actually today's today's lecture and just apply it to this. I think, see what we see what we get recorded. And use that as like a starting point. A good starting point. Sure.
+
+01:22
+All right. Did you guys get a chance to read this one at all? Just briefly, one. Yeah. The quality, we're doing tasks and support, quality attributes, and I think the most important thing from our lectures at the moment is obviously developing requirements. That's what the first three weeks have been about. Yeah. So it's probably where we should focus on this. Once we get a good idea. Yeah,
+
+01:51
+today was good because it felt like actually pretty broad. Yeah. Whereas the first few weeks were a bit more of our talking about specific concepts that will help
+
+02:04
+illustrate project incentives. And list the most important requirements at the goal level. Identify the pain points. Do you want to maybe just talk about those bullet bullet points? Yeah, through one by one. Yeah. I can write stuff on the board. If you Hey, you guys want photos of it afterwards? Might be easy. Yeah, maybe yeah.
+
+02:23
+So think about what type of project swing soft consulting is dealing with. So we're dealing with a well it's a software that's helping a small business scale up. Again, my terrible spelling the business extension.
+
+02:50
+Project. Yeah. 51
+
+02:56
+Before Yep, so one requirement is no extra staff.
+
+03:07
+Well, that's one of the what's the incentive?
+
+03:10
+Incentive. Incentive. Just
+
+03:13
+because, like, illustrate the project incentives, and what's the most important
+
+03:19
+thing in living history? Yeah.
+
+03:27
+Okay, yeah. incentives. Can you define them for me because I'm not. I don't really get that incentives.
+
+03:35
+I think they just don't give them what the business wants this general overview before we start doing requirements. Anything okay.
+
+03:42
+I guess the first and the second I'm pretty close. Yeah, I can do them together. Yeah. Yeah. So no extra staff. So upscaling and I guess what else handle
+
+03:57
+large numbers of people and large volume maybe?
+
+04:03
+More orders, more people? Sitting in the store? Again, maybe, maybe we can write a different category for this, like, implicit requirements would be to to have some sort of automation obviously, there has to be. I don't know like, I think that might be up to us to imagine what I mean, they would, I'm assuming they would have to make a proposal. So if you're upscaling but you don't want to give more stuff, then that implies this automation. Yeah, right. Like there has to be and I don't know if that's there's a lot of systems that we can look at currently, right now that robots so that like, one staff and there's no there's little robots that you haven't seen little cat robot face and a little cat face and brings your plate Yeah, and other ones they do that now.
+
+05:09
+Maybe this rifle automation include robotics, possibly
+
+05:11
+possibly robotics, possibly just very efficient QR code that's a new one as well. QR code. system is very, very popular right now.
+
+05:31
+Yeah. Particularly for taking orders, right. Yeah. And have a QR code. I remember the the major one you see, Mr. Yummy, obviously. Yeah.
+
+05:48
+I mean, also there'd be like hardware. Robotics is hardware, but there could be like iPads or some sort of legal
+
+05:57
+may have ready here with we're ignoring hardware assuming that hardware is required before the restaurant can be purchased.
+
+06:10
+So it's like whatever it's like nearly like it's open ended. So I guess the budget is we should we should I think we should have a like something. So like, we shouldn't be too open ended in terms of like what they can do their capabilities as a business. I think as a business, we should be realistic and be like this is a small business upscaling. So they're obviously expecting their business to grow. But they're still not at the point where they can just be spinning backwards of cash. So we need to like maybe have that as one of our considerations is like spending and how much a system would cost to maintain. Also, we don't have we're not expecting them to have IT staff because restaurants don't usually have it. So we have to have it has to be a self sustainable system. It can't be can't rely on any IoT.
+
+07:19
+What do you recommend recommend doing? Yeah, I agree on the low spending think that spending a whole bunch of money buying a new restaurant, like next door. Yeah. Yeah, yep.
+
+07:34
+So this goal level, I think there was something from one of our lectures right.
+
+08:01
+Okay, so that's what we're working on in Project Inception right now, right? Yep.
+
+08:18
+We should stop on maybe before maybe just for a second. Just so we're doing analysis and validation. Here. I'd say right now. That's the stage where you were considering the stakeholders, the stakeholders as written us. Were kind of imagining details. And maybe we can define those ambiguous use details more because we're just it's roleplay. So we can roleplay for example, what do the stakeholders want? So we've, we've said that they they've just bought a restaurant and so they can't spend too much money. But we assume that they're still not going to be. It wouldn't be like it wouldn't be extremely likely. You probably wouldn't want to be on an extreme budget because they're expecting to make money so well like me. So we have to justify our like, you know, if we're making cloud infrastructure, we have to justify what services we use, for example. So So spending has to be justified. I guess that's like one
+
+09:32
+like careful spending capital spending with with any one of the demands right? Now.
+
+09:43
+You can split the justified and all that. Yeah.
+
+09:50
+We're tech so that means no robots. Well, that's how it was. Oh, yeah, that's how it was. Yeah, sorry.
+
+10:01
+It says they mostly thinking about an information system Yep.
+
+10:14
+Restaurants, I mean, if they talk to any other restaurants and non restaurants, go find a software company to develop software. They're just gonna buy off the shelf.
+
+10:22
+I mean, there's no third grade up here and then they want the new system to support renovations.
+
+10:35
+And statistics,
+
+10:36
+I think it will statistic footer menu item. I think.
+
+10:44
+Sir, we need system to kind of automate that analyze, like have a internal analyst inside our software, because we're assuming that they're not going to have an analyst or they're not going to. It has to be like super like, yeah, abstracted away. And just so you know, give them very user friendly stats that they could use, for example, like, you know, steaks really popular and, but it doesn't make that much money. So it's still justified to be on the menu, but, you know, blah, blah, blah. So it's like, what stats do they care about? Like, why are they looking at stats, what stats they care about? And I don't think they really need to be asking those questions because they're not analysts. We should probably anticipate why they would need starts in the first place. And then kind of just you know, it's more rigid. But again, like, I think it's like should be out of a box easy to use.
+
+11:56
+I think that'd be perfect for like testing requirements. Yeah. When we come to decide that these steps should be very user friendly, simplified for restaurant thirsty is Yeah.
+
+12:08
+I won't put it on. Yeah, that's fine. That's fine.
+
+12:11
+Also taking orders from customers,
+
+12:13
+take orders from customers and that would be QR code, probably. Yeah. And I think it says in there somewhere. We have to come up with a couple of different ways to do it. Right. I think just like potential alternatives, QR and maybe just our own system of skull bases
+
+12:42
+so, so, one potential customers about offerings. That's the main thing about statistics. So that's the offerings. So that's, that's a that's a demand or what was that like?
+
+12:55
+So customers offerings.
+
+12:56
+So pretty much like this is a popular menu menu items. We're using statistics for marketing. Like internal marketing, not not like other restaurants incorporate the features.
+
+13:20
+Of Water riser okay. So, the customization aspect of this is that it's actually a stripped down system from a regular restaurant system, I guess rather than like a fully featured system, they said they will consider that later on. So okay, potential growth potential. So we have that. So I guess a implicit thing would be that it needs to be easy to add new features. Because they're expecting to add new features.
+
+14:12
+You've also got creating invoices and receipts.
+
+14:30
+And handling payments, although we do not use a separate thing. For that. Wouldn't that have already been made? Well, probably
+
+14:45
+in real life, right? Yeah. Someone's up someone else's system would have integration with F boss or whatever their bank is actually or the bank would supply the system too often. Pretty close to what I remember from seeing in the demands as well right. The
+
+15:07
+menu has to be sort of available online. So
+
+15:15
+it has to support reservations, taking orders from customers, and informing the kitchen about orders. Creating invoice receipts, customers and handling payments. In order to get a better basis is available online. It says delivery possibly.
+
+15:45
+Okay, so
+
+15:46
+I don't know. That being like a rich demand or something.
+
+15:51
+Yeah, definitely. Maybe in the potential growth grow? Yeah. There'll be one of the things we have to think about of how they want to grow is to be able to integrate with the delivery system, maybe like menulog, I guess or something or their arm thing right.
+
+16:18
+The online menus have to be linked to the marketing
+
+16:22
+so that at the end it says that faced with requirements for restaurant everywhere it is faced with a task of writing up a more detailed specification now what is that? Are they going to give us something more detailed?
+
+16:42
+In this is your role playing but
+
+16:43
+okay, yeah. So we're just so we're filling in the blanks. Now. Yep. So this is what we're doing. I just like I'm just throwing this out there. Have you learned Japan they have those. The vending machine automated system where it's like, you just order something from the vending machine and then you go sit down and they give it to you? That's a possibility. That's that's a possibility. That didn't
+
+17:07
+include robotics.
+
+17:12
+But, so, kind of like where you could extrapolate from this is that statistics can be kind of expanded upon to fulfill some of these other requirements, possibly. Because we're already creating a statistical system if we're going to be recording data. We need to
+
+17:48
+I think we've probably gotten most of the demands out of that, right. Yeah. And I guess this is how the customer thinks that's gonna interact with them. Yes, I know the our job to really nail it down. Yeah. What this actually means Yeah. Later, nice. Paper towels in the bathrooms.
+
+18:15
+In the bathrooms here yeah. Just for what is
+
+18:21
+when they know enough
+
+18:27
+to say no. I mean, it doesn't say that exclusively. But I think they're saying they don't think they can grow to serve 150 Without going automation, which makes me think that means they can't get the stuff that we want. If we don't get the stuff and do it manually. Maybe they wouldn't be bothering with the automation. But that's that's kind of like maybe, maybe they're just not I'll see if there's some toilet paper or something. They'll grab
+
+19:05
+whatever you're talking about, to love God. Computing Technology Project eight. That's the main main intro to AI with the unit I forgot about Yeah.
+
+19:30
+Interest pretty cool. Like it. Yeah. It's got it's gotten a few hard like, logical record. Philosophical logical symbols that are used to like, do XOR kind of gates, I don't know. It's like, X oaring things in the real world. I'll show you I'll show you
+
+20:13
+you gonna have to learn over Oh, wow. Yeah. I've heard of illogical symbols in philosophy. They teach it to you in AI. It's like, it's like logic gates for like real world situations. That's how and that's how they're teaching AI. Right. So it's pretty cool.
+
+20:40
+Okay, can you elaborate a bit more what I mean, like the physical
+
+20:44
+symbols. Yes. Yeah. So. So like, if this it's like a it's like, exactly. It's like, imagine if you could structure a sentence into a mathematical formula or scenario into a mathematical formula. That's what, that's what sort of using symbols. And they use these symbols. So they use like, it's really similar to gate gates in and like that kind of math. I don't know what that type of math is. Part of but for example there is there is exactly if then exclude or see that's actually excellent. So yeah, so, you know, if you went into this shot, then this would happen or Yeah, so that's very basic. It is like a base. What's Bayes rule again? Bayes rule? Bayes Theorem states that the conditional probability of an event based on the occurrence of another event is equal to the likelihood of the second event given the first event multiplied. Anyway, it's it pretty much just like if there's these two events, what's the likelihood of something happening? And that and there's an equation for it? Yeah. The numbers are implied from the stats that you get from whatever's happening.
+
+22:28
+So I think I know. I think I know that from statistics, like, if you think I've seen it in sort of cancer diagnosis, like if you Yeah, that's diagnosis of having this gene for cancer. Yeah. Not your actual chances. You'll get it kind of thing. Yeah.
+
+22:43
+So yeah, that's exactly the example that was given the class. Yeah.
+
+22:49
+Because it's always wrong. It's always way less than you expect, but you got 99% chance you've actually got this gene, but it doesn't mean you get 90% Yeah,
+
+22:57
+because it's like it's still one in 100. So what it's not that Yeah.
+
+23:04
+Love if we could do just talk a little bit about and since we did it today, I'm looking for the one that has the domain feature on it. We just do a little domain, maybe as a product. We just do similar to this. We'll just put product in the middle we just talked about. Yeah, these other bits in there. And then maybe we can just talk about how you want to actually have an ice what, what are we going to use to write whether we're going to ever get which would be lovely. Yeah. Anyway, okay, so the product we've got there it thing in the middle. control computers?
+
+23:43
+I would, I would say that. Again, regular like restaurant regulation, any kind of any Yeah, literally any kind of regulation. Would be domain. So probably business domain, right. But yeah, business regulations. Internet based regulations. I don't know. I'm just being vague because I don't actually know what right. Yeah.
+
+24:18
+h&s is far as I know, maybe they'll find out later. We've got customers over here.
+
+24:26
+Customers Yeah.
+
+24:31
+Some of our clients
+
+24:37
+think maybe it is physical probably as well as domain requirements. So like, the property, the properties or domain requirements you know, accessibility. How much space can our hardware take up? You know
+
+25:08
+you know, how secure is the location can we have like expensive hardware they're like, Do you have a dish can you walk your shop?
+
+25:16
+Would NEP requirements be one order be like way too? Sorry. Regarding energy requirement, like, like, I don't know if any capable of like, sort of a I don't know.
+
+25:32
+Yeah, like what, EJ? Yeah, they'd probably come
+
+25:36
+under like operational budget. Just chuck energy in there for now. I guess. Like,
+
+25:41
+I mean, it could be it's, it's, it's like what broad enough where it's like what happens if the property con like handle doesn't have the electrical infrastructure for you know? You know? Yeah. Yeah, maybe
+
+26:00
+you're gonna put it down with it's gonna get wet or something. You can install it right.
+
+26:04
+Yeah. Yeah. Maybe like how much if it has like enough outlets? Yes. It's
+
+26:18
+cool. I think magazine or domain would be good to have things like your QR code that you said, Yeah.
+
+26:23
+QR code.
+
+26:30
+So yeah, why can't so the actual hardware where we're whatever it is, you know, iPad or, you know, you have you know, you'd have a maybe, maybe like a small server. You know, because we're because they're not it's under third party. Actually, there might be actually third party products, you know, just API's, and third party products are probably what we're going to use because that's what that's they're built for small businesses mind. Usually, the bigger you go, the more custom things you build. So and third party would include, you know, Dow would probably be where they get their computing like, you know, their database and or that would be in third under third party.
+
+27:22
+If I divided this up kind of just, this is stupid, and we said these areas Yes. Yeah in front of us. We can include administration, we can put maybe kitchen over here
+
+27:45
+Yep.
+
+27:51
+And then customer. Yep. So like, the QR is at the table. The customers are dealing with that.
+
+27:58
+And I reckon. Yeah, all right. Yep. Is that right? Yep, sure. So So third party would probably be back of house then.
+
+28:11
+Yeah, that's true.
+
+28:14
+customer, customer in itself, that front of house
+
+28:22
+or front of house would be your staff. So start
+
+28:25
+Are you back are back as you mean, like in hospitality?
+
+28:31
+Hospitality. Sorry. Yeah. Yeah,
+
+28:32
+I forgot Mindwipe funding back at NASA. Okay. So customers, okay, so let's just think about customer first. Customers are going to be interacting. So
+
+28:45
+you walk out they want the marketing on the website, right?
+
+28:49
+Yeah, yeah. All the web stuff. Yeah.
+
+28:54
+And I put that in here as well because it is kind of something that you guys need to probably update. If that's not too stupid, I have it. in two places. Well,
+
+29:06
+I would say that to make it not been two places we can define the categories as interaction. Okay, so that one party is because like, actually front of house will never see a back of house would see it. Customer would write to it back of house would read. The back of house wouldn't see the website the back of house would be seeing probably the database or no, no that database like an app representation of like, so that would be that would be like the app
+
+29:51
+would be like to website then for like, one is for when the customer is in the restaurant and once you order and remove all the ordering and menu and stuff and then another for when the customer is like just researching restaurant for like
+
+30:10
+I think that would mean I think from I think that would be like you know if the website's embedded in like another place that would probably be something else. I don't think that's a website per se.
+
+30:28
+I don't think we need to get it to perfect just so we show we've had a general discussion or anything. Yeah, maybe leave it in two places for now, I
+
+30:35
+reckon. Okay.
+
+30:37
+Because obviously both of them interact with that.
+
+30:41
+I don't think back of house would interact with the website. No, I think the website would store data in the app. Yeah, I don't think the back of house would interact with the website in any way. Because the back of houses is just getting orders. They're just like, they're literally getting printed on the screen. There's orders. They'll make the order. And then they'll just say I've made this order.
+
+31:04
+What if the check comes up with a special and says we want to push this to the customer? That
+
+31:09
+that has to be that wouldn't be done in the back of house to the back. If you're talking about hospitality? Yeah. Because that would that implies that that would be done in a kitchen. That would be done probably in the front of house because the front of house is arranging the menu, not the back of house. Because you wouldn't, you wouldn't be seeing in the kitchen typing. Yes.
+
+31:31
+Includes like the GM, other managers department. It's that kind of thing as well.
+
+31:35
+I think the GM is in the front of house because the cars the front of house is like managing the affairs of like the people and the printing and the front
+
+31:48
+desk has direct contact with customers. The GM doesn't typically do that.
+
+31:53
+Well, that's kind of more I mean, that's vague now. Let's keep it vague. Yeah, well, then you should just put in a different category then. Because if you're working just purely from a hospitality point of view, but that would be a third category. Yeah. Because that's just a business person at that point. Yeah, it's not really like
+
+32:15
+well, we can check that in there. Yeah. This one because it's got the most room.
+
+32:37
+Operations
+
+32:43
+I always am I remembering the website from there?
+
+32:49
+Yeah, yeah. Not that right. Yeah, that would Yeah, that makes sense.
+
+32:55
+All right, so we're still working on the customer. What else did they what do we have here on demands? System Support reservations, I guess customers are going to have something to do with the reservations, right. They have to be able to
+
+33:07
+interact with that. Yeah, they have to reserve Yeah.
+
+33:16
+They have to be able to pay on the website. If if they're getting takeaway, so you have to make a booking. So reservation or order takeaway.
+
+33:34
+What else can a customer potential
+
+33:36
+inclusive growth, great invoices. I mean, if they're ordering online, they need to get the receipt. Right. That's true. Invoice receipt, I
+
+33:49
+guess marketing would also because your suggestions to the to the customer
+
+33:59
+renewed with the marketing information boards. Okay. Maybe that's enough. The customer Yeah. Yeah. So we've got definitely send orders to the kitchen right if we're talking about yes, yes. And orders. Yeah, send orders. Orders you're gonna need much more because they're probably not gonna
+
+34:22
+just need to say that. They just Yeah, they just need to order No, they just need to just say the orders, orders or
+
+34:35
+I don't know if they would play it or if it would be automated, but there have to be a way to tell the website that something's run out.
+
+34:44
+Okay. Oh, yeah, that's true. That's cool. Maybe that's stock levels. Maybe your stock rose is difficult, because who's going to do that? That's a lot of work. Yeah, maybe you can ADC at six something or what is it? 88 Or when you so maybe back of house has very, very limited options where they can push something to say it's, we've finished cooking or push a menu item to say we don't have this menu. Ah, yeah, that's that's so they have like some very rudimentary interface that's like, it can you can only it's like a true false kind of system.
+
+35:27
+interface. The now that some sort of GDI
+
+35:32
+forum Yeah, something really simple. That can So yeah, that can say if something's available to order or not for that day. Because, honestly, they would probably be the only people that could tell you. You know, one's going to take stock every single day that I don't know. No one's going to take stock and then walk how much stock can predict that it's, it's too much,
+
+35:55
+but they might say, Oh, we've got 20 steaks today, right? They
+
+35:59
+could say to have 20 steaks today on
+
+36:01
+machine, man, we have server across to admin maybe you're gonna be alright.
+
+36:07
+Oh, yeah. 100% Yeah. Yeah. And even third party right? Yeah.
+
+36:22
+It would still be hard because it's not it's not a reliable a human even if someone said I was 20 steaks. What happens if someone dropped a steak on the floor or whatever, it's, it'd be good if just be like okay, we don't have steaks, Chef, bang, press this button. It's a special function that goes through website makes it unavailable website goes to the iPad and makes it unavailable to the iPad
+
+36:55
+so that would be also like a hardware thing. So we would have a touch screen in the back of house and then we had, which would probably just need one as well since we already Yeah. Yeah, iPad and then I guess admin would need a piece like that would need a PC I guess.
+
+37:18
+point of sales right. Yep.
+
+37:28
+So also like front of house needs to create invoices, receipts.
+
+37:33
+Yeah, that's right. They didn't help us and he doesn't want to use the computer.
+
+37:37
+Yeah. F POS machines integration. Pos right. Yeah.
+
+37:51
+I guess I need to be able to put orders in as well. Something don't like QR code and payment separately. Is that enough? To be a different system? Yeah.
+
+38:06
+Borders. That's pretty good. And 150 I mean, I might just put multi year and I mean, you need multiple POS is like it's as 150 people you might need three different places three different places where staff can put
+
+38:26
+themselves Yeah, sure. Yeah. Yep. Yep. So I maybe that's Is that is that part of customer or is that part of Front of House?
+
+38:40
+Well, I'm thinking this would be a point of sales machine in particular. Oh, yeah. Multiple QR codes kind of thing. Yeah. So the product back in the front of house, this product would need to be able to handle multiple interactions at once.
+
+38:53
+Okay, well, maybe maybe like we could for this idea. But Ben should if it's too getting too complicated, but maybe a lot a lot of businesses now having just like the McDonald's style touch pads on the wall just to order their takeaways. Yeah, so don't have to go inside the shop and that would come and that would all be nice with the marketing because then we could have the items that are you know, that they want to push like right on the screen at the start. So
+
+39:29
+that would probably be customer facing right
+
+39:31
+now. That's customer facing.
+
+39:35
+Mac is touched by Yeah.
+
+39:42
+Even I mean even small businesses using it now it's not even like that premium anymore. Yeah.
+
+39:52
+Okay, that's me direction. We need a separate admin system to deal with that, or can we include that in website? What's the website we might have a portable it's only accessible by these. I think
+
+40:05
+the way it would happen would be that it would all pull from the same source so that that means that all of these iPads and POS and everything would be pulling from the exact same data. So that that means that the admin would have access direct access to this and then everything else would handle. Like the way to display it and the way in processes will be separate to that. So yeah, I think
+
+40:40
+more edge computing slash on device computing rather Yeah,
+
+40:44
+probably just be like we could say like cloud it would be a cloud service thing. Yeah, where you'd have a database, you would have some sort of functions, pushing into all these separate interfaces, and then there will be updating the core i like a live database a lot. I mean, live storage, which would be like, you know, what's currently happening in the restaurant, like the current orders the past orders in that day or in that week or whatever, and then you would have like, deep storage, which is like, menu items and you know, old invoices and whatever, like, things of that nature. Yes. Remind
+
+41:31
+me of the statistics less analytics. Yeah. I think pretty good. You guys gone for time you want to try to wrap this up? Yeah, let's wrap it up.
+
+41:57
+So in terms of
+
+42:00
+handling collaboration, what are your thoughts?
+
+42:03
+So you had a suggestion?
+
+42:06
+I just saw this the other day in Internet of Things. It's called Overleaf.
+
+42:18
+This is one I'm working on. I'm in for internet thing, which is a survey. So basically, you put your documentation in as code and you compile it, and it prints out your thing over here. So we can keep the code as a good seven, see who's worked on it whenever. This is like the introduction. I wrote, which is this is just the beginning of my introduction. And you can just look at it in here introduction.md and puts like and handles this all for you. So you just add images and stuff.
+
+42:47
+Do I get more than markup? Does
+
+42:50
+do more than markup? Yeah, it does. heaps of different things. It's our Markdown is just my particular one with a look. But yeah, it's meant to be mostly for latex. I don't know what that is. It's like a if you want to display mathematical symbols, you typically writing latex correctly. Okay. But yeah, it does HTML in my all different languages. Okay,
+
+43:16
+so it's like just support it all in
+
+43:18
+writing text if you want to come through fine. Okay. I just like mark down because I can do stuff like, that's easy to do in a bold identity.
+
+43:28
+Yeah, if you have any objections or suggestion, you don't mind. I mean, I don't mind waiting a new thing in school otherwise, I
+
+43:36
+mean, we're looking at maybe Google Docs, or do you guys like Microsoft? You know, I'm not.
+
+43:41
+I'm actually not fast either. Like Microsoft Office. They're
+
+43:47
+doing your Google Docs.
+
+43:50
+I don't mind. I don't think it makes that much of a difference.
+
+43:54
+I'd say.
+
+44:04
+speed wise Google Docs, to me is the fastest and the easiest to use. But if we, if it's if, if everyone's uses, I'm actually happy to use it. I'm happy to learn something new. I don't mind. either. I've just I got convinced. So when people try to convince me or mark down but
+
+44:24
+I mean, it takes a while. I'll just write text and it'll take text. I think we can even take that like Word document files.
+
+44:30
+And I like the disparate. It's probably really easy to do it on this anyway. But I like just like blinking, making like, footnotes and stuff. creating indexes quite easily. Stuff like that. But it's probably you can probably do that quite easily, I'm sure. So yeah, let's just let's just say overly happy. Can you set up the environment so and then and do we just have to make an account or
+
+44:56
+yeah, you can make this a free account for this. And then started getting shit and
+
+45:02
+you can start to get if you're comfortable using Git,
+
+45:05
+I mean, I didn't use it much up until a year or two ago.
+
+45:09
+I mean, I'm, I'm comfortable with it on the most basic level, which is like, commit push. Yeah, that's a branch.
+
+45:18
+Get up, right. Yeah, exactly. Yeah. You might need to use a, like a GitHub client or git client, or something like that. If you want to run on your computer, or you can just use it from a website from
+
+45:30
+Mike type direct. So you can embed this into GitHub.
+
+45:35
+This, I think, actually does have that it's a paid for function. You've got to get up. Drop stuff there, but that's a full but yeah, like, for my ones, how
+
+45:46
+hard would it be to make a workflow that will push automatically? Well, this isn't
+
+45:51
+a minute things or surveys or a paper this is my that's the main text that I have and I have that working as a kid. I'm using Kraken as my client. Which this is pretty good for free and will there'll be a public IP so you can use this without having to vacate crack. Yeah. And so this is the survey paper gets so far. We're at the mercy three results and they kind of stuff that I'm using for it.
+
+46:27
+What's the difference between this and just a regular get on desktop.
+
+46:33
+This is a big UI. Basically. If you wanted to do git commands in command, it just works the exact same. Okay, I just want this like a couple used multiple Asians ones as well
+
+46:54
+multiple commits to so should we create branches or should we
+
+46:59
+recommend to create branches and then we can merge them back together once we're happy with them? And this will kind of satisfy that requirement where we're meant to check each other's work and that kind of thing. Okay,
+
+47:09
+yeah, that's true. So, okay, so generally speaking, we just work on a particular piece and then if we need to edit like the whole thing, like as a whole, we would just yeah, we'll just need a
+
+47:28
+I'm happy not to do this as well. We can just do Google Docs if you prefer.
+
+47:31
+No, it's just because like the sometimes like, you just want to clean everything up or something. Yeah. And then like, it creates like a problem because someone was typing text and it's just like, because it's like, highly dynamic usually document, like of this size. But um, yeah, I'm gonna probably go to an experience to see how the color was a bunch of work at some point.
+
+48:00
+I mean, forget you protect us from that, right. Yeah.
+
+48:03
+Yeah, I've had I've had situations where that I still don't know why. But I had situations where it was a bunch of code. I couldn't I couldn't find it again. But it's probably because I'm so I was just really inexperienced the year
+
+48:17
+well, if you guys are happy with that, I'll put that together. And I guess I'm taking photos to the actual Yeah, just like
+
+48:25
+just make a separate just make just make a separate
+
+48:38
+stuff I needed to yeah okay play
