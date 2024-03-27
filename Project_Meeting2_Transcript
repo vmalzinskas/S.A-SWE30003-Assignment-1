@@ -1,0 +1,740 @@
+
+Project meeting 2
+Wed, Mar 27, 2024 10:43AM • 1:03:57
+SUMMARY KEYWORDS
+verification, actors, add, task, attributes, put, domain, quality, validation, system, support, reference, barista, roles, waitress, functional requirements, work, read, entities, description
+
+00:02
+Sorry, once I was trying to start to Yeah.
+
+00:06
+You want to print us the text as well.
+
+00:08
+The printed text. Yeah, there's a there's a transcript. Yeah, I was quick.
+
+00:13
+access it from the link without logging without joining. Oh,
+
+00:17
+really? Okay. Yeah, I can print that or yeah, just put it in text. Yeah, that's fine. Yeah. Well, firstly, I'm actually still a bit confused about the main actors and entities, the main data model. So like, if we look at it logically, right, like think logically speaking, a domain is just like, just an encapsulation like environment and pretty much like if you will get it from just like, Okay, what's a domain? It's usually an environment. And if you're inside that environment, you'd call it a domain, like if we're and we can kind of categorize it however we want. We can go very broad with a domain or, or more like micro. I don't know if I feel like with the domain data model, and that's kind of what they're implying because they're like, Okay, what's inside the domain, the environment. Anything outside the environment, like maybe like API or something might not be part of the domain right? Like so we can like maybe investigate that a little bit. entities and an actor from what I've like, kind of observed today. I feel like an actor kind of triggered something. Yeah, that's kind of a definition of an actor. Yeah. Whereas like entity just exists in a model. Yeah. As as like something does something.
+
+01:55
+That's pretty good. Yeah.
+
+01:58
+But if we want to look at actors, like say in the real world, I don't think we shouldn't mix that with the digital world, if you know what I mean. The actors.
+
+02:11
+Yeah. What do we mean? Yeah, because it feels
+
+02:14
+like actors when you talk about it in different contexts mean different things from
+
+02:19
+from this model here I will remove the the actors from that and just make it entities only for our domain data model.
+
+02:33
+Okay. Yeah, because I'm just maybe we can even make a note of that in our staff because do you guys have any opinion about this pie boy, just like jumping just whenever you want. Whenever you have a feeling about something or you have a different definition, or you don't think we're talking about the right thing? Just jump in. Don't like say excuse me, just like jump in as sharp who is UI and just talk? Because it's not, it's not going to be a moderated conversation. We're just going to go through everything because there's a lot there's a lot to go through.
+
+03:14
+Because, I mean, one of the problems I had with this is from what I understand this model was meant to be the business as it is now, which is non technical, right? Yeah. And what we're trying to create has different capabilities to what this actual model represents, right? So it only like, there's no capability in this model here for people to update the website, because that's not what they're currently doing.
+
+03:38
+And we have two data models, a website and an app.
+
+03:42
+Yeah. I don't think we need to worry about the website just because they made it sound like it's outside of the scope scope. Okay. We could possibly put that in other requirements.
+
+03:51
+Sure. Yeah. Yeah. We also we also should, at the end, kind of, because we didn't actually delegate this, but the last thing is like, what are their options? Like, what are we going to build for them, and we didn't really delegate that to everyone and I think that's something good to do together. Because I think everyone's got an opinion about it. And it's more of an opinion based thing and experience your personal experience. Like maybe you've worked with like, like API's or and maybe someone else's work with like monolithic structure where it's like it's all in house or whatever. So that's all valid. I think we should and we can discuss that probably in as in our last meeting, because there'll be the last section and I think what do you guys want to do it online because we're not going to be in uni right? So you can just do it on? Same same day, Wednesday.
+
+04:50
+If we are doing online, we can just do like evening game so that everyone will be free. What's
+
+04:56
+like evening out what's the best maybe
+
+04:57
+after five? After five hours I'm available all day. So to be honest,
+
+05:03
+evening times are good. For me. After anytime after works on good because I have to do like most stuff.
+
+05:10
+You prefer to do it on Thursday, just since he's gone when you start again. Thursday,
+
+05:14
+is my busiest day. Yeah, sorry. Sorry. Yeah, I'm good any day of the week except for Monday and Thursday next week. And if it's, I can do after five, but I'm not going to have as much time. If I if we do at any time in the day. I've got tons of time I can I can do it.
+
+05:32
+Maybe if we just put our issues in the discord going up to the late meeting on Wednesday and then we can just address those quickly. Make it a short, medium or long. But
+
+05:43
+we have to but it's our submission. So we so we have to make sure everything's like
+
+05:49
+Yeah, but what I mean is like we will go through beforehand. Yeah. So we can just bang it out nice and quickly. Okay,
+
+05:55
+okay. Yeah. Does that sound good? Yeah. Yep. Cool. All right. So what how do we want to go through this? So we, so we understand that concept now. Right? We've defined it. Now. We want to go probably forever report. We have.
+
+06:15
+I think probably a good idea since we're all here. Let's talk about the stuff that wasn't delegated to anyone. Like you did a bit of work on the actors. I've done a little bit of work on that. Yeah, I've got like a basic introduction and stuff. I left it all pretty, pretty basic waiting for your guys input.
+
+06:34
+The thing is that if you guys were making industry work on the introduction, but let's make it a little bit more. Yeah,
+
+06:39
+exactly. I kind of just wanted to play.
+
+06:43
+Like, you guys have laid the basement so we just
+
+06:49
+I just wanted to quickly just be just like, more generally speaking, can you just go to the Table of Contents first. Just because I want to make sure that we're all kind of understanding like the kind of progression we're going from kind of a non technical to the technical towards the end, right. So that's kind of a structure. So when you're thinking about, say quality attributes and stuff, verification, that's toward the end, but we want we're all flowing from like one to the other. So like, when you're doing yours section, it's really good to reference what was done in validation. And in the introduction, and especially in the role, because the roles are important. Because we're all referencing the same roles. We want to say use the same language throughout the whole and same concepts throughout the whole thing. And one more thing, do you reckon you could just show us your like roles and stuff just to like illustrate that a little bit better as in the actors and actors in entities yet?
+
+08:16
+Starting
+
+08:19
+so domain entities meal customer Front of House, see? Yeah, so that's, so this is like really broad. And then if we go to can you go to can you open another one? Open my one from get as well? So we can like compare them? Because this is this is the very start. This is like all the entities that we'll be referencing in task and support but we're doing and quality assurance you will be referencing this because it's because we've already identified the domain entities and actors
+
+09:07
+this is your or is it? Maybe I requested it? I pushed it to mind maybe I'll just double check
+
+09:29
+have any cool requests
+
+09:36
+wouldn't I be pushing it? Cuz I put I got your waders. This is my one. So am I pushing it too because last time, I just I just added a nice synced
+
+09:54
+Yeah, we should generate a pull request on my site,
+
+09:58
+but it didn't it didn't know.
+
+10:09
+Forked Can I don't just like generate on Create
+
+10:24
+Okay, I'm gonna create a pull request
+
+10:34
+manually Did you get it?
+
+10:50
+One branch, a pull request. Oh yeah.
+
+11:01
+It's made a completely separate so I didn't edit your thing I just created a new text file
+
+11:17
+finances rosters. Can you just if you copy that into oh boy, it should be more legible copy. That is what Overleaf, it's written in overly
+
+11:31
+selective and efficient
+
+11:35
+I'll be right back.
+
+12:10
+If I had time I'm sure there's like a way to make like a get harder action that could like go right into Overleaf.
+
+12:16
+Yeah. They have it sort of paid.
+
+12:25
+Okay, so. So I sort of maybe start from identifying actors because that's kind of that will probably we'll just like kind of combined it I guess. I look
+
+12:39
+like having a chance to read through it. But I like the this is the description. So if you're talking about billing, right, yeah. So I think we should call
+
+12:49
+it software engineers, a senior software engineer. Yeah. Okay. Then.
+
+12:54
+Of course, I think so. I think you can only do this class if you did object oriented programming.
+
+13:01
+Even if you're doing computer science, you get it.
+
+13:04
+Yeah, but everyone that does computer science is essentially a software engineer and unless you're just doing cybersecurity, maybe then you're not but but generally speaking, like, generally speaking. You can read I mean, we don't have to read that. But if you want to read that, and
+
+13:22
+just say I'll pull this into the new threads. I'll add all that in. Yeah. And I'll go through all your sections and I'll probably bring in
+
+13:29
+one of them doesn't have a source. I've been like trying to put in sources and stuff. But yeah, it's not that important for this conversation. But yeah, you guys can read it and say, you know, feel it feel free to critique it because Yeah. Anyway, so we have like a overview of the roles and the tacit, tacit what we believe that they need so this is part of the validation process as I as I have interpreted from the from the documentation is that we essentially like have an assumption of what they do. And then we go back and we'll I have a chat to them. And then they're like, oh, yeah, this is what we do. This is what we don't do we get a better understanding of over stakeholders roles. So in in this regard, actors are the way I've defined actors. They're more within the real world domain. So that so they're pretty much stakeholders. But I guess it could be even stakeholders like there could be other players in this like the government or something, which I don't know if that's a stakeholder. I don't know. I don't know if you'd classify that as a stakeholder because they don't have any interest. In your business, but they are interacting with your business, for example. So that's how that's structured. And then we can go I mean, if everything makes sense there you can add or remove based on probably removing is like a little bit. We shouldn't be too disruptive. But you can definitely like make a note to remove it. And because that's if someone's referencing that then it doesn't make sense. It's gonna be crazy.
+
+15:31
+I think all this looks to indicate that this would put in as a subsection to front of house staff. Yeah. Can all clear management under admin. Maybe we'll come up with some more admin stuff. Yeah. Later and that's all good. Is this operations might go in under admin as
+
+15:48
+well. Management. I'm in front of house management. Okay. Yep, sure. Um, which is like a sub. So like, if you read it, they have like, say I have access to waitstaff functionality. So maybe I should, I could tear them. So maybe it won't be in this form. Maybe it'll be more tabular, and there'll be like, it'll be more of a hierarchy. Maybe I can structure that differently. Definitely. Um, it's pretty hard to read through as like a voice like that.
+
+16:19
+Looks pretty good, actually. Okay,
+
+16:21
+so we got barista waitstaff. Maybe we should add entities though. Also into this like QR codes. The actual hardware side of it, maybe that shouldn't be part of either the introduction, slash validation, but they're closely linked, right. Then kind of coming off that we have like, verification and quality attributes. And then you guys kind of get into more of functional requirements, non functional requirements. Then you're looking at actors that are more like, I guess, how would you describe it like triggers rather than stakeholders? So is there a good example I mean,
+
+17:28
+an actor is definitely someone who interacts with the system. Not necessarily modal in it. But sometimes,
+
+17:35
+API being active from time like if you're making an API call. An
+
+17:40
+API could be, but doesn't necessarily mean we model as anything. Yeah. But that's exactly because it interacts with our system that we're building. Yeah. So
+
+17:53
+I think you guys have to think about it in that way. Like if we're mentioning like deliveries and think about like, what, what about actors within that like UberEATS, or whatever it is? Your kiosk, you said kiosk last time. So we're going with that? Are we going with that chaos?
+
+18:12
+I mean, we didn't go from that. Versus the solution. I
+
+18:17
+fought with the I don't know, did we even did we write it in video remind
+
+18:20
+me what to suggest.
+
+18:23
+Are we ready to
+
+18:25
+just like when you go in and depress the big, big iPad? Yeah, rockin McDonald's. Are we doing that or not?
+
+18:32
+I mean, there is a little bit in the case study like we discussed before, but says they're not really interested in ideas outside of what they're expressed. is like the, the other functionality
+
+18:51
+so unless they're like menus available online, and basically under the ear, they said, they've decided not to consider any other features other than what they've kind of got in this paragraph.
+
+19:02
+As a short point, just a short point.
+
+19:06
+Alright, that's it. So we'll get rid of but I think the QR code is valid because I don't think
+
+19:12
+I feel like this was not the last year
+
+19:14
+press Command G or is this what is this? Yeah, and just QR? No.
+
+19:23
+Maybe that was a lie. Okay, I mean, this this could be put in as other requirements. Again, like I think this fits well with stuff they're not saying within the scope, but quickly helpful to their business.
+
+19:37
+Do we have it we don't have a whiteboard marketing and do it. Okay, because I think we're kind of now getting into like the territory be recording what we should be doing but extra delegation now because then to our code comes into your guys's that's a quality attribute and that's part of verification. Because that that's, that's like a software thing. So just keep that in mind. If we're keeping it don't worry about the digital kiosks. Obviously. The website is something we haven't really talked about and you said that we don't have to worry about that. But we took a look at it as something we're interacting with. Does it they talk about the website.
+
+20:35
+They talk about in terms of upload menus and stuff not in terms of managing the entire website.
+
+20:43
+Okay, so maybe in again, from your guide. There should be an actor, maybe like a web portal actor, someone that's interacting with our system from the web rather than in person Yeah, so we can go to the next
+
+21:13
+that's that's not that's not for me to do that. I did that by accident. But you can you can take that if you want. It's, this is for quality attributes. So Todd Tasik. I don't know if you've read about this one. But it's called a tacit questionnaire. I can send you some stuff because I just did it by accident, but it's pretty much like you're making a questionnaire about like software, like, what they think they can do with the software. And then you kind of taken that like model the sort of like the quality attributes. I think that you can just literally, Google tacit requirements.
+
+22:00
+Sorry, I just wanted to just
+
+22:08
+read the code. Yeah. Yeah. And this, if you've got a friend request pending just send a PDF that I mean.
+
+22:36
+Functional one?
+
+22:41
+So I think maybe, when we're considering the quality attributes, like you suggested, well, we also just the QR code would be good. As does our system of still having the waitstaff go into the computer and added in? Is that really the best quality thing we could do? Could we improve it and then we talked about the QR system.
+
+23:03
+We look at it for you, I have created something like the example solution.
+
+23:14
+The real life reference is where we just actually add the reference according to what we have discussed above. Like, for example, the waitress is doing this thing these things which are up there. So do you guys prefer like this or just like a one single barrier? No, don't do it once
+
+23:33
+and and also
+
+23:42
+I think quality attributes also entails functional and non functional requirements as well, which would be that would be a secondary section that would be a novice section inside quality attributes which describes Do you know what I'm saying? Like? quality attributes would be like security, you know, everything that's that you expect from the system that the customer expects from the system? non functional requirements like Yeah, but system can function but these non functional requirements are expected and we'll make it like a Yeah, like, like, you know, a photo right, but it doesn't like, affect the system in any way, but it's something you should have so do i mean to
+
+24:35
+like, add a separate thing like a functor? Should be two sets? Yeah.
+
+24:40
+Yeah, they should and then they should be? Probably also, I think.
+
+24:47
+You'll have to relate it directly back to amendments. This hasn't been documented as well. Right. Yeah. So yeah. I've done some real quick ones. I think. A new system shall support reservations. So you might come down to where we can support somebody taking a walk in and then you come to your page and the like usability reference our usability, okay.
+
+25:21
+This is an example from one of the I just put it in a table but this is an example from one of the readings from the so it it's like a questionnaire that's like asking about like, certain quality attributes. Right. And you don't I don't think you actually have to do it in this form, necessarily. I think there's more simple ones you can do, but that will be really good to
+
+25:47
+get for this event. Yes.
+
+25:53
+But, but maybe I'll try and when I find that article, I'll just send it to you as well. More like put this into context. Because this isn't this isn't for like a restaurant or something. This is for something completely different. I think. So something like that.
+
+26:13
+Yeah, I just go to the rubric and it says like, describe for quality attributes and one has like five math. Done. 20 Yeah. I just rather than taking it for just described as fine quality or juice or like for per
+
+26:28
+year. I don't get the mug like the marking seems like
+
+26:34
+yeah, I just that's I just created like Yeah,
+
+26:39
+cuz if you did four things, you wouldn't really cover anything. Yeah.
+
+26:44
+Excel, they have to be tech savvy like this.
+
+26:46
+Really? Yeah. That you know, what he said in class today is like it's not fully complete where the examples aren't complete. I
+
+26:56
+feel I have much more here. So
+
+26:59
+yeah, it's it's like so
+
+27:03
+maybe I spent like two or three hours that's it? Yeah. Yeah. And I don't want to do like that like it's a team. effort. It's a ask you guys like if you guys want I can just elaborate redirection, like all those things. Yes. And I even though I didn't, I didn't, but I don't want to be like you guys do.
+
+27:29
+That's why we're doing this automating so it can page about everything.
+
+27:43
+To Tasman support. Yeah. So the other thing, I'll put some blank desk and say, just if you're having trouble download, take tables and yeah, there's probably like 100 tasks and support things we could do for the restaurant. But I mean, how many you guys comfortable with because it's a lot of work right in the mountains thinking about?
+
+28:06
+I mean, I think I'm okay with doing like at least two or three bikes. Yeah. Yeah. So I think I started something like that. Yeah. I didn't go to detail I just like went one. So if you go 1.1 and go up to a 1.1. So like, this is the task description. So the way it's structured in the documentation is that there's a task description. Then you like model your task and support from the task description. What what do you guys think of, for example, like, if like one group of people make or like, me, or me and someone else do like the task description and then another group of people whose task and support based on that, or is that or is that not? Is that Is that too much? I
+
+29:13
+think. I mean, that's kind of reasonable. And it's similar to what we've already got. We can expand like, we can make the tables or anything just because you can add a task description actually into the table. Yeah, that'll keep it a little bit more organized. I think. Like the put a description in there, above purpose, and just make it a bit more expanded
+
+29:36
+to do you think, would you want to do that or
+
+29:39
+Yeah, all right. We can do that. Once we got that done. I mean, are you guys happy to have any distributions in just
+
+29:47
+a couple of days? Yeah, do a few tasks and support like, there's like all the numbers like 1.1 And then you just like put it all together and just like, do your analysis like your analysis? That sounds good. Yep.
+
+30:04
+So you're doing the validation. You said, I'm doing validation. So Julian, you're very verifiability and two tasks. Yep.
+
+30:16
+Do you want to you have a he
+
+30:18
+do not have anything unfortunately. Yeah, I just haven't had time to look at some medical stuff come up a bit. I will try my best, generally something up for today.
+
+30:32
+But I mean, I don't mind helping out and putting the framework on making it easier.
+
+30:37
+Let's what's what's just Gerba verification so you have like a good understanding of what to aim for and you don't have to like
+
+30:45
+if you've done anything in yours about that Jordan because I haven't checked anything in mind. So very
+
+30:51
+Can you just mentioned the crowd? The crowd which which I don't know if you but the crowd is kind of good because it the crowd table is good because you can kind of describe verification, and then kind of just do that chart. And because you'll have like over rows and stuff there you can like, I'll show you what the current chart is.
+
+31:24
+And then this one here doesn't make any verification is the other one. Yeah,
+
+31:31
+they both don't know. Yeah, they both don't have the validation. They have it as a credit. They did a credit check. And what's the other one? Is this the this is just HD,
+
+31:44
+which you said is not HD one
+
+31:45
+Yeah. Yeah. It's like a red herring just
+
+31:49
+mocking Yeah. These guys decided that these assignments equally Yeah, I mean, given the task and support so they
+
+32:01
+have a project they have a crunch crunch problem domain. So credit check, go read their credit check just just to quickly like get an idea of it because I got a really simple one. So So yeah, it's just yeah, record committee. Okay.
+
+32:31
+This in my readings should not be validation. They should be verification, but they didn't do verification. So that just means they just missed a section. Because I because it's in the requirements validation, verification separate. So if you could do a CRUD check on what your application is going to be doing, so it's like a table. It's like a table and crud just stands for create read. What's your again? I think I've got it written down. Because I keep forgetting it the late days the way you is use use something. It's update. Read Update, Delete. Yeah. So it's like, you know, overweight, like it's like, get like it's the same. So So, so a good reference for that one. Of the readings in week two or three forgot. I'll try to find a few that said
+
+33:41
+the way they've set this up board and onto the views. I guess their task is what it is.
+
+33:48
+Yeah, sorry. Sorry. I'm sorry, my bad I'm putting in that teach business goals
+
+34:06
+I just I just put into the grid
+
+34:11
+what sorry it's not gonna work. Good. You've set the local Yeah. To like your own folder.
+
+34:18
+Okay, sorry my bad but this open in a different I will just doubt LinkedIn
+
+34:26
+required right and anyway, right. Yeah. Just wait to just
+
+34:29
+speak to you. Sorry, can I just I just want to double check that I'm in the right direction tasks as functional requirements, functional needs check in check.
+
+34:57
+Sorry, I'm just, I just don't I do agree with me. About it's about verification. I
+
+35:07
+think that sounds reasonable. And then from getting validation and verification stuff again,
+
+35:12
+certification is the technical requirements to say. Yeah, this definitely looks like a technical things reading, writing, updating, this is all like things that are. Yeah. But there are technical,
+
+35:28
+which, I mean, he's doing it against his task or his entities, women to be doing it against their requirements that we derive from our
+
+35:38
+support is that we're doing it against our roles or roles. Yeah, so we've, who we've served from validation. If you go back to the my one, the section two maybe I should just categorize that as users or roles or something. So it's easier. It's up. It's all the way at the start. Yeah, yeah. It's actors, identifying actors. So if we go to that one, these are all the people that are going to be using the system. So you probably want to do a credit check on that. Guy. The waitstaff are going to be reading, writing, updating, right, like sort of chefs going to be deleting stuff off the menu, if it's not there, things like that. I mean, he probably won't do it stuff will probably update it to show that sort of available. But but you get the you get the idea, right. It's like that. I
+
+36:40
+mean, I don't think the exact workings of this imaginary restaurant. Particularly like if you wanted to solve the ship, delete things off the menu. That's fine. Yeah.
+
+36:51
+I think it matters. Yeah, it doesn't make sense. Yeah. Yeah. Just it's like a common sense thing from a software perspective. Right and based on like, again, you can you go to these. If you go to the subsections it will pretty much tell you what we're anticipating that they will be doing. So you can be like okay, well his barista might request stock for beans, right? So they will, that's an update, right. Or chef put something new in the menu because you can alter the menu so that's a right and an update. Maybe it could be two things. Right then be like one, it's like a rigid in that way. The court check, you can do multiple things. And yeah, so pretty much you'd want to get all those over subfields and pretty much like you don't have to like systematically put them all down, just get the journal. Some of them will be like the same, like so you'll just just write the actual like normalized version of it if you Yeah. Then for what else for verification.
+
+38:15
+We have to directly write relate to the task and support since that's all
+
+38:18
+it is task and support. Yeah. So it looks like kind of between tasks. And so I think it's like that step where you like extract the data from tasks and support and like
+
+38:33
+Julene have to look at like say we wrote the task and support that says, gets to the table. Does he have to come up with the verification method? To say whether our software system takes care of that? Yeah. So how would you if we're helping him out and we're doing the structure how do you think we should structure that?
+
+38:51
+Can we look at sorry, can we look at the ordering is for verification is quite deep, right? It's after quality attributes, right. So first, we are going to sorry,
+
+39:09
+I mean, we're assuming we've done the validation. We're creating the software now we're verifying.
+
+39:15
+But oh, yeah, true. So the last thing to do is verify it by you would validate it early on. Yeah. So So structurally speaking. I think we have I think we have the entire so you know what, that's pretty good then. So then what would happen is that we so quality attributes and validation will give you the like, insight on what you should verify. So like, yeah, so you you'll be like looking at tasks and support. You'll be like looking at everything and you'll be like, okay, attribute how do we verify it? Right? Like how do we you'll probably have to go through just week two or three, just to have a look at how they've so you've got your credit check and you've got just slowly
+
+40:18
+we haven't really covered that much verification in the lecture yet Rome is we're still a bit behind on we
+
+40:23
+know I think we just glossed over it and it was like it was covered in the online lectures more. It was they had a big there was like one week just for verification even though it's like both of them are 10 points each or
+
+40:39
+15. That what do you remember when abouts
+
+40:45
+we tool I think was like week two semi honestly. I think it was week two? Yeah.
+
+40:57
+I certainly do. But in the lecture they have like, discuss two ways it does like two or three strats. That's it. Because
+
+41:09
+they did the domain model as well in week two, but we've only just started doing it in our tutorial. It was like a real short one and start. domain model as well. Yeah, like we've only just
+
+41:38
+two main entities talk. All actors. I think it's a week one and we answered this question week two, just like the first question, answering to the weekly question.
+
+42:04
+Walking criteria.
+
+42:16
+Okay, so verifiability verifiability is not as emphasized. So maybe we can get away with just like, just like a short analysis on the quality attributes, I think and then the current chart, and I think there'll be enough to be honest
+
+42:35
+Do you think for every task and support we will have quote
+
+42:37
+attributes is a big one. So we want to sorry for sorry? Um, but podi attribute is a big one. It says four categories. Five Marks. Ah, yeah. I think that's like I think that's
+
+42:59
+HD boy they make something similar.
+
+43:05
+Cody attributes is on the non functional requirements. So where's functional requirements? To know
+
+43:21
+project goals and assumptions data dot data domain model user tasks in tasks and support style Okay, Cody attributes so you're specifically talking about non functional requirements.
+
+43:41
+So I don't have to add that like to losses like to separate Yeah,
+
+43:45
+but I think actually what you've covered is functional requirements. What you have right now is functional requirements. No,
+
+43:53
+say like, except similar ones used in the
+
+43:57
+federal liability.
+
+44:00
+The non functional because it's not like
+
+44:20
+Okay, your that's true. Also known as quality attributes. Okay. Yeah, you're right, your non functional requirements.
+
+44:31
+I don't think this is enough for like, four or five blocks per section.
+
+44:38
+Reliability. Performance. I think I got it, sir. Sir. Sir. I think what we're, what we want to remember is that it's for a cafe Yeah. So some Cody Cody attributes quite worthwhile and higher in the hierarchy than others. So like, for example, security.
+
+45:15
+Yeah, security for the second do you think security
+
+45:17
+is is is very, very, very, very important.
+
+45:21
+No way like, it is important but not very, very well. Yeah.
+
+45:25
+So maybe it wasn't always guaranteed
+
+45:29
+to be in one of these five because it shouldn't be there. The payments are made so we should have no admin. Yeah.
+
+45:39
+Okay, what's
+
+45:40
+taking like, fourth or fifth step?
+
+45:44
+Yeah, sir. Is there any other one that should be maybe that could even serve reliability? Definitely. 100% reliability is probably one of the most important correctness because you have to. This is important, because you have to
+
+46:05
+be involved in any type. Like I will try to add like two or three more, and I'm the final meaning we can just add or remove.
+
+46:12
+You know what, you know what? I reckon instead of adding more, instead of data in the update, go you have detailed description in goal. Instead of writing for example, like let's go for correctness, right. Ensure the system processes information accurately and performs its functions correctly. That's true. That's true, but that's not that what goes in the context of the coffee shop. Why is correctness so important? Directly there should be like exactly, exactly like the correct like if a person if the waitress puts in an order, it should be the correct order. There should never be a deviation. Right? And also correct it should be if the waitress charges $60 It should always be $60. That should, that's what you should write, you know what I mean? Yeah, that's more important than then just like a general description
+
+47:09
+even claim to do on the detail description. Like once it's done. We'll just be like, if you look at the security, I have given like for example, only managers should be able to access and even the if you read through that, so is trying to add something like that to all of them, which is related to the cafe.
+
+47:29
+Yeah, exactly. So great. So pretty much go through all that expand, expand on pretty much the case study. Yeah. Right. So just like like security, what does that relate to? Like? You could even be like actors in our insecurity, the actors or the administration, and the business. You can find overall so yeah, you'll make sense to
+
+47:56
+you so that you could say that the barista shouldn't have access to yes it's all
+
+48:00
+exactly so that's another what what what headings that under like a
+
+48:05
+Debian security full quality attributes right and
+
+48:10
+no, but like, but like, the kind of anti what like I don't know, it'd be like, the, this shouldn't happen, what's the least?
+
+48:23
+Okay, so, finally, managers should have
+
+48:25
+access and praise. Okay. Yeah. Yeah. And so, that's good, because you're restricting it Yeah. Down to and then it also then you have more interplay between each other because then your crud table is and the quality attributes are reflecting exactly what each other are doing right? Because when he goes down to the baristas there's not going to be any security access for him. Like he's not going to be able to read or update anything that's sensitive, you know? Right. So that so that will be good.
+
+48:58
+Yeah, on trigger they just added Manager Oh, they're just starting managers, even though managers how these these things, they are not able to do the like access or the payment information of like customers. And I will also are like, the shorts, like the very staff or other actors who are not accessible like who does not lead to access security. Should we our acid, again, at some point, or do you want me to like merge them together?
+
+49:28
+I think I think from the the tutorials, they want specific, not merged.
+
+49:37
+But you don't have to think you shouldn't be adding too many categories actually. You know, because you know why? Because then it shows that like the categories that you've chosen, a well reasoned. If you go too broad, it's kind of like you're just trying to capture you know, everything. So I think like what you like, what's the first one? Usability? Oh, yeah. 100% usability security. Usability like enrolls you say see people's education level for usability.
+
+50:12
+Lego they'd like it to be usable by a child with a minimal folio said knowledge. Yeah.
+
+50:20
+Yeah, awesome. Perfect. And, like I mentioned, waitresses barista will use the words that are already inside the document. And just scroll down and then scroll down to performance is valid. That's valid. That's, that's I think you've actually covered everything quite well. You just have to add, yeah, yeah.
+
+50:43
+I'm making if you go to Security or anything. Here, I have mentioned the channel here and in real life or scenario, something I will add, like in the cafe, the waitress all by itself, the minimal noise. Yeah, so it seemed like they do want it like to be that or this layer.
+
+51:04
+Don't be general, be specific to the cafe.
+
+51:08
+description here. Like in here. If you
+
+51:11
+want to give like a sort of like a description, like a definition. Yeah. Like, so the reader has an understanding of what you're saying. You should do that in a separate section. So you can write usability and then write something small about a small paragraph about it, and then get into goal and the and you don't have to say detailed description, you could say. You could say, I don't know, scenario, like a scenario that you could you know, this is a small example of how or an example of what would be happening that could be good. Yeah, that would be really good. That would be really good. But generally speaking, though, looks good actually. Just have to add the cafe stuff. Yeah. Yeah, that's,
+
+52:02
+like I wonder one more opinion from Hugo.
+
+52:06
+public performance requirements in class and he's always like, like, how many seconds suited that he's like, he wants exactly. References. Yeah, yeah.
+
+52:16
+I have a lot of that from the last. Like.
+
+52:22
+What can we request is to take a
+
+52:25
+quality attributes don't just say like for us say like, it should take more than two minutes. 495 questions? Yeah.
+
+52:35
+Exactly. So go into as much detail as possible because it is. This is starting to get into like the technical side of it.
+
+52:44
+I want to make sure at least one of my point is worth four marks. Because they're they're like asking us to write for quality attributes and one word phi, that's like two so I decided to fight so it's like split to like from this How is the doula going to give me four marks so I need to add more and more. They say just
+
+53:04
+I think this is the limiter. Yeah. Good. Don't do more than five don't do five good. We find that everything considered and overall is considered and all the specifications considered that they'll be good because we're gonna have to the task and support we're gonna we want to flesh that out a little bit more. So I'll
+
+53:34
+just try to come up with like one or two quality or dudes. On our fire meeting we'll discuss the like the most important file and take the file. Yeah,
+
+53:43
+yeah. Yeah. Okay, I think so.
+
+53:56
+Okay, so functional requirements then will be moved and validation because the I mean, I've kind of already wasted the functional requirements to be honest under you know, so that's, that's kind of done. I'll just restructure that a little bit to like mentioned that's a functional requirement. And maybe we will have a second when it comes to like the domain model, right, is that the is that the domain model? will be the actors and entities. Well, now
+
+54:37
+the domain that we will have the actors are basically based on our tutor today. The one in the HD project had actors in there. But the staff made it clear not to put the actors into the domain.
+
+54:50
+Okay, okay. I want to turn your mind to roles. That's all like, maybe I'll define actors but I essentially want to go to roles because then it's easier for them to like, just put it in there. Was like, do you need the actors in like, do you need
+
+55:14
+I mean, this is something that you specifically in the lectures, so I wouldn't remove it. I have defined roles separately if you wanted to do that.
+
+55:21
+Even a Dhobi
+
+55:23
+Okay, that's fair. That's fair. Okay, well, why now? That's the way I've structured it, so I'm just going to leave it and then I'm just going to the actors will have their functional requirements right underneath the description. So that when you guys start are going to reference them you can straight away be like okay, waitress This is the waitress functional requirements. This is what she can do. So that so, so please try and like yeah, like when you're like adding stuff with like, words. We have to try and use the same language. Yeah. I think that's reasonable. Is there anything else?
+
+56:09
+Verification milestones, just taking that phone call? You're good with that, Julian? Yep. Did you decide I mean, do we have to write something specific along the lecture lines like, like the exact verifiable, like this guy, the experience controller should be able to use all system functions after two hours of training that for each does not
+
+56:33
+or that's actually a good point. Yeah. That's, maybe we have to
+
+56:40
+have a section like that. For each task and support and verify
+
+56:43
+Taskin support is why she was having Paston support the last thing we do, so we can like focus on it, and go through it with this level of detail, because I didn't even think about I didn't even think about
+
+56:57
+that. That's the lesson we Do. Do. Julian got to really work on it until later are verifiable. So how do we verify that the waitress can table in the system or?
+
+57:22
+But so, like the task and sport is the waitress needs to be able to see people there. Then the requirements read the waitress can add a table to the system. Waitress can add customer to the table.
+
+57:37
+Maybe we can Yeah, maybe you can. Okay, so we had to do tasks on sport quite soon. That's okay. That's alright. It's not that bad.
+
+57:54
+I mean, we could roughly flesh it out. Julian could start working on these requirements. And then we could tailor the Tasman support to match the
+
+58:03
+we can just add heading right or we can add headings to the task and support up to that, you know, we don't even have to make it you could do is just add the the what's it called? keep forgetting sorry. The task description because the task description will we'll it's just it's so yeah, that shouldn't Yeah. So we'll just there's already headings for the front of house so like seating a group with a booking taken order. Serve food and drink process payments, right like that's all that's all like something that you can like be like, oh, yeah,
+
+58:51
+that which I don't know how to get that up
+
+58:56
+by the good stuff.
+
+58:58
+I have get up here and then you beliefs here and then I I know how to get up. You'll see the main dot text on the GitHub. Click on the main dot txt file.
+
+59:17
+And you can copy and paste that into an Overleaf project so create an overlay project
+
+59:25
+right up project wide.
+
+59:40
+Cafe
+
+59:45
+just replaced that text when you copied and then just go compile which is on the right hand side about the PDF
+
+1:00:02
+Okay, cool. Thank you. And you might need to copy in the images if you want to have them in there as well or you can not do it for now. Yeah,
+
+1:00:09
+also like I might drop that my drop in because like I don't want to watch for confusion. Maybe you can join me in a master combos. Like I don't know like I'm just worried about
+
+1:00:25
+like, I'll bring in what you did later tonight but let's be done this evening. Yeah,
+
+1:00:29
+some of its some of its a bit like scattered so like it doesn't it's fine. Yeah. All right.
+
+1:00:36
+Cool. upbring pretty much all of it in later on when we're having a discussion on Saturday if it doesn't.
+
+1:00:41
+Yeah, I reckon so. I reckon the main thing for Wednesday for so for me, I'm going to I'm just going to flesh out the task descriptions. For you, it's adding the context of the CO wild bay because that's really important in that because that's the whole reason you've chosen those right. And do they like all the first few things? Yeah, like yes, it
+
+1:01:17
+is very under. Yeah, yeah. And at the moment, yeah. And
+
+1:01:24
+I'm going to update all my, my domain and all that stuff, and also work on task descriptions as well.
+
+1:01:30
+Okay, so we'll do we'll do task one support. Yeah. Okay. And then I'll try and like just finish the task descriptions as soon as I can. And then you can use that to do the crowd and yeah, do some requirements. verifiability from lecture one. Oh, that's from lecture one. Yeah. So you could Yeah, just go to extra one. And just look at that and, and it should be it should be pretty good. Should be pretty straightforward. So anything that's imprecise or vague? Just like validating
+
+1:02:09
+and I assume we'll start with Mark and ours and he's pretty loves that.
+
+1:02:16
+He loves a winning go like so. 10 ways. Alright, cool Is there anything else?
+
+1:02:23
+I think that's pretty good.
+
+1:02:27
+I'll put the transcript up when I get home. And I'll try and get a try and put in the text versions.
+
+1:02:35
+Yeah, cuz I mean, we can just feed that into chattering TP and ask him to format it as I mean, it's, I'm pretty sure
+
+1:02:42
+it is formatted as a minute. The problem is, it doesn't capture everything perfectly. So
+
+1:02:49
+that we can I think, I think the robot will be able to summarize all the top names and stuff and who was there during the day? Yeah.
+
+1:02:57
+Oh, yeah. Text files. And yeah, we'll just wait, what's chat? Let's make sure we chat. Um, we're not going to be around until Tuesday. That's because I'm gonna have it on not to just just new or it's like, a bit like in a one of those national
+
+1:03:21
+parks. It was a nice walk around there. Yeah.
+
+1:03:25
+Yeah, it's gonna be I haven't actually been torn properly. I've just driven past it like,
+
+1:03:31
+going on a Great Ocean Road, tons of waterfalls and stuff. as well. Yeah.
+
+1:03:36
+Dude, I'm excited. I didn't know one was that good to be honest. Yeah. I'm gonna go alright. Good meeting good meeting. Let's let's let's try and be a little bit more active on the discord. Okay. The thing is
