@@ -111,10 +111,12 @@ Other Actors:
 \subsection{Acquiring Knowledge using a Tacit Questionnaire}(Quality Requirements)
 Careful construction of a tacit questionnaire allows us to extract data from stakeholders without requiring them to understand deep technical details. Instead, we are more focused on discovering what they expect or would like from the system, drawing from their experience and implicit knowledge of their role within their domain.
 
-Here we are looking to extract some data about the nonfunctional and functional requirements
+Here we are looking to extract some data about the and functional requirements
 \subsection{Task Descriptions}
-\subsubsection{Work Area 1:Front of House}
-Greet guests, seat them, bring water to table. 
+
+\subsubsection{Work Area 1: Front of House}
+Areas: Dinning Hall, Coffee station, Point of sales
+Greet guests, seat them, bring water to table, prepare drinks. 
 Standing, assume medium-high frequency of traffic.
 Have responsibility over several tables occasionally helping when larger party's enter,
 Users: IT Novice, high school level education
@@ -140,9 +142,76 @@ Process Payments
     \item edit bill
     \item print bill
     \item look up pick-up and delivery orders
+    \item reading roster
+    \item process pick-up/delivery services
+    \item read/write bookings
 \end{itemize}
 
-\subsubsection{Work are 2.Back of House}
+\subsubsection{Work area 2: Back of House}
+Area: Kitchen, Dry stock, Cool room, cleaning area
+Prepare Orders, Meal prep, Receive Delivery's, Specials
+Standing, fast past - dynamic environment, working in a team of 3-6 people, long shifts(8-12 hours)
+Have a variety of rolls in the kitchen, from cleaning to cooking
+Users: IT Novice, high school level education
+
+\paragraph{Task 1.1}
+Meal Preparation
+\paragraph{Task 1.2}
+Stock Take
+\paragraph{Task 1.3}
+Menu Updating
+\paragraph{Task 1.4}
+Cooking a Dish
+\paragraph{Task 1.5}
+Ordering Stock
+
+\paragraph{Sub-tasks}
+\begin{itemize}
+    \item update meal in queue
+    \item request and update stock levels
+    \item request menu update
+    \item remove menu item
+    \item reading roster and writing roster
+\end{itemize}
+
+\subsubsection{Work area 3: Business, Finance and Administration}
+Area: Office
+Revenue, Spending, Ordering, Approving Changes, Web, Marketing, Hiring, Roster, Stats
+Small team, ad-hoc support from external services.
+Usually outsourcing work or working alone or in pair post breakfast/lunch rush
+Users: IT intermediate:, college level education
+
+\paragraph{Task 1.1}
+Generating Revenue and Cost analysis
+\paragraph{Task 1.2}
+Ordering Stock
+\paragraph{Task 1.3}
+Updating Visual Menu and Approving Changes
+\paragraph{Task 1.4}
+Launching marketing Campaigns
+\paragraph{Task 1.5}
+Paying Salary's
+\paragraph{Task 1.6}
+Making Web changes
+\paragraph{Task 1.5}
+Updating pricing
+\paragraph{Task 1.5}
+Managing Third party Actor integration like Delivery Apps 
+
+\paragraph{Sub-tasks}
+\begin{itemize}
+    \item update menu
+    \item update price
+    \item pay salary
+    \item view analytics
+    \item reading roster and writing roster
+    \item read/write staff data
+    \item launch marketing
+    \item pay rent and utilities
+    \item order stock
+    \item approve requests
+\end{itemize}
+
 
 \subsection{Task and Support}
 
