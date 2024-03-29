@@ -1,0 +1,51 @@
+**Meeting Minutes**
+
+**Date:** [Insert Date]
+
+**Attendees:**
+- [Participant 1]
+- [Participant 2]
+- [Participant 3]
+- [Participant 4]
+
+**Agenda:**
+1. Discussing quality attributes and verification milestones.
+2. Planning the structure of project documentation.
+3. Assigning tasks and establishing workflow.
+4. Communication strategy.
+
+**Meeting Summary:**
+
+1. **Focus on Quality Attributes:**
+   - Participants discussed the importance of ensuring that their project meets the requirements for quality attributes. They aimed to have at least one point in their project worth four marks.
+   - The group decided to focus on usability, security, reliability, and potentially other attributes relevant to their cafe project.
+
+2. **Verification Milestones:**
+   - There was a discussion about the need to include specific verification milestones for each task and support requirement.
+   - Examples of verifiable statements were considered, such as the time it takes for a user to learn the system or perform specific tasks.
+
+3. **Task and Support Details:**
+   - Participants planned to flesh out the task and support descriptions, ensuring they match the requirements of the project.
+   - They emphasized the importance of using consistent language and terminology throughout the documentation.
+
+4. **Document Structure:**
+   - The group discussed the structure of their project documentation, including the inclusion of actors, roles, and functional requirements.
+   - They considered how to incorporate the cafe context into their quality attribute descriptions and verification milestones.
+
+5. **Workflow and Collaboration:**
+   - Participants planned to work collaboratively to complete the project, dividing tasks among group members and coordinating their efforts.
+   - They discussed their workflow for different sections of the documentation and planned to collaborate to ensure consistency and completeness.
+
+6. **Communication:**
+   - The group acknowledged the importance of staying active on their communication platform (Discord) to facilitate collaboration and coordination.
+
+**Action Items:**
+1. Flesh out task and support descriptions - All participants
+2. Incorporate cafe context into quality attribute descriptions - [Participant 1]
+3. Define verification milestones for each task - [Participant 2]
+4. Review and ensure consistency in documentation - All participants
+5. Maintain active communication on Discord - All participants
+
+**Next Meeting:** [Insert Date and Time]
+
+**Adjournment:** The meeting was adjourned at [Insert Time].

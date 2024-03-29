@@ -1,0 +1,51 @@
+**Meeting Minutes**
+
+**Date:** [Insert Date]
+
+**Time:** [Insert Start Time] - [Insert End Time]
+
+**Location:** [Insert Location]
+
+**Attendees:**
+- [Insert Name]
+- [Insert Name]
+- [Insert Name]
+- [Insert Name]
+- [Insert Name]
+
+**Agenda:**
+1. Introduction and Overview
+2. Discussion on System Requirements
+3. Planning Collaboration Tools
+4. Next Steps
+
+**1. Introduction and Overview**
+- Participants introduced themselves and their roles.
+- Meeting objectives and agenda were reviewed.
+
+**2. Discussion on System Requirements**
+- Emphasis on the need for a system to support renovations and automate analysis.
+- Identified the importance of user-friendly statistics for marketing purposes.
+- Considered options for taking orders from customers, including QR codes and internal systems.
+- Highlighted the need for online menus linked to marketing and potential integration with delivery systems.
+
+**3. Planning Collaboration Tools**
+- Explored options for collaboration tools, including Overleaf for documentation.
+- Considered the use of Git for version control and branching strategies for collaborative work.
+- Discussed preferences for Google Docs or Microsoft Office for document collaboration.
+
+**4. Next Steps**
+- Agreed to set up Overleaf accounts for documentation.
+- Decided to use Git for version control, with a focus on branching strategies.
+- Assigned tasks for organizing documentation and taking photos for reference.
+- Agreed to reconvene for further planning and progress updates.
+
+**Action Items:**
+- [Insert Name]: Set up Overleaf accounts for documentation.
+- [Insert Name]: Investigate Git branching strategies and set up repository.
+- [Insert Name]: Organize documentation and take photos for reference.
+- [Insert Name]: Coordinate scheduling for the next meeting.
+
+**Next Meeting:** [Insert Date], [Insert Time], [Insert Location]
+
+**Meeting Adjourned at:** [Insert End Time]

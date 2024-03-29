@@ -17,6 +17,10 @@
 \usepackage{array}
 \usepackage{makecell}
 
+
+
+
+
 %Task and support template
 
 %\begin{table}[htbp]
@@ -71,6 +75,7 @@ Cosy Koala IT}
 \date{March 2024}
 
 \begin{document}
+
 
 \maketitle
 \newpage
@@ -301,15 +306,55 @@ The system should model closely as possible to the current practices.
 \clearpage
 
 \section{Problem Domain}
+It is helpful to think of Data at the Cosy Koala in three ways. Reading data in the restaurant system. Writing data to the restaurant system. Or writing data to the website system. 
+Many of the tasks the Cosy Koala needs to complete fit into one of these three Domain Data Models in a general way. 
+Example: Taking a customers order fits into a section of the "Writing data to the restaurant system" domain model.
 
-\subsection{Data model \normalsize\textbf{Author: Vincent}}
-\subsubsection{Domain model \normalsize\textbf{Author: Vincent}}
+
+The reading data from the website is not included as this is typically accessed through a website in a standard way.
+
+\clearpage
+\subsection{ Domain Data model Reading \normalsize\textbf{Author: Vincent}}
+Reading Data from the Cosy Koala Restaurant Systems. The green rectangles are actors.
+The front of house actor accesses restaurant system data through the " Point of sales machine".
+Admin accesses restaurant system data through their GUI likely from a personal computer.
+Back of house only really needs to read data relevant to orders at almost all times. So they access the the restaurant system exclusively through the Docket machine and order dockets.
+
+
+
+
+
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=15cm]{Domain_Model.jpg}
-    \caption{Cosy Koala Domain Model}
-    \label{fig:Domain_Model}
+    \includegraphics[width=15cm]{Domain Data Model access.jpg}
+    \caption{Cosy Koala Domain Model Reading.}
+    \label{fig:Domain_Model_access}
 \end{figure}
+
+\clearpage
+\subsection{Cosy Koala Domain Model Writing.}
+Here we model how many task involving moving data into the restaurant system work.
+
+Example: The task of taking orders from a customer involve the guest making orders and building a meal which is passed to the waiter (Front of house member) who then puts it into the restaurant system via the point of sales machine.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=15cm]{Domain Data Model input.jpg}
+    \caption{Cosy Koala Domain Model Writing.}
+    \label{fig:Domain_Model_input}
+\end{figure}
+
+\clearpage
+\subsection{Cosy Koala Domain data Model Website Writing}
+The third major domain data model regards the writing of information from the restaurant system to the website.
+
+Example: The admin staff member will access the data from the restaurant system before analyzing it and generating marking data which they then model the information they want to put to the website.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=15cm]{Domain Model Data input website.jpg}
+    \caption{Cosy Koala Domain Model Website Writing.}
+    \label{fig:Domain_Model_website}
+\end{figure}
+
 
 \subsubsection{Entity Descriptions - Detailed}
 \textbf{Meal:} To group together items for payment, delivery, or dropping at a table it would be helpful to place them into a unit of a meal. This way a meal can be paid for as one, or moved to a new table as one etc.
@@ -581,9 +626,9 @@ Users: IT intermediate:, college level education
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
         \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
-        \textbf{Purpose:} \\
-        \textbf{Frequency:}}}\\
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Take a tables order. \\
+        \textbf{Purpose:} To get orders from a guest or group of guests at a table, enter them into the system, so that the order can be shared with the kitchen and progress can be tracked. Including verifying that the order has been completed.  \\
+        \textbf{Frequency:} If the restaurant has only single guest tables this could occur 150 times a service, However, a more likely number is around 70 times a service 3 services a day}}\\
         \hline
         % Row 1
         Sub task 1 & Example Solution 1 \\
@@ -612,9 +657,9 @@ Users: IT intermediate:, college level education
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
         \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
-        \textbf{Purpose:} \\
-        \textbf{Frequency:}}}\\
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Cook Food for guests. \\
+        \textbf{Purpose:} This task is for the kitchen and the back of house staff to receive a tables order with all the information needed in order to properly cook it as requested in an organized manor, i.e. Allergy information, time order was taken, guests at table, menu item, course (entree).  \\
+        \textbf{Frequency:} If the restaurant has only single guest tables this could occur 150 times a service, However, a more likely number is around 70 times a service 3 services a day}}\\
         \hline
         % Row 1
         Sub task 1 & Example Solution 1 \\
@@ -643,9 +688,9 @@ Users: IT intermediate:, college level education
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
         \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
-        \textbf{Purpose:} \\
-        \textbf{Frequency:}}}\\
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Create analytics from restaurant data. \\
+        \textbf{Purpose:} The admin staff member gathers the sales information from the restaurant system in order to discover and statistical information about what sells well, and what the restaurant can do to improve business. This uses analytical technique. \\
+        \textbf{Frequency:} At a minor level daily and weekly, at significant level probably quarterly.}}\\
         \hline
         % Row 1
         Sub task 1 & Example Solution 1 \\
@@ -674,9 +719,9 @@ Users: IT intermediate:, college level education
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
         \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
-        \textbf{Purpose:} \\
-        \textbf{Frequency:}}}\\
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Update website restaurant details. \\
+        \textbf{Purpose:} Update the Website with details about menu and restaurant menu offerings, including advertising things like seasonal specials, or discounts, and even opening hours for special events  \\
+        \textbf{Frequency:} At most weekly, more likely every few weeks.}}\\
         \hline
         % Row 1
         Sub task 1 & Example Solution 1 \\
@@ -705,9 +750,9 @@ Users: IT intermediate:, college level education
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
         \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
-        \textbf{Purpose:} \\
-        \textbf{Frequency:}}}\\
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} To take food from the kitchen when ready and deliver it to guest at the table \\
+        \textbf{Purpose:} The kitchen will cook the food it receives orders for with the intention to complete the cooking of a tables order together i.e. entrees with entrees. A front of house member will then take the food to the correct customer in the restaurant. \\
+        \textbf{Frequency:} Up to 150 times a service, at 3 services a day.}}\\
         \hline
         % Row 1
         Sub task 1 & Example Solution 1 \\
@@ -736,9 +781,9 @@ Users: IT intermediate:, college level education
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
         \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
-        \textbf{Purpose:} \\
-        \textbf{Frequency:}}}\\
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Share information Admin to front of house, and admin to back of house. \\
+        \textbf{Purpose:} The admin need to share details of bookings and customer or guests with both the front of house and back of house. These two groups need to share information of capabilities, staff numbers, and the state of the restaurant and kitchen.  \\
+        \textbf{Frequency:} At least once a day, sometimes maybe as many as 5 times a day.}}\\
         \hline
         % Row 1
         Sub task 1 & Example Solution 1 \\
@@ -805,11 +850,27 @@ Users: IT intermediate:, college level education
     \label{fig:Domain_Product}
 \end{figure}
 
+\clearpage
 \subsection{CRUD}
 create, read, update, Delete
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Operation} & \textbf{Description} & \textbf{Input} & \textbf{Output} & \textbf{Remarks} \\ \hline
+Create & & & & \\ \hline
+Read & & & & \\ \hline
+Update & & & & \\ \hline
+Delete & & & & \\ \hline
+\end{tabular}%
+}
+\caption{CRUD Table Template}
+\label{tab:crud-template}
+\end{table}
 
 
-
+\clearpage
 \section{Quality Attributes of System}
 
 \subsection{Usability} 
@@ -831,7 +892,7 @@ can access certain func onali es. For example, only managers should be able to a
 financial reports or employee records and on the other hand it should also make sure that 
 the customers payment details are encrypted and not accessible even by the managers. 
 Real-Life Reference: 
-\Subsection{Correctness}
+\subsection{Correctness}
 Goal: Ensure the system processes informa on accurately and performs its func ons 
 correctly. 
 Detailed Descrip on: The system should validate input data to prevent errors and ensure 
