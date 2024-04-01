@@ -807,19 +807,38 @@ Users: IT intermediate:, college level education
 
 \subsection{CRUD}
 
-\begin{table}
-    \centering
-    \begin{tabular}{ccccccc}
-        Tasks / Entities & Customer & Table & Stock & Kitchen & Invoice and receipts &  Statistics and reports \\
-        Create Reservation & CU & U &  &  &  & \\
-        Take order & U & U & R & U & U & \\
-        Inform kitchen of order &  &  &  & u &  & \\
-        Create invoice and receipts & U & U &  &  & R & \\
-        Handle payments &  &  &  &  & U & \\
-        Analysing statistics on ordered menu items & RU &  & R & R & R & CU \\
-    \end{tabular}
-    \caption{Caption}
-    \label{tab:my_label}
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|l|c|c|c|c|c|c|}
+    \hline
+    \textbf{Tasks / Entities} & \textbf{Customer} & \textbf{Table} & \textbf{Stock} & \textbf{Kitchen} & \textbf{Invoice and receipts} & \textbf{Statistics and reports} \\
+    \hline
+    Create reservation & CU & U & & & & \\
+    \hline
+    Take order & U & U & R & U & U & \\
+    \hline
+    Inform kitchen of order & & & & U & & \\
+    \hline
+    Create invoice and receipts & U & U & & & R & \\
+    \hline
+    Handle payments & & & & & U & \\
+    \hline
+    Analysing statistics on ordered menu items & RU & & R & R & R & CU \\
+    \hline
+    Complete payment transaction onsite & U & & & & CRU & U \\
+    \hline
+    Cook food & & RU & RUD & CRUD & & \\
+    \hline
+    Create Analytics & R & R & R & R & R & CRUD \\
+    \hline
+    Update Website & & & R & & & R \\
+    \hline
+    Drop food to table & RU & RUD & & RUD & U & \\
+    \hline
+    Share information Admin-Front of house, admin-back of house & R & R & R & R & R & R \\
+    \hline
+  \end{tabular}
+  \caption{Your table title here}
 \end{table}
 
 
