@@ -84,10 +84,10 @@ Cosy Koala IT}
 
 
 \section{Introduction}
-This document contains the specifications for a operational information system (OIS) for the Cosy Koala restaurant in Hawthorn Vic. This document will outline the specifications, requirement and quality attributes of the operational information system
+This document contains the specifications for a operational information system (OIS) for the Cosy Koala restaurant in Hawthorn, Vic. This document will outline the specifications, requirement and quality attributes of the operational information system
 
 \subsection{Purpose}
-The purpose of this document is to detail the functionalities and features of the OIS, aiming to streamline various restaurant operations as the business grows. From customer management and interactions to internal services and task management, the goal of this system is to allow the Cosy Koala to operate at a targeted customer patronage of 150 guests.
+The purpose of this document is to detail the functionalities and features of the OIS, aiming to streamline various restaurant operations as the business grows. From customer management and interactions to internal services and task management, the goal of this system is to allow the Cosy Koala to operate at a targeted concurrent customer patronage of 150 guests.
 
 \subsection{Scope}
 The OIS will facilitate the following high level tasks:
@@ -99,7 +99,7 @@ The OIS will facilitate the following high level tasks:
 
 
 \section{Project Overview}
-The Cosy Koala currently sits 50 customers. It is making a physical expansion on premises to sit 150 customers. The current technical integration with operations is low. Taking orders from guest and interacting with the kitchen, and accounting is handled by hand.
+The Cosy Koala currently has a maximum capacity of 50 customers at any one time. It is making a physical expansion on premises to sit 150 customers. The current technical integration with operations is low. Orders from guests, interactions with the kitchen, and accounting are all done manually.
 The Cosy Koala has identified multiple ideas they would like to include in the OIS:
 \begin{enumerate}
     \item The new system shall support reservations.
@@ -166,9 +166,9 @@ The Cosy Koala has identified multiple ideas they would like to include in the O
 \subsection{Actors}
 \subsection{Identifying Actors}
 
-As Software engineers we have a deep understanding of what is needed to create a successfully, effective and functional application; Versus what the client thinks the software needs in order to have those quality's. This statement implies we have the knowledge and skills to design and execute the development of some software, but a client or a group of stakeholders may have some tacit understanding of what needs to be done, which may have some Merritt, but is ultimately uniformed and may be inaccurate. By that same token, we software engineers may also have a tacit understanding of the roles of the client and stake holders. We attempt to bridge the gap by presenting some ideas and questions of what the client may need, what we expect of them and what their roles entail. 
+As Software engineers we have a deep understanding of what is needed to create a successfully, effective and functional application; Versus what the client thinks the software needs in order to have those qualities. This statement implies we have the knowledge and skills to design and execute the development of some software, but a client or a group of stakeholders may have some tacit understanding of what needs to be done, which may have some merit, but is ultimately uniformed and may be inaccurate. By that same token, we software engineers may also have a tacit understanding of the roles of the client and stake holders. We attempt to bridge the gap by presenting some ideas and questions of what the client may need, what we expect of them and what their roles entail. 
 
-The first approach is coming up with a list of Actors; Defined as broad group of entities interacting within our business domain, like stakeholders, authorities and land-lord. We also list some functionality we assume they need from the program.
+The first approach is coming up with a list of Actors; Defined as broad group of entities interacting within our business domain, like stakeholders, authorities and land-lords. We also list some functionality we assume they need from the program.
 
 In this Scenario the team has identified , the stake holder in Koala Cafe to be:
 
@@ -262,9 +262,9 @@ In this Scenario the team has identified , the stake holder in Koala Cafe to be:
     \end{itemize}
     \item {Maintenance}
     \begin{itemize}
-        \item Order Supply's
-        \item track tasks
-        \item alter to-do list
+        \item Order Supplies
+        \item track maintenance tasks
+        \item alter maintenance to-do list
     \end{itemize}
     \item {Customer}
     \begin{itemize}
@@ -286,7 +286,7 @@ Other Actors:
 
 \subsection{Project Goals \normalsize\textbf{Author: Vincent}}
 \subsubsection{Primary Goals}
-The primary Goal of Cosy Koala and the reason for releasing a tender for an OIS software provider is to be able to support a physical increase of guest from 50 to 150 in their restaurant.
+The primary Goal of Cosy Koala and the reason for releasing a tender for an OIS software provider is to be able to support a physical increase of max guest numbers from 50 to 150 in their restaurant.
 \subsubsection{Secondary Goals}
 \begin{enumerate}
     \item Support increased business through take-away.
@@ -481,7 +481,7 @@ Web Site: Display general information about the restaurant.
         \hline
         \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task: Receive and dine guests} \\
         \textbf{Actor: Front of House} \\
-        \textbf{Purpose:} To prepare the room/s fro upcoming guest, planning at the service\\ and day is appropriate.}}\\
+        \textbf{Purpose:} To prepare the rooms for upcoming guest, planning at the service\\ and day is appropriate.}}\\
         \hline
         % Row 1
         Sub task  & Example Solution  \\
@@ -528,7 +528,7 @@ Users: IT Novice, high school level education
 
 \subsubsection{Work area 2: Back of House}
 Area: Kitchen, Dry stock, Cool room, cleaning area
-Prepare Orders, Meal prep, Receive Delivery's, Specials
+Prepare Orders, Meal prep, Receive Deliveries, Specials
 Standing, fast past - dynamic environment, working in a team of 3-6 people, long shifts(8-12 hours)
 Have a variety of rolls in the kitchen, from cleaning to cooking
 Users: IT Novice, high school level education
@@ -852,23 +852,40 @@ Users: IT intermediate:, college level education
 
 \clearpage
 \subsection{CRUD}
-create, read, update, Delete
-\begin{table}[h]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Operation} & \textbf{Description} & \textbf{Input} & \textbf{Output} & \textbf{Remarks} \\ \hline
-Create & & & & \\ \hline
-Read & & & & \\ \hline
-Update & & & & \\ \hline
-Delete & & & & \\ \hline
-\end{tabular}%
-}
-\caption{CRUD Table Template}
-\label{tab:crud-template}
-\end{table}
 
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|l|c|c|c|c|c|c|}
+    \hline
+    \textbf{Tasks / Entities} & \textbf{Customer} & \textbf{Table} & \textbf{Stock} & \textbf{Kitchen} & \textbf{Invoice and receipts} & \textbf{Statistics and reports} \\
+    \hline
+    Create reservation & CU & U & & & & \\
+    \hline
+    Take order & U & U & R & U & U & \\
+    \hline
+    Inform kitchen of order & & & & U & & \\
+    \hline
+    Create invoice and receipts & U & U & & & R & \\
+    \hline
+    Handle payments & & & & & U & \\
+    \hline
+    Analysing statistics on ordered menu items & RU & & R & R & R & CU \\
+    \hline
+    Complete payment transaction onsite & U & & & & CRU & U \\
+    \hline
+    Cook food & & RU & RUD & CRUD & & \\
+    \hline
+    Create Analytics & R & R & R & R & R & CRUD \\
+    \hline
+    Update Website & & & R & & & R \\
+    \hline
+    Drop food to table & RU & RUD & & RUD & U & \\
+    \hline
+    Share information Admin-Front of house, admin-back of house & R & R & R & R & R & R \\
+    \hline
+  \end{tabular}
+  \caption{Your table title here}
+\end{table}
 
 \clearpage
 \section{Quality Attributes of System}
