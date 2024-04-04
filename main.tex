@@ -1,6 +1,9 @@
 \documentclass{article}
 \usepackage{graphicx} % Required for inserting images
 \usepackage[smartEllipses]{markdown}
+\usepackage{enumitem}
+
+
 \usepackage{geometry}
 
 % Set the text width
@@ -87,15 +90,20 @@ Cosy Koala IT}
 This document contains the specifications for a operational information system (OIS) for the Cosy Koala restaurant in Hawthorn, Vic. This document will outline the specifications, requirement and quality attributes of the operational information system
 
 \subsection{Purpose}
-The purpose of this document is to detail the functionalities and features of the OIS, aiming to streamline various restaurant operations as the business grows. From customer management and interactions to internal services and task management, the goal of this system is to allow the Cosy Koala to operate at a targeted concurrent customer patronage of 150 guests.
+The purpose of this document is to be a client facing document to detail the functionalities and features of the OIS, aiming to streamline various restaurant operations as the business grows. From customer management and interactions to internal services and task management, the goal of this system is to allow the Cosy Koala to operate at a targeted concurrent customer patronage of 150 guests.
 
 \subsection{Scope}
-The OIS will facilitate the following high level tasks:
+
+The Online Information System (OIS) will facilitate the following high-level tasks:
+
 \begin{enumerate}
-    \item Customer Management.
-    \item Customer Interaction.
-    \item Internal Services.
+    \item \textbf{Customer Management:} The system will provide features for managing customer data, including storing customer information, tracking preferences, and managing loyalty programs.
+    
+    \item \textbf{Customer Interaction:} The system will enable seamless interaction between the restaurant and its customers. This includes functionalities such as online reservations, order placement, feedback collection, and communication regarding promotions or special offers.
+    
+    \item \textbf{Internal Services:} The system will streamline internal processes and services within the restaurant. This includes functionalities related to order management, staff scheduling, and generating reports for business analysis.
 \end{enumerate}
+
 
 
 \section{Project Overview}
@@ -850,6 +858,120 @@ Users: IT intermediate:, college level education
     \label{fig:Domain_Product}
 \end{figure}
 
+
+
+
+\section{Functional Requirements}
+\subsection{Task and support: Complete Payment transaction onsite related requirements.}
+\subsubsection{}
+\textbf{Description:} The system shall have a search function.
+\begin{itemize}
+    \item The search function shall be able to search based on table number.
+    \item The search function shall be able to search based on dining room.
+    \item The search function shall be able to search based on  customer name on booking.
+\end{itemize}
+
+
+\textbf{Priority:} High
+
+
+\textbf{Dependencies:} The meals and orders shall be stored in a searchable database
+
+
+\textbf{Acceptance Criteria:} 
+\begin{itemize}
+    \item When a search using table number is used the entire tables meal is returned, with the booking details if they exist and the guest details. This should occur in less than 1 second to not lead to delays.
+    \item When a search using dining room is used the total tables in the system with their entire tables meal is returned, with the booking details if they exist and the guest details. This should occur in less than 1 second to not lead to delays.
+    \item When a search using customer name from booking the entire tables meal is returned, with the booking details if they exist and the guest details. This should occur in less than 1 second to not lead to delays.
+\end{itemize}
+
+
+\subsubsection{}
+\textbf{Description:} The system should have a storage or database that can be search and stores the data on menu items.
+\begin{itemize}
+    \item The database shall store ordered items.
+    \item The database shall show when a item is served.
+    \item The database shall show when a item is payed.
+\end{itemize}
+
+
+\textbf{Priority:} High
+
+
+\textbf{Dependencies:} None
+
+
+\textbf{Acceptance Criteria:} \begin{itemize}
+    \item Every time an item is ordered it should be placed in the database, this shall include the order details including guest, price, time of order, dietary requirements..
+    \item If the state of an order changes i.e. goes from ordered to cooked. This should be reflected in the database in less than 1 second. 
+    \item When an item is payed this should label the item(s) to payed immediately and exclude them from being paid for again without staff authorization.
+\end{itemize}
+
+\subsubsection{}
+\textbf{Description:} The system should communicate with the Sales machine, i.e. eftpos machine, credit card machine.
+\begin{itemize}
+    \item The value of the payment shall be sent from the POS machine.
+    \item The sale shall be initiated from the POS machine.
+\end{itemize}
+
+
+\textbf{Priority:} Medium if the sale can be initiated on eftpos machine. Else High.
+
+
+\textbf{Dependencies:} The orders are stored in the POS machine and are accessible.
+
+
+\textbf{Acceptance Criteria:} \begin{itemize}
+    \item The value of the payment send to the eftpos device is the same as the bill.
+    \item When a staff member initiates a payment it appears on the eftpos device immediately.
+\end{itemize}
+
+\subsubsection{}
+\textbf{Description:} The system should have a GUI.
+\begin{itemize}
+    \item The GUI shall display meal information, including: price total, price per item, number of guest at table, table number, seat of order.
+    \item The GUI shall display the price and details to both the staff member using the POS and also the customer.
+    \item The GUI shall present an option to print a receipts to both the customer and staff member.
+\end{itemize}
+
+
+\textbf{Priority:} High
+
+
+\textbf{Dependencies:} None
+
+
+\textbf{Acceptance Criteria:} 
+\begin{itemize}
+    \item The displayed information on the GUI shall be of font size 1cm in height on the screen. 
+    \item The staff member and customer display shall be the same.
+    \item The GUI shall present an a single option to print a receipt in the center of the screen in a large button to the customer. The staff member can have the receipt button in a options drop down menu. 
+\end{itemize}
+
+
+\textbf{Description:} The system shall have a connection to a printer.
+\begin{itemize}
+    \item The system shall format receipt in a 5cm wide format for heat transfer printer.
+    \item The information shall be the same as the Gui.
+\end{itemize}
+
+
+\textbf{Priority:} High
+
+
+\textbf{Dependencies:} GUI requirements.
+
+
+\textbf{Acceptance Criteria:} \begin{itemize}
+    \item The 5cm receipt shall have all information as the GUI did.
+    \item The receipt will contain all original GUI information.
+\end{itemize}
+
+
+
+
+
+
 \clearpage
 \subsection{CRUD}
 
@@ -891,47 +1013,54 @@ Users: IT intermediate:, college level education
 \section{Quality Attributes of System}
 
 \subsection{Usability} 
-Goal: Ensure that the system is intui ve and easy to use for all users, including staff, 
+Goal: Ensure that the system is intuitive and easy to use for all users, including staff, 
 customers, and management. 
-Detailed Descrip on: The interface should be clear and straigh orward, allowing users with 
+Detailed Description: The interface should be clear and straight forward, allowing users with 
 minimal technical skills, such as children or elderly individuals, to navigate and use the 
 system with ease. For example, a child with basic phone usage experience should be able to 
 place an order through a digital menu without difficulty. This can be achieved through, 
 simple menus, clear labels, and helpful icons. The system should also provide accessible help 
-resources and tool ps. 
-Real-Life Reference:  
+resources and tool tips. 
+
+
+\textbf{Real-Life Reference: } The menu available through the website should be the same as a menu you would typically receive in a restaurant. This means there should be a 'entre' section a d 'main' and a 'dessert' section, displayed on the same page. This will facilitate easy understanding of what the restaurant offer.
+
 \subsection{Security}
-Goal: Protect sensi ve data and ensure that transac ons are secure. 
-Detailed Descrip on: Implement industry-standard security measures such as SSL/TLS for 
-data transmission, encrypted storage for sensi ve informa on, and regular security audits. 
+Goal: Protect sensitive data and ensure that transactions are secure. 
+Detailed Description: Implement industry-standard security measures such as SSL/TLS for 
+data transmission, encrypted storage for sensitive information, and regular security audits. 
 The system should have role-based access controls to ensure that only authorized personnel 
-can access certain func onali es. For example, only managers should be able to access 
+can access certain functionalities. For example, only managers should be able to access 
 financial reports or employee records and on the other hand it should also make sure that 
 the customers payment details are encrypted and not accessible even by the managers. 
-Real-Life Reference: 
+
+
+\textbf{Real-Life Reference: } Role based access should be used to restrict employee access to the POS machine or any other system connected computer. This will mean a employee assigned a chef role cannot access the POS machine whilst a front of staff member role will.
 \subsection{Correctness}
-Goal: Ensure the system processes informa on accurately and performs its func ons 
+Goal: Ensure the system processes information accurately and performs its functions 
 correctly. 
-Detailed Descrip on: The system should validate input data to prevent errors and ensure 
-the accuracy of orders, billing, and inventory management. Automated tes ng and quality 
+Detailed Description: The system should validate input data to prevent errors and ensure 
+the accuracy of orders, billing, and inventory management. Automated testing and quality 
 assurance processes should be in place to detect and correct errors before deployment. For 
 example, when a customer places an order, the system should accurately reflect the chosen 
-items, quan es, and prices in the final bill. 
-Real-Life Reference:  
+items, quantities, and prices in the final bill. 
+
+
+\textbf{Real-Life Reference: }  Before an order is paid for the POS machine should verify the price paid against teh internal menu item price.
 \subsection{Reliability (Availability)} 
-Goal: Ensure the system is opera onal and available during business hours without 
+Goal: Ensure the system is operational and available during business hours without 
 unexpected down mes. 
-Detailed Descrip on: The system should be designed for high availability with failover 
+Detailed Description: The system should be designed for high availability with failover 
 mechanisms and redundancy to handle peak mes and unexpected loads. For example, 
-during a busy dinner service, the system should remain func onal and responsive, managing 
-mul ple orders and reserva ons simultaneously without crashing or slowing down. 
+during a busy dinner service, the system should remain functional and responsive, managing 
+multiple orders and reservations simultaneously without crashing or slowing down. 
 Real-Life Reference:  
 \subsection{Performance}
-Goal: Ensure the system responds quickly to user interac ons and processes data efficiently. 
-Detailed Descrip on: The system should be opmized for fast response mes, even under 
-heavy load. This includes efficient database queries, opmized code, and the ability to 
-handle concurrent users smoothly. For instance, when mul ple customers place orders 
-simultaneously, the system should process these quickly without delays or bo lenecks. 
+Goal: Ensure the system responds quickly to user interactions and processes data efficiently. 
+Detailed Description: The system should be optimized for fast response mes, even under 
+heavy load. This includes efficient database queries, optimized code, and the ability to 
+handle concurrent users smoothly. For instance, when multiple customers place orders 
+simultaneously, the system should process these quickly without delays or bottlenecks. 
 Real-Life Reference:  
 
 
@@ -956,8 +1085,6 @@ The back and forth between the two parties; the client and producer (us) is a pr
 
 The key is EARLY Validation.
 
-
-\section{Possible Solutions}
 
 
 \end{document}
