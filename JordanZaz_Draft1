@@ -1,5 +1,15 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\graphicspath{}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 \begin{document}
 
@@ -13,9 +23,9 @@
 \subsection{Development Approach: Working with the Client}
 Ensuring that we closely align with a client's requirements at the early stages of the software development life-cycle is crucial in creating a robust and thoughtful software architecture. We are mindful that any problems faced now are much easier to tackle earlier rather than later on when they are "baked-in." Any changes that are made to later in the software's development can be costly and time consuming since some systems are likely to need re-programming or re-designing which can have a cascading effect on other system, which can lead to a larger restructuring. 
 
-The back and forth between the two parties; the client and producer (us) is a proven methodology (Validation) for creating a software system's architecture as we invest more time early to iron out any projected issues in partnership with the client. We consider all levels of domains: societal, environmental, global,business,customer and methodically come up with strategies that we come up tacitly from a high level and systematically decompose the ideas from the abstract all the way down to the software's design. Source: IEEE's standards for software architecture documentation and the Software Engineering Institute's (SEI) Architecture Trade-off Analysis Method (ATAM).
+The back and forth between the two parties; the client and producer (us) is a proven methodology (Validation) for creating a software system's architecture as we invest more time early to iron out any projected issues in partnership with the client. We consider all levels of domains: societal, environmental, global,business,customer and methodically come up with strategies that we come up with implicitly from interactions with the client; then, from a high level and systematically decompose the ideas from the abstract all the way down to the software's design.
 
-The key is EARLY Validation.
+The point to take is, EARLY Validation.
 
 \subsection{Identifying Actors}
 
@@ -96,9 +106,14 @@ In this Scenario the team has identified , the stake holder in Koala Cafe to be:
         \item make booking online or via phone
         \item order online via phone
         \item order or book via App
-        \item order via QR code
-        \item order via Digital Kiosk
-        \item 
+        \item order via QR code 
+    \end{itemize}
+    \item {Delivery}
+    \begin{itemize}
+        \item Easy app registration, first or third party
+        \item view finished order
+        \item picked up order
+        \item dropped off order
     \end{itemize}
 \end{itemize}
 Other Actors:
@@ -106,13 +121,66 @@ Other Actors:
     \item {Health and Safety}
     \item {Land Lord}
     \item {Suppliers}
+    \item {Third party delivery service}
 \end{itemize}
 
-\subsection{Acquiring Knowledge using a Tacit Questionnaire}(Quality Requirements)
-Careful construction of a tacit questionnaire allows us to extract data from stakeholders without requiring them to understand deep technical details. Instead, we are more focused on discovering what they expect or would like from the system, drawing from their experience and implicit knowledge of their role within their domain.
+\subsection{Use Cases}
+Here we illustrate how the system and the actors interact, using black-box modeling to hide any technical details for now and focusing on the big picture. We isolate a set of actors who are most representative of the scenario to highlight key interactions.
+\\
+\\
+Use-Case 1, Dine-in/Take-away, (On-site):
+Customer can use QR code to order, or can order through staff. (Customers encouraged to use QR codes to order when wait staff are overburdened)
+\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{DineIn_Takeaway.drawio.png}
+    \caption{A simple diagram showing the dine-in and takeaway process which uses the same flow, but would have a different flag to indicate which order type to process. }
+    \label{fig:enter-label}
+\end{figure}
 
-Here we are looking to extract some data about the and functional requirements
+Use-Case 2, Delivery/Pick-up/Bookings (Off-site):
+Shows several avenues the customer may take to interact with the system, outside of the cafe, in order to make a booking or book a table. The actors on the right side of the diagram interact with this request with corresponding functions within the app.
+\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{UseCase_Customer.drawio.png}
+    \caption{Customer interacts with the management app through through indirect means, key actors can process these requests as they come. }
+    \label{fig:enter-label}
+\end{figure}
+
+Use-Case 3, In service, Front and back of house:
+The diagram shows the app in-use while the cafe is running.
+\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{Service_UseCase.drawio (1).png}
+    \caption{the front of house (servers) and back of house (cooks), service functions}
+    \label{fig:enter-label}
+\end{figure}
+\\
+Use-case 4, Business Operations :
+This diagram clusters several actors into a staff actor to represent those on the payroll. The focus is on the responsibilities and functionalities of these core actors and what they can do outside of cafe service hours. 
+\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{Buissness_UseCase.drawio.png}
+    \caption{A distillation of actors who are expected to have some functional access to the app, in and outside of opening hours}
+    \label{fig:enter-label}
+\end{figure}
+
+From here we can determine the functional needs for each actor interacting with the app.
+
+A good way to delegate responsibility and 1limit access based on roll is to delegate special portals to actors. This allows actors to only be able to interact with functionality that is deemed necessary to them while hiding or abstracting away all unnecessary functions. Some have natural been indicated within the use case diagram, here we can identify them.
+\begin{itemize}
+    \item Customer, Web portal
+    \item Kitchen Portal
+    \item Front of house Portal
+    \item Management Portal(Chef and Manager)
+    \item Business Portal
+\end{itemize} 
+
 \subsection{Task Descriptions}
+A task description will help us premeditate any of the avenues an actor may take within the scope of the app. This will allows us to decompose the steps that may be taken for a given task or set of tasks. This data gives us a high level of granular insight into daily tasks, such as: task location and setting, human interactions, implied system interactions, task intensity, responsibilities, actors education level. As a result of these assumptions we can anticipate and avoid as many problems as possible, before development.
 
 \subsubsection{Work Area 1: Front of House}
 Areas: Dinning Hall, Coffee station, Point of sales
@@ -120,50 +188,176 @@ Greet guests, seat them, bring water to table, prepare drinks.
 Standing, assume medium-high frequency of traffic.
 Have responsibility over several tables occasionally helping when larger party's enter,
 Users: IT Novice, high school level education
-\paragraph{Task 1.1}
-Find Table:
-Purpose: Find a free table for walk-in customers, write it as occupied.
-Trigger: Customers walk-in without booking
-Frequency:Average 1 customers every 1.5 minutes during breakfast and 3 customer every 1.5 minutes during a lunch rush (1 hour period, 3 times more)
-Critical: Large Bookings(7>).
-\paragraph{Task 1.2}
-Seating a group with a booking
-\paragraph{Task 1.3}
-Take Order
-\paragraph{Task 1.4}
-Server Food and Drink
-\paragraph{Task 1.5}
-Process Payments
-\paragraph{Sub-tasks}
-\begin{itemize}
-    \item read/write table booking
-    \item send order
-    \item process payment
-    \item edit bill
-    \item print bill
-    \item look up pick-up and delivery orders
-    \item reading roster
-    \item process pick-up/delivery services
-    \item read/write bookings
-\end{itemize}
 
-\subsubsection{Work area 2: Back of House}
-Area: Kitchen, Dry stock, Cool room, cleaning area
-Prepare Orders, Meal prep, Receive Delivery's, Specials
-Standing, fast past - dynamic environment, working in a team of 3-6 people, long shifts(8-12 hours)
-Have a variety of rolls in the kitchen, from cleaning to cooking
-Users: IT Novice, high school level education
+\paragraph{Task 1.1, Seat Guests:}
+Purpose: Find a free table for walk-in customers, if they have a booking find them their reserved table in system, write it as occupied.
+Trigger: Customers walk-in \\
+Frequency:Average 1 customers every 1.5 minutes during breakfast and 3 customer every 1.5 minutes during a lunch rush (1 hour period, 3 times more) \\
+Critical: Large Bookings($>$7) may result in unexpected table booking.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Find a booking
+    \item Seat Guests
+    \item set table to occupied
+    \item Bring water to table
+    \item Ask if they would like any drinks to start
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] No Booking
+    \item [1b.] No Free Table
+    \item [1c.] Double Booked
+    \item [1d.] Regular customer
+    \item [1e.] Front of house is occupied 
+    \item [2a.] Table has not been cleaned
+    \item [2b.] Table is not set
+    \item [2c.] Not enough seats at table
+    \item [2d.] Guests request another table
+    \item [3a.] Customer requests new table
+    \item [4a.] No water glasses left
+    \item [4b.] Customer request Sparkling water
+    \item [5a.] Customer wants to order food
+\end{enumerate}
 
-\paragraph{Task 1.1}
-Meal Preparation
-\paragraph{Task 1.2}
-Stock Take
-\paragraph{Task 1.3}
-Menu Updating
-\paragraph{Task 1.4}
-Cooking a Dish
+\paragraph{Task 1.2, Take order:}
+Purpose: Take order from customers
+Trigger: Customers Waves down server, server approaches table or customer approaches counter\\
+Frequency:Average 1 table-order every 2.5 minutes during rush, 2 coffee(drink) order every minute during rush, 1 take-away order  every 4 minutes during lunch rush \\
+Critical: Large Order, Banquet size. food $=>$ (table-size * 2) and/or drink $=>$ (table-size * 2) before something expected to go wrong\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Take orders from customer
+    \item Process Order at counter (POS)
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Custom Order
+    \item [1b.] Allergy's/Dietary Requirements
+    \item [1c.] Some guests haven't arrived
+    \item [1d.] Additional Orders
+    \item [1e.] Front of house is occupied
+    \item [1f.] Take-away order
+    \item [1g.] Online Order
+    \item [2a.] No options for order
+    \item [2b.] POS occupied
+\end{enumerate}
+
+\paragraph{Task 1.3, Serve Order:}
+Purpose: Deliver prepared food and beverages from the kitchen and bar to the customers at their tables. Ensure the order is correct and presented well.
+Trigger: Notification from the kitchen or bar that the order is ready.\\
+Frequency:Average 1 table-order every 2.5 minutes during rush, 2 coffee(drink) order every minute during rush, 1 take-away order  every 4 minutes during lunch rush \\
+Critical: Accuracy and presentation of the order. Timely delivery to ensure customer satisfaction Correct order, correct table\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Verify the order against the app.
+    \item Pick up the order from the kitchen or bar.
+    \item Serve the order to the correct table and person.
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Missing items in the order
+    \item [1b.] Incorrect order preparation
+    \item [2a.] To many items at the same time
+    \item [3a.] Serving to the wrong table
+    \item [3b.] Customer requests additional items or modifications
+\end{enumerate}
+
+\paragraph{Task 1.4, Process Payment:}
+Purpose: Accurately process payment for the customer, using their preferred payment method. Ensure a smooth and positive end to the dining experience.
+Trigger: Customer requests the bill.\\
+Frequency: Corresponds to table turnover rate; each table typically generates one payment transaction per visit.\\
+Critical: Payment processing accuracy and security. Customer privacy.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Present the bill to the customer.
+    \item Process the payment via cash, credit/debit card, or digital payment method.
+    \item Provide payment confirmation to the customer (receipt).
+    \item Ensure the table is set as free in the system post-payment.
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [2a.] Payment declined
+    \item [2b.] Customer requests split billing
+    \item [2c.] Coupon or discount
+    \item [2d.] Tips
+    \item [3a.] Receipt printer malfunctions
+    \item [4a.] System error in updating table status
+\end{enumerate}
 \paragraph{Task 1.5}
-Ordering Stock
+
+\subsubsection{Work Area 2: Back of House}
+Area: Kitchen, Dry Stock, Cool Room, Cleaning Area\\
+Prepare Orders, Meal Prep, Receive Deliveries, Specials\\
+Environment: Standing, fast-paced - dynamic environment, working in a team of 3-6 people, long shifts (8-12 hours).\\
+Roles include a variety of tasks, from cleaning to cooking.\\
+Users: IT Novice, high school level education.
+
+\paragraph{Task 2.1, Meal Preparation:}
+Purpose: Prepare meals according to the current menu and special orders, ensuring high-quality standards and timely delivery to the front of house.
+Trigger: Order receipt from the front of house or online system.\\
+Frequency: Varies with customer flow, significantly higher during meal times.\\
+Critical: Adherence to recipes, food safety standards, and timing.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Receive notification on app and review the order.
+    \item Gather ingredients from the stock
+    \item Prepare the meal
+    \item Notify the front of house when the order is ready using app
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Dish unavailable
+    \item [2a.] Missing ingredients
+    \item [2b.] Special dietary requests
+    \item [3a.] Equipment malfunction
+    \item [4a.] Rush order or priority change
+\end{enumerate}
+
+\paragraph{Task 2.2, Stock Take:}
+Purpose: Regularly assess stock levels to ensure the kitchen has all necessary ingredients and supplies. Identify items that need replenishment.
+Trigger: Scheduled stock take or noticeable depletion of items.\\
+Frequency: Daily or weekly, depending on the item's usage rate.\\
+Critical: Accuracy of the stock take to prevent overstocking or stockouts.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Check levels of all ingredients and supplies
+    \item Update the stock management system with current levels
+    \item Identify items that need ordering and request or order them
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Discrepancies between physical stock and system records
+    \item [1b.] Cross-contaminated stock
+    \item [2a.] System can't find item
+    \item [3a.] Urgent need for a stock item outside of regular ordering schedules
+\end{enumerate}
+
+\paragraph{Task 2.3, Menu Updating:}
+Purpose: Reflect changes in the menu due to seasonality, availability of ingredients, or promotional offers.
+Trigger: Decision from management or chef to alter the menu.\\
+Frequency: promotional, Seasonally or as needed.\\
+Critical: Timely update in all systems and communication to the front of house and business owners.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Discuss and finalize new menu items or changes with management and chef
+    \item Update the menu in the system and ensure the front of house is informed
+    \item Train kitchen staff on any new recipes or preparation techniques
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Unavailability of planned ingredients
+    \item [2a.] Discrepancy in dish item between menu and kitchen
+    \item [2b.] System update errors or delays.
+    \item [3a.] Kitchen can only make a small amount of this dish
+\end{enumerate}
+
 
 \paragraph{Sub-tasks}
 \begin{itemize}
@@ -174,74 +368,153 @@ Ordering Stock
     \item reading roster and writing roster
 \end{itemize}
 
-\subsubsection{Work area 3: Business, Finance and Administration}
-Area: Office
-Revenue, Spending, Ordering, Approving Changes, Web, Marketing, Hiring, Roster, Stats
-Small team, ad-hoc support from external services.
-Usually outsourcing work or working alone or in pair post breakfast/lunch rush
-Users: IT intermediate:, college level education
+\subsubsection{Work Area 3: Business, Finance and Administration}
+Area: Office\\
+Focus: Revenue, Spending, Ordering, Approving Changes, Web, Marketing, Hiring, Roster, Stats\\
+Environment: Small team, ad-hoc support from external services. Usually outsourcing work or working alone or in pairs post breakfast/lunch rush.\\
+Users: IT Intermediate, college level education.
 
-\paragraph{Task 1.1}
-Generating Revenue and Cost analysis
-\paragraph{Task 1.2}
-Ordering Stock
-\paragraph{Task 1.3}
-Updating Visual Menu and Approving Changes
-\paragraph{Task 1.4}
-Launching marketing Campaigns
-\paragraph{Task 1.5}
-Paying Salary's
-\paragraph{Task 1.6}
-Making Web changes
-\paragraph{Task 1.5}
-Updating pricing
-\paragraph{Task 1.5}
-Managing Third party Actor integration like Delivery Apps 
+\paragraph{Task 3.1, Generating Revenue and Cost Analysis:}
+Purpose: Analyze financial data to assess profitability, identify trends, and make informed decisions on cost management and revenue enhancement.
+Trigger: End of financial period (monthly/quarterly/yearly) or as needed.\\
+Frequency: Regularly scheduled and ad-hoc as required for decision making.\\
+Critical: Accuracy of financial data and analysis.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Collect and compile financial data (sales, expenses, etc.)
+    \item Analyze data to identify trends, opportunities, and areas of concern
+    \item Prepare financial reports for management review
+    \item Suggest actionable strategies based on financial analysis
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Incomplete or inaccurate financial data
+    \item [2a.] Many ways to interoperate data
+    \item [3a.] Urgent financial reporting requested by management
+    \item [4a.] Bad financial projection 
+\end{enumerate}
 
-\paragraph{Sub-tasks}
-\begin{itemize}
-    \item update menu
-    \item update price
-    \item pay salary
-    \item view analytics
-    \item reading roster and writing roster
-    \item read/write staff data
-    \item launch marketing
-    \item pay rent and utilities
-    \item order stock
-    \item approve requests
-\end{itemize}
+\paragraph{Task 3.2, Ordering Stock:}
+Purpose: Ensure that the cafe is adequately stocked with all necessary ingredients and supplies to meet operational needs without overstocking.
+Trigger: Stock levels fall below predetermined thresholds.\\
+Frequency: As determined by inventory checks or automatically by inventory management software.\\
+Critical: Balancing adequate stock levels without excessive inventory.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Review stock reports or inventory system alerts for low stock items
+    \item Place orders with suppliers, ensuring the best balance of cost and delivery times
+    \item Confirm order details and delivery schedules
+    \item Update inventory records upon receipt of stock
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [2a.] Supplier out of stock or discontinues an item
+    \item [2b.] Supplier increased prices
+    \item [2c.] Supplier no longer has this item
+    \item [3a.] Delivery delays or issues
+\end{enumerate}
+
+\paragraph{Task 3.3, Updating Visual Menu and Approving Changes:}
+Purpose: Keep the digital and physical menus updated with the latest offerings, including seasonal items, specials, and any changes in pricing.
+Trigger: Menu item changes approved by management and/or chef.\\
+Frequency: Seasonally, or as changes occur.\\
+Critical: Consistency and accuracy across all menu presentations.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Gather all necessary details for menu changes, including descriptions, pricing, and images.
+    \item Update the digital menu in the POS system, online platforms and third party services.
+    \item Coordinate the printing of updated physical menus, if applicable.
+    \item Brief staff on menu changes to ensure accurate information is provided to customers.
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Delay in receiving updated content (e.g., images, descriptions).
+    \item [2a.] Technical issues with updating digital platforms.
+\end{enumerate}
+
 
 
 \subsection{Task and Support}
 
-\begin{tabular}{ |p{6cm}||p{6cm}|p{6cm}|p{6cm}|  }
+\subsubsection{Task and Support: Seating Guests and Taking Orders}
+\begin{tabular}{ |p{6cm}||p{6cm}|  }
  \hline
- \multicolumn{2}{|c|}
- {
-Task:     1.1 Seat Guests
-Purpose: } \\
+ \multicolumn{2}{|c|}{Task: 1.1 Seat Guests and Task 1.2 Take Order} \\
  \hline
- Sub-task & Example solution    \\
+ Sub-task & System/Process Support    \\
  \hline
- 1.)Take Order.
-    Problem: Customer has a custom order& System allows ingredient items to be added on at extra cost   \\
-    \hline
- 2.)&   AX  \\
-    \hline
- 3.) &AL \\
-    \hline
- Variants: &DZ \\
-    \hline
- 1a.)&   AS  \\
-    \hline
+ Identify free tables and seat guests. & A digital floor plan accessible via a tablet shows real-time table availability, allowing staff to quickly identify and select the best available table for guests.   \\
+ \hline
+ Present menus and take guests' orders. & Digital menus available through QR codes on the tables allow guests to browse the menu on their personal devices. Staff can take orders through a handheld device that sends orders directly to the kitchen.   \\
+ \hline
+ Process special requests and dietary restrictions. & The ordering system includes a feature to mark orders with special requests or dietary restrictions, alerting kitchen staff immediately to ensure compliance.   \\
+ \hline
+ Confirm the order with guests. & The handheld device provides a summary view of the order for confirmation with guests before submission to the kitchen, reducing errors. \\
+ \hline
+\end{tabular}
 
+\subsubsection{Task and Support: Preparing and Cooking Orders}
+\begin{tabular}{ |p{6cm}||p{6cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Task: 2.4 Cooking Orders} \\
+ \hline
+ Sub-task & System/Process Support    \\
+ \hline
+ Receive and review orders from the front of house. & Kitchen display screens show orders in real-time, with color coding to indicate priority and timing, ensuring efficient workflow management.   \\
+ \hline
+ Prepare ingredients and cook according to the menu. & An integrated recipe management system provides kitchen staff with quick access to recipes and cooking instructions for each menu item, ensuring consistency and quality.   \\
+ \hline
+ Manage special orders and dietary requirements. & Special orders and dietary requirements are highlighted on the kitchen display screens, with detailed instructions to ensure compliance and customer satisfaction.   \\
+ \hline
+ Signal when orders are ready to be served. & A one-click notification system on the kitchen display screen allows the kitchen staff to alert the front of house when orders are ready for pickup or delivery to the table. \\
+ \hline
+\end{tabular}
+
+\subsubsection{Task and Support: Digital Menu Update}
+\begin{tabular}{ |p{6cm}||p{6cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Task: 3.3 Updating Visual Menu and Approving Changes} \\
+ \hline
+ Sub-task & System/Process Support    \\
+ \hline
+ Gather details for menu changes, including descriptions, pricing, and images. & The system provides a centralized digital asset management platform where chefs and managers can upload and categorize new menu items, prices, and associated images directly.   \\
+ \hline
+ Update the digital menu in the POS system and online platforms. & The app acts as central content management system enabling seamless updates across all digital platforms, including the POS system, website, and mobile app, ensuring consistency.   \\
+ \hline
+ Coordinate the printing of updated physical menus, if applicable. & Integration with a third-party printing service allows for automatic submission of print orders directly from the app. \\
+ \hline
+ Brief staff on menu changes to ensure accurate customer information. & An automated notification system alerts staff to any menu updates through the staff portalas well as roster changes and applying for time-off \\
+ \hline
+\end{tabular}
+
+\subsubsection{Task and Support: Developing In-House Promotions Based on Analytics}
+\begin{tabular}{ |p{6cm}||p{6cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Task: Utilizing Analytics for In-House Promotion Development} \\
+ \hline
+ Sub-task & System/Process Support    \\
+ \hline
+ Review historical sales and customer feedback data. & The app integrates an analytics dashboard to highlight top-selling items, customer preferences, and feedback, identifying potential areas for promotions.   \\
+ \hline
+ Identify opportunities for promotions. & Data analytics tools analyze sales trends, inventory levels, and customer behavior to suggest items or services ideal for promotional activities.   \\
+ \hline
+ Design promotion details and criteria. & Promotion management software allows managers to define the scope, duration, and terms of the promotion, including discounts, combo deals, or loyalty points incentives.   \\
+ \hline
+ Communicate and market promotions to customers. & Digital signage software updates in-house displays with promotional information. The system also updates the cafe's app and website to inform customers of current promotions.   \\
+ \hline
+ Monitor promotion effectiveness and adjust as needed. & Real-time sales data and customer feedback collected during the promotion period are analyzed to assess the promotion's impact, allowing for quick adjustments or extensions.   \\
  \hline
 \end{tabular}
 
 
 \subsection{CRUD}
 create, read, update, Delete
+
+\subsection{Acquiring Knowledge using a Tacit Questionnaire}(Quality Requirements)
+Careful construction of a tacit questionnaire allows us to extract data from stakeholders without requiring them to understand deep technical details. Instead, we are more focused on discovering what they expect or would like from the system, drawing from their experience and implicit knowledge of their role within their domain.
 
 
 \end{document}
