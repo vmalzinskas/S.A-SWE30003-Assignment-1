@@ -85,27 +85,37 @@ Cosy Koala IT}
 \tableofcontents
 \newpage
 
-
+\clearpage
 \section{Introduction}
-This document contains the specifications for a operational information system (OIS) for the Cosy Koala restaurant in Hawthorn, Vic. This document will outline the specifications, requirement and quality attributes of the operational information system
+The Operational Information System (OIS) for the Cosy Koala restaurant is designed and functionally described in this Software Requirements Specification (SRS). Through the use of technology, the initiative seeks to completely transform the restaurant's customer service and operational effectiveness. Our group is working on creating a system that will automate important procedures, such as billing and reservations, and offer useful insights to support decision-making for businesses.
+
+The OIS project is a strategic endeavour aimed at improving Cosy Koala's eating experience and operational flow, rather than just a technological undertaking. This document ensures a scalable and user-centric solution by outlining the system's requirements, architecture, and scope. By completing this project, we hope to raise the bar for technology integration in hospitality management by providing a stable, user-friendly, and safe system that fits the hectic pace of the restaurant business.
+
+
 
 \subsection{Purpose}
-The purpose of this document is to be a client facing document to detail the functionalities and features of the OIS, aiming to streamline various restaurant operations as the business grows. From customer management and interactions to internal services and task management, the goal of this system is to allow the Cosy Koala to operate at a targeted concurrent customer patronage of 150 guests.
+The purpose of this document is to be a client facing document to detail the functionalities and features of the OIS, aiming to streamline various restaurant operations as the business grows. From customer management  and interactions to internal services and task management, the goal of this system is to allow the Cosy Koala to operate at a targeted concurrent customer patronage of 150 guests.
 
 \subsection{Scope}
 
-The Online Information System (OIS) will facilitate the following high-level tasks:
+With the goal of utilizing cutting-edge technology to revolutionize the restaurant's operational dynamics and customer contact, this Software Requirements Specification (SRS) paper outlines the blueprint for the Operational Information System (OIS) at Cosy Koala. In order to help Cosy Koala increase operational efficiency, boost customer service, and spur business growth, the project aims to develop a comprehensive system that automates and integrates every aspect of restaurant operations, from customer reservations and order management to kitchen operations and financial reporting.
 
 \begin{enumerate}
-    \item \textbf{Customer Management:} The system will provide features for managing customer data, including storing customer information, tracking preferences, and managing loyalty programs.
+    \item \textbf{Customer Management:} It involves creating a centralized database to handle past data, profiles, and preferences of customers in order to provide loyalty program's and individualized service.
     
-    \item \textbf{Customer Interaction:} The system will enable seamless interaction between the restaurant and its customers. This includes functionalities such as online reservations, order placement, feedback collection, and communication regarding promotions or special offers.
+    \item \textbf{Order Processing:} To cut down on wait times, minimize mistakes, and improve kitchen operations, automate the order-taking and processing workflow.
     
-    \item \textbf{Internal Services:} The system will streamline internal processes and services within the restaurant. This includes functionalities related to order management, staff scheduling, and generating reports for business analysis.
+    \item \textbf{Inventory management:} Putting in place an integrated system to monitor stock levels, forecast when reorders will be needed, and cut down on waste.
+
+    \item \textbf{Financial Transactions:}  To guarantee accuracy and adherence to financial regulations, streamlining invoicing, payment processing, and financial reporting is necessary.
+
+    \item \textbf{Analytics and Reporting:}  Providing current company intelligence and analytics, such as sales trends, customer behaviour, and operational performance, to support strategic decision-making.
+
+    
 \end{enumerate}
 
 
-
+\clearpage
 \section{Project Overview}
 The Cosy Koala currently has a maximum capacity of 50 customers at any one time. It is making a physical expansion on premises to sit 150 customers. The current technical integration with operations is low. Orders from guests, interactions with the kitchen, and accounting are all done manually.
 The Cosy Koala has identified multiple ideas they would like to include in the OIS:
@@ -127,6 +137,14 @@ The Cosy Koala has identified multiple ideas they would like to include in the O
     \item OIS : Operation Information System.
     \item FOH : Front of house.
     \item BOH : Back of house.
+    \item POS: Point of Sales system
+    \item The App or This App: Referring to this application being developed, broader than OIS, can encompass API integration from third party's and web integration
+    \item API: Third party software system or app that integrates into this software
+    \item Actors: An identified entity that can potentially interact within our domain. In our case generalised to encompass a group of stakeholders
+    \item Stakeholder: a specified entity that interacts within our business domain
+    \item Domain: Generally speaking; an abstract region within a system, where its "borders" are defined by what subsystem and entities interact or live within it. A domain can be visualised as a bubble that groups all its essential parts, functionalities and actors inside of it, as-well as any overlapping or colliding bubbles(domains) or actors. 
+    \item Inner Domain: The domain that describes the apps functional requirements in service.
+    
 \end{enumerate}
 \subsection{Pain Points}
 \begin{enumerate}
@@ -137,10 +155,17 @@ The Cosy Koala has identified multiple ideas they would like to include in the O
         \item Taking offsite orders.
         \item Collecting data on sales.
         \end{enumerate}
-    \item Front to back of house interactions:
+    \item Front of house interactions:
     \begin{enumerate}
-        \item Organize orders.
-        \item Make sure food is sent to correct customer.
+        \item Organize orders
+        \item Make sure food is sent to correct customer
+        \item Serve and prepare Drinks
+        \item Manage Coffee products 
+    \end{enumerate}
+    \item Back of house interactions:
+    \begin{enumerate}
+        \item Produce Orders with quality and consistency
+        \item Make sure their is always enough stock
     \end{enumerate}
     \item Administrative functions:
     \begin{enumerate}
@@ -152,30 +177,8 @@ The Cosy Koala has identified multiple ideas they would like to include in the O
     \end{enumerate}
 \end{enumerate}
 
+\section{Domain Entities}
 
-
-
-
-\subsection{Actors}
-\subsection{Identifying Actors}
-
-As Software engineers we have a deep understanding of what is needed to create a successfully, effective and functional application; Versus what the client thinks the software needs in order to have those qualities. This statement implies we have the knowledge and skills to design and execute the development of some software, but a client or a group of stakeholders may have some tacit understanding of what needs to be done, which may have some merit, but is ultimately uniformed and may be inaccurate. By that same token, we software engineers may also have a tacit understanding of the roles of the client and stake holders. We attempt to bridge the gap by presenting some ideas and questions of what the client may need, what we expect of them and what their roles entail. 
-
-The first approach is coming up with a list of Actors; Defined as broad group of entities interacting within our business domain, like stakeholders, authorities and land-lords. We also list some functionality we assume they need from the program.
-
-In this Scenario the team has identified , the stake holder in Koala Cafe to be:
-
-
-\begin{enumerate}
-    \item Onsite Customer
-    \item Offsite Customer
-    \item Front of House Staff Member
-    \item Back of House Staff Member
-    \item Admin
-    \item Website
-    \item Delivery System
-    \item EFTPOS or Banking System
-\end{enumerate}
 
 % \subsection{Task - Brief}
 % A very brief overview of the 
@@ -268,7 +271,6 @@ The following gives insight into the stakeholders and their interest Cosy Koala 
         \item order or book via App
         \item order via QR code
         \item order via Digital Kiosk
-        \item 
     \end{itemize}
 \end{itemize}
 Other Actors:
@@ -278,28 +280,95 @@ Other Actors:
     \item {Suppliers}
 \end{itemize}
 
+\subsection{Actors} 
 
-\subsection{Project Goals}
-\subsubsection{Primary Goals}
+In this Scenario the team has identified the Actors in Koala Cafes business domain to be:
+
+
+\begin{enumerate}
+    \item Customers(Online/in-store)
+    \item Front of house:
+    \begin{itemize}
+        \item Manager
+        \item Barista
+        \item Server
+        \item Delivery
+        \item EFTPOS or Banking System
+    \end{itemize}
+    \item Back of House
+    \begin{itemize}
+        \item Chef
+        \item Kitchen
+        \item Cleaning/Maintenance
+        \item Stock and supply
+    \end{itemize}
+    \item Admin
+    \begin{itemize}
+        \item Business Owner
+        \item Accountant
+        \item Manager
+        \item Business Banking
+        \item website
+    \end{itemize}
+    \item Government
+    \begin{itemize}
+        \item Regulation
+        \item Health and Safety
+        \item Tax
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Other Domain Entities}
+\begin{enumerate}
+    \item Meal
+    \item Payments
+    \item Seat
+    \item Table
+    \item Dining Room
+    \item Receipts
+    \item Sales Data
+    \item Order
+    \item Marketing Data, i.e. Menu lists, JPGs etc.
+    \item Point of Sales
+    \item Kitchen
+\end{enumerate}
+
+
+\section{Project Goals}
+\subsection{Primary Goals}
 The primary Goal of Cosy Koala and the reason for releasing a tender for an OIS software provider is to be able to support a physical increase of max guest numbers from 50 to 150 in their restaurant.
-\subsubsection{Secondary Goals}
+\subsection{Secondary Goals}
 \begin{enumerate}
     \item Support increased business through take-away.
     \item Support informed customers through their website.
     \item Support informed management about the customers purchases.
     \item Capture potential customers through their website.
 \end{enumerate}
-\subsubsection{Tertiary Goals}
+\subsection{Tertiary Goals}
 Cosy Koala is interested in the possibility of supporting the arrangement of delivery.
 
 \subsection{Assumptions}
 A number of assumptions are made in relation to the implementation of this OIS is that manual scaling of operations are impossible. Whether that means no more staff will be available. Or whether staff will be expected to have other duties.
 
-The system should model closely as possible to the current practices.
-
+The system should model closely as possible to the current manual practices, that is it should not introduce new elements like robotic servers or cookers, ordering Kiosks etc.
+QR codes are an easy and modern approach that most apps of this ilk integrate. So this is an be an exception that we consider.
 
 \clearpage
+\subsection{Goal model}
+This model shows the domain, the actor and the Goal/Requirement that they have an interest in for the Cosy Koala. 
 
+\textbf{For example:} The light blue section is the overall business goal section and we see Grow Business is a Goal/Requirement that relates to this potential software system. You can see from the lack of arrow this goal is not directly related to the product or an actor.
+
+
+\textbf{For example:}  The customer when inner domain related goal is "Payment" This generates the requirement "To make a payment" we can see from the arrow this directly relates to the software product.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=15cm]{Domain_product_diagram.jpg}
+    \caption{Cosy Koala Domain Requirements}
+    \label{fig:Domain_Product}
+\end{figure}
+
+\clearpage
 \section{Problem Domain}
 It is helpful to think of Data at the Cosy Koala in three ways. Reading data in the restaurant system. Writing data to the restaurant system. Or writing data to the website system. 
 Many of the tasks the Cosy Koala needs to complete fit into one of these three Domain Data Models in a general way. 
@@ -308,22 +377,57 @@ Example: Taking a customers order fits into a section of the "Writing data to th
 
 The reading data from the website is not included as this is typically accessed through a website in a standard way.
 
-\subsection{Domain Entities}
-\begin{enumerate}
-    \item Meal
-    \item Payments
-    \item Customer
-    \item Front of House Staff
-    \item Seat
-    \item Table
-    \item Dining Room
-    \item Receipts
-    \item Sales Data
-    \item Order
-    \item Marketing Data, i.e. Menu lists, JPGs etc.
-    \item Point of Sales
-    \item Kitchen
-\end{enumerate}
+\subsubsection{Entity Descriptions - Detailed}
+\textbf{Meal:} To group together items for payment, delivery, or dropping at a table it would be helpful to place them into a unit of a meal. This way a meal can be paid for as one, or moved to a new table as one etc.
+
+\textbf{Payments:} This will model the owed amounts for a meal, capable of of dividing payments based on a number of divisions, i.e. by item, by table, by room for functions. It will interact with receipts and and the Payment System (Actor).
+
+\textbf{Customer:} This will model both the onsite and offsite customers, it will interact with bookings, tables, dining rooms, sales Data. It will contain customer specific data like meal, sales data.
+
+\textbf{Front of House:} This will be a model for anyone interacting with customers capable of creating orders, bookings, taking payment and issuing receipts etc.
+
+\textbf{Seat:} A customer can be assigned a seat to locate a meal or part of a meal to the correct customer.
+
+\textbf{Table:} Contains seats and can be used for grouping meals into a larger single unit for booking or payment.
+
+\textbf{Dining Room:} Containerizes and organizes customers orders i.e. If the restaurant has a multiple rooms this can be used to better locate customers for orders. It will contain tables which contain seats and customers.
+
+\textbf{Receipts:} Will be a record for Sales data and Customers of a meal including its expense, items, time, location. Will be issues by the payment entity.
+
+\textbf{Sales Data:} This is a aggregation of the Receipts data.
+
+\textbf{Order:} (Onsite) Contains the meal order items, seat, table, dining room, that is ordered by a customer. \\(Offsite) Contains the meal order items, customer that is ordered by a customer.
+
+\textbf{Marketing Data:} This will be the data that can be sent to the Website (Actor) in order to update the website.
+
+\textbf{Point of Sales Machine:} Facilitates payment transactions. Issues receipts. Logs sales data. Is operated be a front of house staff member. Interacts with the payment entity and the payment system (Actor)
+
+\textbf{Kitchen:} Containerizes and organizes customers food order for pick up by front of house.
+
+\subsection{Actors Descriptions - Detailed}
+
+\textbf{Onsite Customer:} Is a person dining on food or beverages prepared by Cosy Koala. This is done on site in a dining room at a table. .
+
+\textbf{Offsite Customer:} Is a person dining on food or beverages prepared by Cosy Koala. This is done off site at any location other than Cosy Koala dining rooms.
+
+\textbf{Front of House:} This is a staff member who has direct contact with the customer. They take orders from customers. Take orders to the Kitchen. Bring customers their food. They are responsible for maintaining the orders integrity (Making sure the customer gets what they pay for). The take customer transactions. Communicate with Admin.
+\begin{itemize}
+    \item {EFTPOS or Banking System:} This is the outside system that will have to interact with the POS entity in order to facilitate payments.
+    \item {Delivery:} This the outside system that facilitates delivery, like Uber, or menulog etc.
+\end{itemize}
+
+\textbf{Back of House:} Prepare the customers food order. Responsible for making sure front of house receive the food order with correct information i.e. order number etc. Communicate with Admin.
+\begin{itemize}
+    \item Supplier: communicate with this entity for restocking of all perishables and hospitality equipment
+\end{itemize}
+
+\textbf{Admin:} Get the logged data from the Point of Sales Machine.
+Generate analytics from the Sales data.
+\begin{itemize}
+    \item Web Site: Display general information about the restaurant.
+    \item Business banking: Pay for wages, rent and other incurring expenses.
+\end{itemize}
+
 
 \clearpage
 \subsection{ Domain Data model Reading}
@@ -331,25 +435,6 @@ Reading Data from the Cosy Koala Restaurant Systems. The green rectangles are ac
 The front of house actor accesses restaurant system data through the " Point of sales machine".
 Admin accesses restaurant system data through their GUI likely from a personal computer.
 Back of house only really needs to read data relevant to orders at almost all times. So they access the the restaurant system exclusively through the Docket machine and order dockets.
-
-\subsection{Domain Entities Overview}
-\begin{enumerate}
-    \item Meal
-    \item Payments
-    \item Customer
-    \item Front of House Staff
-    \item Seat
-    \item Table
-    \item Dining Room
-    \item Receipts
-    \item Sales Data
-    \item Order
-    \item Marketing Data, i.e. Menu lists, JPGs etc.
-    \item Point of Sales
-    \item Kitchen
-\end{enumerate}
-
-
 
 \begin{figure}[!ht]
     \centering
@@ -383,54 +468,7 @@ Example: The admin staff member will access the data from the restaurant system 
 \end{figure}
 
 
-\subsubsection{Entity Descriptions - Detailed}
-\textbf{Meal:} To group together items for payment, delivery, or dropping at a table it would be helpful to place them into a unit of a meal. This way a meal can be paid for as one, or moved to a new table as one etc.
 
-\textbf{Payments:} This will model the owed amounts for a meal, capable of of dividing payments based on a number of divisions, i.e. by item, by table, by room for functions. It will interact with receipts and and the Payment System (Actor).
-
-\textbf{Customer:} This will model both the onsite and offsite customers, it will interact with bookings, tables, dining rooms, sales Data. It will contain customer specific data like meal, sales data.
-
-\textbf{Front of House:} This will be a model for anyone interacting with customers capable of creating orders, bookings, taking payment and issuing receipts etc.
-
-\textbf{Seat:} A customer can be assigned a seat to locate a meal or part of a meal to the correct customer.
-
-\textbf{Table:} Contains seats and can be used for grouping meals into a larger single unit for booking or payment.
-
-\textbf{Dining Room:} Containerizes and organizes customers orders i.e. If the restaurant has a multiple rooms this can be used to better locate customers for orders. It will contain tables which contain seats and customers.
-
-\textbf{Receipts:} Will be a record for Sales data and Customers of a meal including its expense, items, time, location. Will be issues by the payment entity.
-
-\textbf{Sales Data:} This is a aggregation of the Receipts data.
-
-\textbf{Order:} (Onsite) Contains the meal order items, seat, table, dining room, that is ordered by a customer. \\(Offsite) Contains the meal order items, customer that is ordered by a customer.
-
-\textbf{Marketing Data:} This will be the data that can be sent to the Website (Actor) in order to update the website.
-
-\textbf{Point of Sales Machine:} Facilitates payment transactions. Issues receipts. Logs sales data. Is operated be a front of house staff member. Interacts with the payment entity and the payment system (Actor)
-
-\textbf{Kitchen:} Containerizes and organizes customers food order for pick up by front of house.
-
-
-
-\subsection{Actors Descriptions - Detailed}
-
-\textbf{Onsite Customer:} Is a person dining on food or beverages prepared by Cosy Koala. This is done on site in a dining room at a table. .
-
-\textbf{Offsite Customer:} Is a person dining on food or beverages prepared by Cosy Koala. This is done off site at any location other than Cosy Koala dining rooms.
-
-\textbf{Front of House:} This is a staff member who has direct contact with the customer. They take orders from customers. Take orders to the Kitchen. Bring customers their food. They are responsible for maintaining the orders integrity (Making sure the customer gets what they pay for). The take customer transactions. Communicate with Admin.
-
-\textbf{Back of House:} Prepare the customers food order. Responsible for making sure front of house receive the food order with correct information i.e. order number etc. Communicate with Admin.
-
-\textbf{Website:} Displays the restaurant information for customers.
-
-\textbf{Admin:} Get the logged data from the Point of Sales Machine.
-Generate analytics from the Sales data.
-Web Site: Display general information about the restaurant.
-
-\textbf{EFTPOS or Banking System:} This is the outside system that will have to interact with the POS entity in order to facilitate payments.
-
-\textbf{Delivery System:} This the outside system that facilitates delivery, like Uber, or menulog etc.
 
 
 \clearpage
@@ -544,7 +582,74 @@ Web Site: Display general information about the restaurant.
 
 
 \clearpage
-\subsection{Tasks}
+\section{Validation}
+\subsection{Development Approach: Working with the Client}
+Ensuring that we closely align with a client's requirements at the early stages of the software development life-cycle is crucial in creating a robust and thoughtful software architecture. We are mindful that any problems faced now are much easier to tackle earlier rather than later on when they are "baked-in." Any changes that are made to later in the software's development can be costly and time consuming since some systems are likely to need re-programming or re-designing which can have a cascading effect on other system, which can lead to a larger restructuring. 
+
+The back and forth between the two parties; the client and producer (us) is a proven methodology (Validation) for creating a software system's architecture as we invest more time early to iron out any projected issues in partnership with the client. We consider all levels of domains: societal, environmental, global,business,customer and methodically come up with strategies that we come up with implicitly from interactions with the client; then, from a high level and systematically decompose the ideas from the abstract all the way down to the software's design.
+
+The point to take is, EARLY Validation.
+
+% \subsection{Identifying Actors}
+
+\subsection{Use Cases}
+Here we illustrate how the system and the stakeholders (section 3.1) interact, using black-box modeling to hide any technical details for now and focusing on the big picture. We isolate a set of actors who are most representative of the scenario to highlight key interactions.
+\\
+\\
+Use-Case 1, Dine-in/Take-away, (On-site):
+Customer can use QR code to order, or can order through staff. (Customers encouraged to use QR codes to order when wait staff are overburdened) 
+\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{DineIn_Takeaway.drawio.png}
+    \caption{A simple diagram showing the dine-in and takeaway process which uses the same flow, but would have a different flag to indicate which order type to process. }
+    \label{fig:enter-label}
+\end{figure}
+
+Use-Case 2, Delivery/Pick-up/Bookings (Off-site):
+Shows several avenues the customer may take to interact with the system, outside of the cafe, in order to make a booking or book a table. The actors on the right side of the diagram interact with this request with corresponding functions within the app.
+\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{UseCase_Customer.drawio.png}
+    \caption{Customer interacts with the management app through through indirect means, key actors can process these requests as they come. }
+    \label{fig:enter-label}
+\end{figure}
+
+Use-Case 3, In service, Front and back of house:
+The diagram shows the app in-use while the cafe is running.
+\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{Service_UseCase.drawio (1).png}
+    \caption{the front of house (servers) and back of house (cooks), service functions}
+    \label{fig:enter-label}
+\end{figure}
+\\
+Use-case 4, Business Operations :
+This diagram clusters several actors into a staff actor to represent those on the payroll. The focus is on the responsibilities and functionalities of these core actors and what they can do outside of cafe service hours. 
+\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{Buissness_UseCase.drawio.png}
+    \caption{A distillation of actors who are expected to have some functional access to the app, in and outside of opening hours}
+    \label{fig:enter-label}
+\end{figure}
+
+From here we can determine the functional needs for each actor interacting with the app.
+
+A good way to delegate responsibility and 1limit access based on roll is to delegate special portals to actors. This allows actors to only be able to interact with functionality that is deemed necessary to them while hiding or abstracting away all unnecessary functions. Some have natural been indicated within the use case diagram, here we can identify them.
+\begin{itemize}
+    \item Customer, Web portal
+    \item Kitchen Portal
+    \item Front of house Portal
+    \item Management Portal(Chef and Manager)
+    \item Business Portal
+\end{itemize} 
+\clearpage
+\section{Tasks}
+\subsection{Task Descriptions}
+A task description will help us premeditate any of the avenues an actor may take within the scope of the app. This will allows us to decompose the steps that may be taken for a given task or set of tasks. This data gives us a high level of granular insight into daily tasks, such as: task location and setting, human interactions, implied system interactions, task intensity, responsibilities, actors education level. As a result of these assumptions we can anticipate and avoid as many problems as possible, before development.
 
 \subsubsection{Work Area 1: Front of House}
 Areas: Dinning Hall, Coffee station, Point of sales
@@ -553,6 +658,126 @@ Standing, assume medium-high frequency of traffic.
 Have responsibility over several tables occasionally helping when larger party's enter,
 Users: IT Novice, high school level education
 
+\paragraph{Task 1.1, Seat Guests:}
+Purpose: Find a free table for walk-in customers, if they have a booking find them their reserved table in system, write it as occupied.
+Trigger: Customers walk-in \\
+Frequency:Average 1 customers every 1.5 minutes during breakfast and 3 customer every 1.5 minutes during a lunch rush (1 hour period, 3 times more) \\
+Critical: Large Bookings($>$7) may result in unexpected table booking.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Find a booking
+    \item Seat Guests
+    \item set table to occupied
+    \item Bring water to table
+    \item Ask if they would like any drinks to start
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] No Booking
+    \item [1b.] No Free Table
+    \item [1c.] Double Booked
+    \item [1d.] Regular customer
+    \item [1e.] Front of house is occupied 
+    \item [2a.] Table has not been cleaned
+    \item [2b.] Table is not set
+    \item [2c.] Not enough seats at table
+    \item [2d.] Guests request another table
+    \item [3a.] Customer requests new table
+    \item [4a.] No water glasses left
+    \item [4b.] Customer request Sparkling water
+    \item [5a.] Customer wants to order food
+\end{enumerate}
+
+\paragraph{Task 1.2, Take order:}
+Purpose: Take order from customers
+Trigger: Customers Waves down server, server approaches table or customer approaches counter\\
+Frequency:Average 1 table-order every 2.5 minutes during rush, 2 coffee(drink) order every minute during rush, 1 take-away order  every 4 minutes during lunch rush \\
+Critical: Large Order, Banquet size. food $=>$ (table-size * 2) and/or drink $=>$ (table-size * 2) before something expected to go wrong\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Take orders from customer
+    \item Process Order at counter (POS)
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Custom Order
+    \item [1b.] Allergy's/Dietary Requirements
+    \item [1c.] Some guests haven't arrived
+    \item [1d.] Additional Orders
+    \item [1e.] Front of house is occupied
+    \item [1f.] Take-away order
+    \item [1g.] Online Order
+    \item [2a.] No options for order
+    \item [2b.] POS occupied
+\end{enumerate}
+
+\paragraph{Task 1.3, Serve Order:}
+Purpose: Deliver prepared food and beverages from the kitchen and bar to the customers at their tables. Ensure the order is correct and presented well.
+Trigger: Notification from the kitchen or bar that the order is ready.\\
+Frequency:Average 1 table-order every 2.5 minutes during rush, 2 coffee(drink) order every minute during rush, 1 take-away order  every 4 minutes during lunch rush \\
+Critical: Accuracy and presentation of the order. Timely delivery to ensure customer satisfaction Correct order, correct table\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Verify the order against the app.
+    \item Pick up the order from the kitchen or bar.
+    \item Serve the order to the correct table and person.
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Missing items in the order
+    \item [1b.] Incorrect order preparation
+    \item [2a.] To many items at the same time
+    \item [3a.] Serving to the wrong table
+    \item [3b.] Customer requests additional items or modifications
+\end{enumerate}
+
+\paragraph{Task 1.4, Process Payment:}
+Purpose: Accurately process payment for the customer, using their preferred payment method. Ensure a smooth and positive end to the dining experience.
+Trigger: Customer requests the bill.\\
+Frequency: Corresponds to table turnover rate; each table typically generates one payment transaction per visit.\\
+Critical: Payment processing accuracy and security. Customer privacy.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Present the bill to the customer.
+    \item Process the payment via cash, credit/debit card, or digital payment method.
+    \item Provide payment confirmation to the customer (receipt).
+    \item Ensure the table is set as free in the system post-payment.
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [2a.] Payment declined
+    \item [2b.] Customer requests split billing
+    \item [2c.] Coupon, discount or promotion
+    \item [2d.] Tips
+    \item [3a.] Receipt printer malfunctions
+    \item [4a.] System error in updating table status
+\end{enumerate}
+
+\paragraph{Task 1.5, Prepare Drink:}
+Purpose: Barista prepare simple drink or coffee.
+Trigger: Get alert on app, ticket printed.\\
+Frequency: 3 drinks per minute in peak hour\\
+Critical: drink must be accurate, consistent and high-quality, especially coffee order.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Barista receives alert and ticket is printed
+    \item Makes drink
+    \item notifies system that drink has been prepared
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] barista to busy with many orders to notice
+    \item [2a.] Makes wrong drink
+    \item [3a.] Forgets to notify system
+    \item [3b.] Server is to busy to pick up order
+\end{enumerate}
+
+\clearpage
 \subsubsection{Work area 2: Back of House}
 Area: Kitchen, Dry stock, Cool room, cleaning area
 Prepare Orders, Meal prep, Receive Deliveries, Specials
@@ -560,6 +785,67 @@ Standing, fast past - dynamic environment, working in a team of 3-6 people, long
 Have a variety of rolls in the kitchen, from cleaning to cooking
 Users: IT Novice, high school level education
 
+
+\paragraph{Task 2.1, Meal Preparation:}
+Purpose: Prepare meals according to the current menu and special orders, ensuring high-quality standards and timely delivery to the front of house.
+Trigger: Alert on app an ticket printed\\
+Frequency: 2 meals per minute in peak hour.\\
+Critical: Adherence to recipes, food safety standards, dietery requirements, allergy's and timing.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Receive notification on app and review the order.
+    \item Gather ingredients
+    \item Prepare the meal
+    \item Notify the front of house when the order is ready using app
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Dish unavailable
+    \item [1b.] Order Changes
+    \item [2a.] Missing ingredients
+    \item [2b.] Special dietary requests
+    \item [3a.] Equipment malfunction
+    \item [3b.] food contamination
+    \item [4a.] Rush order or priority change
+\end{enumerate}
+
+\paragraph{Task 2.2, Ordering Stock:}
+Purpose: Ensure that the cafe is adequately stocked with all necessary ingredients and supplies to meet operational needs without overstocking.
+Trigger: Kitchen or Barista alerts system of low stock. Or system alerts of predicted monthly stock usage.\\
+Frequency: Twice per day a kitchen and barista checks stock levels. Once at start and end of day.\\
+Critical: Make sure stock levels are never at 0, stock should be order before complete depletion. shared responsibility between app and staff\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Staff review stock reports or inventory system alerts for low stock items
+    \item Place orders with suppliers
+    \item Confirm order details and delivery schedules
+    \item Update inventory records upon ordering and receiving of stock
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Human error, staff does not alert app
+    \item [1b.] New stock not configured in app for routine stock alerts
+    \item [2a.] Supplier out of stock or discontinues an item
+    \item [2b.] Supplier increased prices
+    \item [2c.] Supplier no longer has this item
+    \item [3a.] Delivery delays or issues
+    \item [4a.] Suppliers data may be incorrect or out of date
+    \item [4b.] Human error, received stock but not updated
+\end{enumerate}
+
+
+\paragraph{Sub-tasks}
+\begin{itemize}
+    \item update meal in queue
+    \item request and update stock levels
+    \item request menu update
+    \item remove menu item
+    \item reading roster and writing roster
+\end{itemize}
+
+\clearpage
 \subsubsection{Work area 3: Business, Finance and Administration}
 Area: Office
 Revenue, Spending, Ordering, Approving Changes, Web, Marketing, Hiring, Roster, Stats
@@ -567,8 +853,193 @@ Small team, ad-hoc support from external services.
 Usually outsourcing work or working alone or in pair post breakfast/lunch rush
 Users: IT intermediate:, college level education
 
+\paragraph{Task 3.1, Generating Revenue and Cost Analysis:}
+Purpose: Analyze financial data to assess profitability, identify trends, and make informed decisions on cost management and revenue enhancement.
+Trigger: End of financial period (monthly/quarterly/yearly) or as needed.\\
+Frequency: Regularly scheduled and ad-hoc as required for decision making.\\
+Critical: Accuracy of financial data and analysis.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Collect and compile financial data (sales, expenses, etc.)
+    \item Analyze data to identify trends, opportunities, and areas of concern
+    \item Digital financial reports for accountant and business owner on app
+    \item Suggest strategies based on financial analysis
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Incomplete or inaccurate financial data
+    \item [2a.] Many ways to interoperate data
+    \item [3a.] May have been closed for some period, like Christmas or renovations, so data is not consistent. 
+    \item [4a.] Accountant needs historical data to check against some discrepancy
+\end{enumerate}
 
-\subsection{Complete Payment transaction onsite.}
+
+
+\paragraph{Task 3.2, Updating Menu and Approving Changes:}
+Purpose: Keep the digital and physical menus updated with the latest offerings, including seasonal items, specials, and any changes in pricing.
+Trigger: Menu item changes approved by management and/or chef.\\
+Frequency: Seasonally, promotions(on-demand) and specials(monthly)\\
+Critical: Consistency and accuracy across all media; physical menus, third party apps, internal app, web-sight, social media.\\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item kitchen/barista creates new items for business owner and management to taste, gain feedback and approve.
+    \item Create resources for menu changes, including descriptions, pricing, and images.
+    \item Update the digital menu in the app, it should be centralised to update all digital platforms
+    \item Print physical menus.
+    \item Brief staff on menu changes to ensure accurate information is provided to customers.
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] ingredients don't appear on stock list
+    \item [1b.] dish is to expensive to produce, uses premium ingredients that don't have good profit margins
+    \item [2a.] Delay in receiving updated content (e.g., images, descriptions).
+    \item [3a.] Technical issues with updating digital platforms.
+    \item [4a.] Human error, not enough menus printed
+    \item [4b.] Prints have wrong colour or formatting or are poor quality
+    \item [5a.] brief staff on wrong menu, kitchen and management are not in sync
+\end{enumerate}
+
+\paragraph{Task 3.3, Create Marketing and Promotions }
+Purpose: Use Apps analytics capabilities to find trends and use cost analysis in order to create effective marketing and promotional strategies.
+Trigger: Business Owner or Accountant notice a trend, seasonal promotion\\
+Frequency: Seasonally or strategically(on-demand)\\
+Critical: Marketing campaign or promotion must increase revenue somewhat, is expected to reflect what trends in data is showing. \\
+\\
+\textbf{Subtasks}:
+\begin{enumerate}
+    \item Accountant and Business owner have meeting to review finances and analytics and formulate strategy.
+    \item Manager, Chef and business owner have meeting to discuss items for promotion.
+    \item Gather resources for promotion (images, web banners etc.) 
+    \item centralised campaign, to update all digital platforms, menus and banners.
+    \item Produce any physical resources and update physical menu to include campaign.
+    \item Brief staff on campaign and try to push any promotion that increases revenue
+\end{enumerate}
+\textbf{Variants}:
+\begin{enumerate}
+    \item [1a.] Many directions to take strategy
+    \item [1b.] Themed promotion
+    \item [2a.] Lots of good ideas, not enough capacity to facilitate them all in campaign
+    \item [2b.] Good ideas change core strategy
+    \item [3a.] Don't have skills to produce some resource 
+    \item [3b.] Third party introduced to system to develop some resource
+    \item [4a.] system error, doesn't update all media
+    \item [5a.] Bad quality resource
+    \item [5b.] wrong colours or formatting
+    \item [6a.] brief staff on incorrectly
+\end{enumerate}
+\clearpage
+\subsection{Task and Support}
+
+\subsubsection{Take a booking}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Take a customers booking. \\
+        \textbf{Purpose:} To pre-allocate a customer to a table in order to make sure the customer can dine when arriving. \\
+        \textbf{Frequency:} Up to 150 time a service, 3 services a day.}}\\
+        \hline
+        % Row 1
+        \textbf{Sub task} & \textbf{Example Solution} \\
+        \hline
+        % Row 2
+        Receive customers correspondence - email, phone call & system will alert this request to management and front of house.  \\
+        \hline
+        % Row 3
+        For each booking review availability. & If some one wants to book a table for 12pm, the admin will first check if there is space for a table of 4 at that date and time. \\
+        \hline
+        % Row 4
+        Enter booking into record. & The Front of house will make a recording of the booking so that the tables cannot be double booked.This is done manually so that staff are aware of bookings \\
+        \hline
+        Inform the Front of house staff & The front of house will transfer the bookings for today to a sheet for the front of house to organise the dining room to host. \\
+        \hline
+        Return confirmation correspondence to the customer & The app will send a return email with the confirmation details.\\
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+        \hline
+        The front of house receives a phone call. & This booking will need to be reviewed on the spot in order to make confirmation. \\
+        \hline
+        The booking is made on short notice & After the bookings and confirmation have already been made for the day. A new booking comes in. The admin will need to directly confirm and inform front of house to accommodate the booking. \\
+        \hline
+        The booking cannot be made. & The front of house must reject the booking and offer a possible alternative.\\
+        \hline
+    \end{tabular}
+    \caption{Take a booking}
+    \label{tab:Take a booking}
+\end{table}
+\clearpage
+\subsubsection{Take a tables order}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Take a tables order. \\
+        \textbf{Purpose:} To get orders from a guest or group of guests at a table, enter them into the system,\\ 
+        so that the order can be shared with the kitchen. Including verifying\\ that the order has been completed.  \\
+        \textbf{Frequency:} If the restaurant has only single guest tables this could occur 150 times a service.\\ 
+        However, a more likely number is around 70 times a service, 3 services a day}}\\
+        \hline
+        % Row 1
+        \textbf{Sub task}  & \textbf{Example Solution}  \\
+        \hline
+        % Row 2
+        Receive customer requests & Locate menu item in app/website using the search function. \\
+        \hline
+        % Row 3
+        Confirm item variant (sauces, size, etc) or inform sell out & Check menu item in app/website, it will be marked with a red X if it is sold out, and have options in a drop down menu if the particular menu item has variants. \\
+        \hline
+        % Row 4
+        Send order to kitchen  & Press the send button to send an alert with all the details to the kitchen. \\
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+        \hline
+        Customer modifies the order after sending & The server uses the app to update the order details and resends it to the kitchen. The kitchen staff are alerted to the change. \\
+        \hline
+        The customer has dietary restrictions & The server notes any dietary restrictions in the app, which highlights compatible menu items and alerts the kitchen to avoid cross-contamination. \\
+        \hline
+        The kitchen requests clarification on an order & The server receives a notification on the handheld device and returns to the table to clarify the order with the customer, then updates the order in the system. \\
+        \hline
+    \end{tabular}
+    \caption{Take a table's order}
+    \label{tab:Take a tables order}
+\end{table}
+\clearpage
+\subsubsection{Drop of food to table}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} To take food from the kitchen when ready and deliver it to the guest at the table. \\
+        \textbf{Purpose:} The kitchen prepares the food as per orders, aiming to complete the cooking of a table's order together,\\ such as all entrees or mains at once. A front of house member is then responsible for delivering\\ the food to the correct table in the restaurant efficiently. \\
+        \textbf{Frequency:} Could occur up to 150 times a service, with 3 services a day.}}\\
+        \hline
+        % Row 1
+        \textbf{Sub task} & \textbf{Example Solution}  \\
+        \hline
+        % Row 2
+        Collect food from kitchen  & Before picking up the order, confirm its readiness on the kitchen's digital display. Use a phone/tablet to set the status of the order as "Ready for delivery". \\
+        \hline
+        % Row 3
+        Take order to customers  & Consult the digital floor map on your phone/tablet to locate the table number associated with the order. Verify the table and guest details to ensure accuracy. \\
+        \hline
+        % Row 4
+        Confirm delivery & Once the food is delivered, use the phone/tablet to update the order status to "Delivered" and briefly check with guests to ensure everything is to their satisfaction. \\
+        \hline
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+        \hline
+        Special instructions for delivery & If there are special instructions (e.g., "Surprise dessert for a birthday"), ensure these are followed discreetly and accurately to enhance the guest experience. \\
+        \hline
+        Miscommunication leads to wrong table delivery & Immediately correct the mistake by apologizing to the wrong table, retrieving the dishes, and delivering them to the correct table. Communicate the error to the kitchen if necessary. \\
+        \hline
+    \end{tabular}
+    \caption{Drop food to table}
+    \label{tab:Drop food to table}
+\end{table}
+
+\clearpage
+\subsubsection{Complete Payment transaction onsite.}
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
@@ -609,87 +1080,20 @@ Users: IT intermediate:, college level education
 \end{table}
 
 \clearpage
-\subsection{Take a booking}
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{|p{5cm}|p{10cm}|}
-        \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Take a customers booking. \\
-        \textbf{Purpose:} To pre-allocate a customer to a table in order to make sure the customer can dine when arriving. \\
-        \textbf{Frequency:} Up to 150 time a service, 3 services a day.}}\\
-        \hline
-        % Row 1
-        \textbf{Sub task} & \textbf{Example Solution} \\
-        \hline
-        % Row 2
-        Receive customers correspondance - email, phone call & Each day the admin will check the restaurant email and collect any bookings that have been sent.  \\
-        \hline
-        % Row 3
-        For each booking review availability. & If some one wants to book a table for 4 at 8pm on Friday, the admin will first check if there is space for a table of 4 at that date and time. \\
-        \hline
-        % Row 4
-        Enter booking into record. & The admin will make a recording of the booking so that the resources cannot be double booked. \\
-        \hline
-        Inform the Front of house staff & The admin will transfer the bookings for today to a sheet for the front of house to organise the dining room to host. \\
-        \hline
-        Return confirmation correspondence to the customer & The admin will send a return email with the confirmation details.\\
-        \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
-        \hline
-        The Admin receives a phone call. & This booking will need to be reviewed on the spot in order to make confirmation. \\
-        \hline
-        The booking is made on short notice & After the bookings and confirmation have already been made for the day. A new booking comes in. The admin will need to directly confirm and inform front of house to accommodate the booking. \\
-        \hline
-        The booking cannot be made. & The admin must reject the booking and offer a possible alternative.\\
-        \hline
-    \end{tabular}
-    \caption{Take a booking}
-    \label{tab:Take a booking}
-\end{table}
-
-\clearpage
-\subsection{Take a tables order}
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{|p{5cm}|p{10cm}|}
-        \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Take a tables order. \\
-        \textbf{Purpose:} To get orders from a guest or group of guests at a table, enter them into the system, so that the order can be shared with the kitchen and progress can be tracked. Including verifying that the order has been completed.  \\
-        \textbf{Frequency:} If the restaurant has only single guest tables this could occur 150 times a service, However, a more likely number is around 70 times a service 3 services a day}}\\
-        \hline
-        % Row 1
-        Sub task  & Example Solution  \\
-        \hline
-        % Row 2
-        Receive customer requests & Locate menu item in app/website using the search function. \\
-        \hline
-        % Row 3
-        Confirm item variant (sauces, size, etc) or inform sell out & Check menu item in app/website, it will be marked with a red X if it is sold out, and have options in a drop down menu if the particular menu item has variants. \\
-        \hline
-        % Row 4
-        Send order to kitchen  & Press the send button to send an alert with all the details to the kitchen. \\
-        \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
-        \hline
-        ? & ? \\
-        \hline
-    \end{tabular}
-    \caption{Take a tables order}
-    \label{tab:Take a tables order}
-\end{table}
-
-\clearpage
-\subsection{Cook Food}
+\subsubsection{Cook Food}
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
         \hline
         \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Cook Food for guests. \\
-        \textbf{Purpose:} This task is for the kitchen and the back of house staff to receive a tables order with all the information needed in order to properly cook it as requested in an organized manor, i.e. Allergy information, time order was taken, guests at table, menu item, course (entree).  \\
-        \textbf{Frequency:} If the restaurant has only single guest tables this could occur 150 times a service, However, a more likely number is around 70 times a service 3 services a day}}\\
+        \textbf{Purpose:} This task is for the kitchen and the back of house staff to receive a table's order with\\ 
+        all the information needed in order to properly cook it as requested in an organized manner,\\ 
+        i.e., Allergy information, time order was taken, guests at table, menu item, course (entree).  \\
+        \textbf{Frequency:} If the restaurant has only single guest tables this could occur 150 times a service, \\
+        However, a more likely number is around 70 times a service, 3 services a day}}\\
         \hline
         % Row 1
-        Sub task  & Example Solution  \\
+        \textbf{Sub task}  & \textbf{Example Solution}  \\
         \hline
         % Row 2
         Receive notification from wait staff & A screen (computer) displays the new order alongside existing ones. \\
@@ -698,188 +1102,206 @@ Users: IT intermediate:, college level education
         Start cooking the order  & Mark the order as in progress on the screen. \\
         \hline
         % Row 4
-        Finish cooking and plate up & Mark the order as done on the screen, which sends an alert to FOH. \\
+        Finish cooking and plate up & Mark the order as done on the screen, which sends an alert to FOH (Front Of House). \\
         \hline
         \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
         \hline
-        ? & ? \\
+        Adjusting to special dietary needs & Review the order for any special instructions like allergies or dietary restrictions and adapt the cooking process to meet these needs. \\
+        \hline
+        Urgent modification request & If an order is modified urgently (e.g., customer changes their mind), the kitchen staff must prioritize and adjust the cooking process accordingly, ensuring minimal disruption to other orders. \\
+        \hline
+        Delayed ingredient availability & If a key ingredient is delayed or suddenly runs out, kitchen staff must quickly find a substitute or adjust the menu offering, informing FOH to communicate changes to the customer. \\
         \hline
     \end{tabular}
     \caption{Cook Food}
     \label{tab:Cook Food}
 \end{table}
 
+
 \clearpage
-\subsection{Create Analytics}
+\subsubsection{Create Analytics}
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
         \hline
         \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Create analytics from restaurant data. \\
-        \textbf{Purpose:} The admin staff member gathers the sales information from the restaurant system in order to discover and statistical information about what sells well, and what the restaurant can do to improve business. This uses analytical technique. \\
-        \textbf{Frequency:} At a minor level daily and weekly, at significant level probably quarterly.}}\\
+        \textbf{Purpose:} The admin staff member gathers the sales information from the restaurant system in order to discover\\ 
+        and statistical information about what sells well, and what the restaurant can do to improve business.\\ 
+        This uses analytical techniques. \\
+        \textbf{Frequency:} At a minor level daily and weekly, at a significant level probably quarterly.}}\\
         \hline
         % Row 1
-        Sub task  & Example Solution  \\
+        \textbf{Sub task}  & \textbf{Example Solution}  \\
         \hline
         % Row 2
-        Record all details  & Enter in data regularly  \\
+        Record all details  & Enter data regularly into the system, ensuring accuracy and completeness. \\
         \hline
         % Row 3
-        Generate analytics  & Press generate report button to generate graphs and reports. \\
+        Generate analytics  & Use the analytics feature in the system to press generate report button, creating graphs and reports on sales, customer preferences, and peak times. \\
         \hline
         % Row 4
-        ? & ? \\
+        Analyze the reports & Review the generated reports to identify trends, patterns, and areas of improvement. Discuss findings with management to make informed decisions. \\
         \hline
         \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
         \hline
-        ? & ? \\
+        Data indicates an unpopular menu item & Use analytics to pinpoint menu items with low sales. Consider modifying or replacing these items based on customer feedback and sales data. \\
+        \hline
+        Seasonal trends affect business & Identify seasonal trends from the data and adjust menu offerings and marketing strategies accordingly to maximize revenue. \\
         \hline
     \end{tabular}
     \caption{Create Analytics}
     \label{tab:Create Analytics}
 \end{table}
 
-\clearpage
-\subsection{Update Website}
+\subsubsection{Update Website}
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
         \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Update website restaurant details. \\
-        \textbf{Purpose:} Update the Website with details about menu and restaurant menu offerings, including advertising things like seasonal specials, or discounts, and even opening hours for special events  \\
-        \textbf{Frequency:} At most weekly, more likely every few weeks.}}\\
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task} Update website restaurant details. \\
+        \textbf{Purpose:} To ensure the website reflects current menu offerings, seasonal specials, discounts,\\ and special event opening hours, keeping customers informed and engaged. \\
+        \textbf{Frequency:} At most weekly, more likely every few weeks depending on seasonal changes and promotional activities.}}\\
         \hline
-        % Row 1
-        Sub task  & Example Solution  \\
+        \textbf{Sub task}  & \textbf{Example Solution}  \\
         \hline
-        % Row 2
-        Access admin section of the website & Input admin credentials  \\
+        Access admin section of the website & Use admin credentials to login to the website's back-end for updates.  \\
         \hline
-        % Row 3
-        Make relevant changes  & Edit menu items and change advertisements using drag and drop feature, change prices by typing in a new price \\
+        Make relevant changes  & Utilize a user-friendly interface to edit menu items, adjust prices, and update advertisements with drag-and-drop features. \\
         \hline
-        % Row 4
-        Save and update the website  & Push the changes to the live website. \\
+        Save and update the website  & Confirm changes and publish them to the website by pushing the update button, making the changes live to visitors. \\
         \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant}}}\\
         \hline
-        ? & ? \\
+        Update via centralized app & Implement an integration where changes made through a central app automatically update the website via its API, ensuring consistency across platforms. \\
         \hline
     \end{tabular}
     \caption{Update Website}
     \label{tab:Update Website}
 \end{table}
 
-\clearpage
-\subsection{Drops food to table}
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{|p{5cm}|p{10cm}|}
-        \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} To take food from the kitchen when ready and deliver it to guest at the table \\
-        \textbf{Purpose:} The kitchen will cook the food it receives orders for with the intention to complete the cooking of a tables order together i.e. entrees with entrees. A front of house member will then take the food to the correct customer in the restaurant. \\
-        \textbf{Frequency:} Up to 150 times a service, at 3 services a day.}}\\
-        \hline
-        % Row 1
-        Sub task & Example Solution  \\
-        \hline
-        % Row 2
-        Collect food from kitchen  & Set status of order as delivered using phone/ipad. \\
-        \hline
-        % Row 3
-        Take order to customers  & Use phone/ipad to check order information for table number. \\
-        \hline
-        % Row 4
-        ? & ? \\
-        \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
-        \hline
-        ? & ? \\
-        \hline
-    \end{tabular}
-    \caption{Drops food to table}
-    \label{tab:Drops food to table}
-\end{table}
 
 \clearpage
-\subsection{Share information Admin-Front of house, Admin-Back of house.}
+\subsubsection{Share information Admin-Front of house, Admin-Back of house.}
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|p{5cm}|p{10cm}|}
         \hline
         \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} Share information Admin to front of house, and admin to back of house. \\
-        \textbf{Purpose:} The admin need to share details of bookings and customer or guests with both the front of house and back of house. These two groups need to share information of capabilities, staff numbers, and the state of the restaurant and kitchen.  \\
-        \textbf{Frequency:} At least once a day, sometimes maybe as many as 5 times a day.}}\\
+        \textbf{Purpose:} The admin needs to share details of bookings and customer or guests with both the front of house\\ and back of house. These two groups need to share information of capabilities, staff numbers, and the state\\ of the restaurant and kitchen.  \\
+        \textbf{Frequency:} At least once a day, sometimes as many as 5 times a day.}}\\
         \hline
         % Row 1
-        Sub task  & Example Solution  \\
+        \textbf{Sub task}  & \textbf{Example Solution}  \\
         \hline
         % Row 2
-        Send out information  & Type information into computer internal mail then send it to all/relevant employees who will receive an alert on their tablet or phone \\
+        Send out information  & Type information into computer internal mail then send it to all/relevant employees who will receive an alert on their tablet or phone. \\
         \hline
         % Row 3
-        ? & ? \\
+        Confirm receipt & Require a read receipt or a quick confirmation reply to ensure the message has been received and acknowledged. \\
         \hline
         % Row 4
-        ? & ? \\
+        Address queries & Set up a quick response system for any questions or clarifications needed from either the front of house or back of house staff regarding the shared information. \\
         \hline
         \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
         \hline
-        ? & ? \\
+        Urgent updates & For immediate changes or emergencies, use a group chat and in app call out to produce an urgent email to business owner, manager and chef. \\
+        \hline
+        Different information needs & Tailor communication based on department roles, ensuring that front of house and back of house receive only relevant updates to their duties. \\
         \hline
     \end{tabular}
     \caption{Admin communication}
     \label{tab:Admin communication}
 \end{table}
 
+
 \clearpage
-\subsection{}
+\subsection{Task: 3.3 Updating Visual Menu and Approving Changes}
 \begin{table}[htbp]
-    \centering
-    \begin{tabular}{|p{5cm}|p{10cm}|}
+\centering
+\begin{tabular}{ |p{5cm}|p{10cm}|  }
+
+\hline
+\textbf{Sub-task} & \textbf{System/Process Support}    \\
+\hline
+Gather details for menu changes, including descriptions, pricing, and images. & The system provides a centralized digital asset management platform where chefs and managers can upload and categorize new menu items, prices, and associated images directly.   \\
+\hline
+Update the digital menu in the POS system and online platforms. & The app acts as a central content management system enabling seamless updates across all digital platforms, including the POS system, website, and mobile app, ensuring consistency.   \\
+\hline
+Coordinate the printing of updated physical menus, if applicable. & Printed by third party, order from business owners account by admin  \\
+\hline
+Brief staff on menu changes to ensure accurate customer information. & An automated notification system alerts staff to any menu updates through the staff portals as well as roster changes and applying for time-off. \\
+\hline
+\multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
         \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
-        \textbf{Purpose:} \\
-        \textbf{Frequency:}}}\\
+        Wrong Description or Image & For immediate changes or emergencies, use a group chat and in app call out to produce an urgent email to business owner, manager and chef. \\
         \hline
-        % Row 1
-        Sub task 1 & Example Solution 1 \\
-        \hline
-        % Row 2
-        ? & ? \\
-        \hline
-        % Row 3
-        ? & ? \\
-        \hline
-        % Row 4
-        ? & ? \\
-        \hline
-        \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
-        \hline
-        ? & ? \\
-        \hline
-    \end{tabular}
-    \caption{Example Table}
-    \label{tab:example}
+\end{tabular}
+\caption{Digital Menu Update}
+\label{tab:Digital Menu Update}
+\end{table}
+
+
+\clearpage
+\subsubsection{Developing In-House Promotions Based on Analytics}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{ |p{5cm}|p{10cm}|  }
+\hline
+\multicolumn{2}{|c|}{\textbf{Task: Utilizing Analytics for In-House Promotion Development}} \\
+\hline
+\textbf{Sub-task} & \textbf{System/Process Support}    \\
+\hline
+Review historical sales and customer feedback data. & The app integrates an analytics dashboard to highlight top-selling items, customer preferences, and feedback, identifying potential areas for promotions.   \\
+\hline
+Identify opportunities for promotions. & Data analytics tools analyze sales trends, inventory levels, and customer behavior to suggest items or services ideal for promotional activities.   \\
+\hline
+Design promotion details and criteria. & Promotion management software allows managers to define the scope, duration, and terms of the promotion, including discounts, combo deals, or loyalty points incentives.   \\
+\hline
+Communicate and market promotions to customers. & Digital signage software updates in-house displays with promotional information. The system also updates the cafe's app and website to inform customers of current promotions.   \\
+\hline
+
+\end{tabular}
+\caption{Developing In-House Promotions Based on Analytics}
+\label{tab:Developing In-House Promotions Based on Analytics}
 \end{table}
 
 
 
 
+% \clearpage
+% \subsection{}
+% \begin{table}[htbp]
+%     \centering
+%     \begin{tabular}{|p{5cm}|p{10cm}|}
+%         \hline
+%         \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Task:} \\
+%         \textbf{Purpose:} \\
+%         \textbf{Frequency:}}}\\
+%         \hline
+%         % Row 1
+%         Sub task 1 & Example Solution 1 \\
+%         \hline
+%         % Row 2
+%         ? & ? \\
+%         \hline
+%         % Row 3
+%         ? & ? \\
+%         \hline
+%         % Row 4
+%         ? & ? \\
+%         \hline
+%         \multicolumn{2}{|c|}{\makecell[cl]{\textbf{Variant:}}}\\
+%         \hline
+%         ? & ? \\
+%         \hline
+%     \end{tabular}
+%     \caption{Example Table}
+%     \label{tab:example}
+% \end{table}
 
 
-\subsection{Functional Requirements and Task Descriptions}
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=15cm]{Domain_product_diagram.jpg}
-    \caption{Cosy Koala Domain Requirements}
-    \label{fig:Domain_Product}
-\end{figure}
 
-
-
-
+\clearpage
 \section{Functional Requirements}
 \subsection{Task and support: Complete Payment transaction onsite related requirements.}
 \subsubsection{}
@@ -996,7 +1418,7 @@ Users: IT intermediate:, college level education
 
 \begin{table}[h!]
   \centering
-  \begin{tabular}{|l|c|c|c|c|c|c|}
+  \begin{tabular}{|p{4cm}|c|c|c|c|p{2cm}|p{2.5cm}|}
     \hline
     \textbf{Tasks / Entities} & \textbf{Customer} & \textbf{Table} & \textbf{Stock} & \textbf{Kitchen} & \textbf{Invoice and receipts} & \textbf{Statistics and reports} \\
     \hline
@@ -1032,78 +1454,387 @@ Users: IT intermediate:, college level education
 \section{Quality Attributes of System}
 
 \subsection{Usability} 
-Goal: Ensure that the system is intuitive and easy to use for all users, including staff, 
-customers, and management. 
-Detailed Description: The interface should be clear and straight forward, allowing users with 
-minimal technical skills, such as children or elderly individuals, to navigate and use the 
-system with ease. For example, a child with basic phone usage experience should be able to 
-place an order through a digital menu without difficulty. This can be achieved through, 
-simple menus, clear labels, and helpful icons. The system should also provide accessible help 
-resources and tool tips. 
+The OIS will have an easy-to-use interface that can be used by users of different technological proficiency levels, guaranteeing accessibility and simple navigation. Frontline staff, for example, will gain from a streamlined order entry procedure that minimises errors and takes less time to submit orders. Within a logical and approachable design framework, managers will have access to a more sophisticated suite of tools for operational management and comprehensive reporting. In order to accommodate a wide range of user preferences and operational needs, the system will also provide multilingual support and configurable interfaces.
+
 
 
 \textbf{Real-Life Reference: } The menu available through the website should be the same as a menu you would typically receive in a restaurant. This means there should be a 'entre' section a d 'main' and a 'dessert' section, displayed on the same page. This will facilitate easy understanding of what the restaurant offer.
 
 \subsection{Security}
-Goal: Protect sensitive data and ensure that transactions are secure. 
-Detailed Description: Implement industry-standard security measures such as SSL/TLS for 
-data transmission, encrypted storage for sensitive information, and regular security audits. 
-The system should have role-based access controls to ensure that only authorized personnel 
-can access certain functionalities. For example, only managers should be able to access 
-financial reports or employee records and on the other hand it should also make sure that 
-the customers payment details are encrypted and not accessible even by the managers. 
+Security is of the utmost importance, and precautions are taken to guard against illegal access and data breaches. For critical consumer and financial data in particular, the system will encrypt data both in transit and at rest. The implementation of role-based access control (RBAC) will guarantee that workers can only access information and features that are essential to their jobs. For example, only managers should be able to access financial reports or employee records and on the other hand it should also make sure that the customers payment details are encrypted and not accessible even by the managers.
 
 
 \textbf{Real-Life Reference: } Role based access should be used to restrict employee access to the POS machine or any other system connected computer. This will mean a employee assigned a chef role cannot access the POS machine whilst a front of staff member role will.
 \subsection{Correctness}
-Goal: Ensure the system processes information accurately and performs its functions 
-correctly. 
-Detailed Description: The system should validate input data to prevent errors and ensure 
-the accuracy of orders, billing, and inventory management. Automated testing and quality 
-assurance processes should be in place to detect and correct errors before deployment. For 
-example, when a customer places an order, the system should accurately reflect the chosen 
-items, quantities, and prices in the final bill. 
+Make that the system operates appropriately and processes information accurately. To avoid mistakes and guarantee the accuracy of orders, billing, and inventory management, the system should validate input data. Errors should be found and fixed before release through automated testing and quality assurance procedures. For example, the system ought to precisely display the selected goods, quantities, and prices in the final bill when a consumer puts an order. 
 
 
 \textbf{Real-Life Reference: }  Before an order is paid for the POS machine should verify the price paid against teh internal menu item price.
-\subsection{Reliability (Availability)} 
-Goal: Ensure the system is operational and available during business hours without 
-unexpected down mes. 
-Detailed Description: The system should be designed for high availability with failover 
-mechanisms and redundancy to handle peak mes and unexpected loads. For example, 
-during a busy dinner service, the system should remain functional and responsive, managing 
-multiple orders and reservations simultaneously without crashing or slowing down. 
-Real-Life Reference:  
+\subsection{Reliability } 
+In order to effectively manage client flow and backend procedures, the system will provide continuous and predictable performance, particularly during peak operational hours. In order to ensure service continuity in the event of a system failure, it will be designed to handle large transaction volumes and include failover and redundancy measures. To ensure data availability and integrity, regular backups and a disaster recovery strategy are essential components of the OIS.
 \subsection{Performance}
-Goal: Ensure the system responds quickly to user interactions and processes data efficiently. 
-Detailed Description: The system should be optimized for fast response mes, even under 
-heavy load. This includes efficient database queries, optimized code, and the ability to 
-handle concurrent users smoothly. For instance, when multiple customers place orders 
-simultaneously, the system should process these quickly without delays or bottlenecks. 
-Real-Life Reference:  
+The OIS, which is designed with efficiency and speed in mind, will facilitate quick data processing and real-time updates, which are essential for order management and kitchen operations. To make sure the system can withstand high operational pressures without deteriorating response times or user experience, performance testing will be carried out under conditions that approximate peak load. 
+
+
+\clearpage
 
 
 
+% \subsubsection{Work Area 1: Front of House}
+% Areas: Dinning Hall, Coffee station, Point of sales
+% Greet guests, seat them, bring water to table, prepare drinks. 
+% Standing, assume medium-high frequency of traffic.
+% Have responsibility over several tables occasionally helping when larger party's enter,
+% Users: IT Novice, high school level education
+
+% \paragraph{Task 1.1, Seat Guests:}
+% Purpose: Find a free table for walk-in customers, if they have a booking find them their reserved table in system, write it as occupied.
+% Trigger: Customers walk-in \\
+% Frequency:Average 1 customers every 1.5 minutes during breakfast and 3 customer every 1.5 minutes during a lunch rush (1 hour period, 3 times more) \\
+% Critical: Large Bookings($>$7) may result in unexpected table booking.\\
+% \\
+% \textbf{Subtasks}:
+% \begin{enumerate}
+%     \item Find a booking
+%     \item Seat Guests
+%     \item set table to occupied
+%     \item Bring water to table
+%     \item Ask if they would like any drinks to start
+% \end{enumerate}
+% \textbf{Variants}:
+% \begin{enumerate}
+%     \item [1a.] No Booking
+%     \item [1b.] No Free Table
+%     \item [1c.] Double Booked
+%     \item [1d.] Regular customer
+%     \item [1e.] Front of house is occupied 
+%     \item [2a.] Table has not been cleaned
+%     \item [2b.] Table is not set
+%     \item [2c.] Not enough seats at table
+%     \item [2d.] Guests request another table
+%     \item [3a.] Customer requests new table
+%     \item [4a.] No water glasses left
+%     \item [4b.] Customer request Sparkling water
+%     \item [5a.] Customer wants to order food
+% \end{enumerate}
+
+% \paragraph{Task 1.2, Take order:}
+% Purpose: Take order from customers
+% Trigger: Customers Waves down server, server approaches table or customer approaches counter\\
+% Frequency:Average 1 table-order every 2.5 minutes during rush, 2 coffee(drink) order every minute during rush, 1 take-away order  every 4 minutes during lunch rush \\
+% Critical: Large Order, Banquet size. food $=>$ (table-size * 2) and/or drink $=>$ (table-size * 2) before something expected to go wrong\\
+% \\
+% \textbf{Subtasks}:
+% \begin{enumerate}
+%     \item Take orders from customer
+%     \item Process Order at counter (POS)
+% \end{enumerate}
+% \textbf{Variants}:
+% \begin{enumerate}
+%     \item [1a.] Custom Order
+%     \item [1b.] Allergy's/Dietary Requirements
+%     \item [1c.] Some guests haven't arrived
+%     \item [1d.] Additional Orders
+%     \item [1e.] Front of house is occupied
+%     \item [1f.] Take-away order
+%     \item [1g.] Online Order
+%     \item [2a.] No options for order
+%     \item [2b.] POS occupied
+% \end{enumerate}
+
+% \paragraph{Task 1.3, Serve Order:}
+% Purpose: Deliver prepared food and beverages from the kitchen and bar to the customers at their tables. Ensure the order is correct and presented well.
+% Trigger: Notification from the kitchen or bar that the order is ready.\\
+% Frequency:Average 1 table-order every 2.5 minutes during rush, 2 coffee(drink) order every minute during rush, 1 take-away order  every 4 minutes during lunch rush \\
+% Critical: Accuracy and presentation of the order. Timely delivery to ensure customer satisfaction Correct order, correct table\\
+% \\
+% \textbf{Subtasks}:
+% \begin{enumerate}
+%     \item Verify the order against the app.
+%     \item Pick up the order from the kitchen or bar.
+%     \item Serve the order to the correct table and person.
+% \end{enumerate}
+% \textbf{Variants}:
+% \begin{enumerate}
+%     \item [1a.] Missing items in the order
+%     \item [1b.] Incorrect order preparation
+%     \item [2a.] To many items at the same time
+%     \item [3a.] Serving to the wrong table
+%     \item [3b.] Customer requests additional items or modifications
+% \end{enumerate}
+
+% \paragraph{Task 1.4, Process Payment:}
+% Purpose: Accurately process payment for the customer, using their preferred payment method. Ensure a smooth and positive end to the dining experience.
+% Trigger: Customer requests the bill.\\
+% Frequency: Corresponds to table turnover rate; each table typically generates one payment transaction per visit.\\
+% Critical: Payment processing accuracy and security. Customer privacy.\\
+% \\
+% \textbf{Subtasks}:
+% \begin{enumerate}
+%     \item Present the bill to the customer.
+%     \item Process the payment via cash, credit/debit card, or digital payment method.
+%     \item Provide payment confirmation to the customer (receipt).
+%     \item Ensure the table is set as free in the system post-payment.
+% \end{enumerate}
+% \textbf{Variants}:
+% \begin{enumerate}
+%     \item [2a.] Payment declined
+%     \item [2b.] Customer requests split billing
+%     \item [2c.] Coupon or discount
+%     \item [2d.] Tips
+%     \item [3a.] Receipt printer malfunctions
+%     \item [4a.] System error in updating table status
+% \end{enumerate}
+% \paragraph{Task 1.5}
+
+% \subsubsection{Work Area 2: Back of House}
+% Area: Kitchen, Dry Stock, Cool Room, Cleaning Area\\
+% Prepare Orders, Meal Prep, Receive Deliveries, Specials\\
+% Environment: Standing, fast-paced - dynamic environment, working in a team of 3-6 people, long shifts (8-12 hours).\\
+% Roles include a variety of tasks, from cleaning to cooking.\\
+% Users: IT Novice, high school level education.
+
+% % \paragraph{Task 2.1, Meal Preparation:}
+% % Purpose: Prepare meals according to the current menu and special orders, ensuring high-quality standards and timely delivery to the front of house.
+% % Trigger: Order receipt from the front of house or online system.\\
+% % Frequency: Varies with customer flow, significantly higher during meal times.\\
+% % Critical: Adherence to recipes, food safety standards, and timing.\\
+% % \\
+% % % \textbf{Subtasks}:
+% % % \begin{enumerate}
+% % %     \item Receive notification on app and review the order.
+% % %     \item Gather ingredients from the stock
+% % %     \item Prepare the meal
+% % %     \item Notify the front of house when the order is ready using app
+% % % \end{enumerate}
+% % % \textbf{Variants}:
+% % % \begin{enumerate}
+% % %     \item [1a.] Dish unavailable
+% % %     \item [2a.] Missing ingredients
+% % %     \item [2b.] Special dietary requests
+% % %     \item [3a.] Equipment malfunction
+% % %     \item [4a.] Rush order or priority change
+% % % \end{enumerate}
+
+% % % \paragraph{Task 2.2, Stock Take:}
+% % % Purpose: Regularly assess stock levels to ensure the kitchen has all necessary ingredients and supplies. Identify items that need replenishment.
+% % % Trigger: Scheduled stock take or noticeable depletion of items.\\
+% % % Frequency: Daily or weekly, depending on the item's usage rate.\\
+% % % Critical: Accuracy of the stock take to prevent overstocking or stockouts.\\
+% % % \\
+% % % \textbf{Subtasks}:
+% % % \begin{enumerate}
+% % %     \item Check levels of all ingredients and supplies
+% % %     \item Update the stock management system with current levels
+% % %     \item Identify items that need ordering and request or order them
+% % % \end{enumerate}
+% % % \textbf{Variants}:
+% % % \begin{enumerate}
+% % %     \item [1a.] Discrepancies between physical stock and system records
+% % %     \item [1b.] Cross-contaminated stock
+% % %     \item [2a.] System can't find item
+% % %     \item [3a.] Urgent need for a stock item outside of regular ordering schedules
+% % % \end{enumerate}
+
+% % % \paragraph{Task 2.3, Menu Updating:}
+% % % Purpose: Reflect changes in the menu due to seasonality, availability of ingredients, or promotional offers.
+% % % Trigger: Decision from management or chef to alter the menu.\\
+% % % Frequency: promotional, Seasonally or as needed.\\
+% % % Critical: Timely update in all systems and communication to the front of house and business owners.\\
+% % % \\
+% % % \textbf{Subtasks}:
+% % % \begin{enumerate}
+% % %     \item Discuss and finalize new menu items or changes with management and chef
+% % %     \item Update the menu in the system and ensure the front of house is informed
+% % %     \item Train kitchen staff on any new recipes or preparation techniques
+% % % \end{enumerate}
+% % % \textbf{Variants}:
+% % % \begin{enumerate}
+% % %     \item [1a.] Unavailability of planned ingredients
+% % %     \item [2a.] Discrepancy in dish item between menu and kitchen
+% % %     \item [2b.] System update errors or delays.
+% % %     \item [3a.] Kitchen can only make a small amount of this dish
+% % % \end{enumerate}
 
 
-\section{Other Requirements}
-\subsection{Acquiring Knowledge using a Tacit Questionnaire}(Quality Requirements)
-Careful construction of a tacit questionnaire allows us to extract data from stakeholders without requiring them to understand deep technical details. Instead, we are more focused on discovering what they expect or would like from the system, drawing from their experience and implicit knowledge of their role within their domain.
+% % % \paragraph{Sub-tasks}
+% % % \begin{itemize}
+% % %     \item update meal in queue
+% % %     \item request and update stock levels
+% % %     \item request menu update
+% % %     \item remove menu item
+% % %     \item reading roster and writing roster
+% % % \end{itemize}
 
-Here we are looking to extract some data about the and functional requirements
+% \subsubsection{Work Area 3: Business, Finance and Administration}
+% Area: Office\\
+% Focus: Revenue, Spending, Ordering, Approving Changes, Web, Marketing, Hiring, Roster, Stats\\
+% Environment: Small team, ad-hoc support from external services. Usually outsourcing work or working alone or in pairs post breakfast/lunch rush.\\
+% Users: IT Intermediate, college level education.
+
+% \paragraph{Task 3.1, Generating Revenue and Cost Analysis:}
+% Purpose: Analyze financial data to assess profitability, identify trends, and make informed decisions on cost management and revenue enhancement.
+% Trigger: End of financial period (monthly/quarterly/yearly) or as needed.\\
+% Frequency: Regularly scheduled and ad-hoc as required for decision making.\\
+% Critical: Accuracy of financial data and analysis.\\
+% \\
+% \textbf{Subtasks}:
+% \begin{enumerate}
+%     \item Collect and compile financial data (sales, expenses, etc.)
+%     \item Analyze data to identify trends, opportunities, and areas of concern
+%     \item Prepare financial reports for management review
+%     \item Suggest actionable strategies based on financial analysis
+% \end{enumerate}
+% \textbf{Variants}:
+% \begin{enumerate}
+%     \item [1a.] Incomplete or inaccurate financial data
+%     \item [2a.] Many ways to interoperate data
+%     \item [3a.] Urgent financial reporting requested by management
+%     \item [4a.] Bad financial projection 
+% \end{enumerate}
+
+% \paragraph{Task 3.2, Ordering Stock:}
+% Purpose: Ensure that the cafe is adequately stocked with all necessary ingredients and supplies to meet operational needs without overstocking.
+% Trigger: Stock levels fall below predetermined thresholds.\\
+% Frequency: As determined by inventory checks or automatically by inventory management software.\\
+% Critical: Balancing adequate stock levels without excessive inventory.\\
+% \\
+% \textbf{Subtasks}:
+% \begin{enumerate}
+%     \item Review stock reports or inventory system alerts for low stock items
+%     \item Place orders with suppliers, ensuring the best balance of cost and delivery times
+%     \item Confirm order details and delivery schedules
+%     \item Update inventory records upon receipt of stock
+% \end{enumerate}
+% \textbf{Variants}:
+% \begin{enumerate}
+%     \item [2a.] Supplier out of stock or discontinues an item
+%     \item [2b.] Supplier increased prices
+%     \item [2c.] Supplier no longer has this item
+%     \item [3a.] Delivery delays or issues
+% \end{enumerate}
+
+% \paragraph{Task 3.3, Updating Visual Menu and Approving Changes:}
+% Purpose: Keep the digital and physical menus updated with the latest offerings, including seasonal items, specials, and any changes in pricing.
+% Trigger: Menu item changes approved by management and/or chef.\\
+% Frequency: Seasonally, or as changes occur.\\
+% Critical: Consistency and accuracy across all menu presentations.\\
+% \\
+% \textbf{Subtasks}:
+% \begin{enumerate}
+%     \item Gather all necessary details for menu changes, including descriptions, pricing, and images.
+%     \item Update the digital menu in the POS system, online platforms and third party services.
+%     \item Coordinate the printing of updated physical menus, if applicable.
+%     \item Brief staff on menu changes to ensure accurate information is provided to customers.
+% \end{enumerate}
+% \textbf{Variants}:
+% \begin{enumerate}
+%     \item [1a.] Delay in receiving updated content (e.g., images, descriptions).
+%     \item [2a.] Technical issues with updating digital platforms.
+% \end{enumerate}
 
 
 
+% \subsection{Task and Support}
+\clearpage
+\section{Solutions}
+\subsection{Solution 1: Centralized Communication Hub for Cosy Koala Restaurant}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=.7\linewidth]{Solution1.jpg}
+    \caption{Enter Caption}
+    \label{fig:enter-label}
+\end{figure}
 
-\section{Validation of Requirements}
-\subsection{Development Approach: Working with the Client}
-Ensuring that we closely align with a client's requirements at the early stages of the software development life-cycle is crucial in creating a robust and thoughtful software architecture. We are mindful that any problems faced now are much easier to tackle earlier rather than later on when they are "baked-in." Any changes that are made to later in the software's development can be costly and time consuming since some systems are likely to need re-programming or re-designing which can have a cascading effect on other system, which can lead to a larger restructuring. 
+\subsection*{Overview}
+Solution 1 includes a centralized hub for communication between all operations at the Cosy Koala restaurant, handling customer order processing, staff communication, marketing integration, and analytics generation.
 
-The back and forth between the two parties; the client and producer (us) is a proven methodology (Validation) for creating a software system's architecture as we invest more time early to iron out any projected issues in partnership with the client. We consider all levels of domains: societal, environmental, global,business,customer and methodically come up with strategies that we come up tacitly from a high level and systematically decompose the ideas from the abstract all the way down to the software's design. Source: IEEE's standards for software architecture documentation and the Software Engineering Institute's (SEI) Architecture Trade-off Analysis Method (ATAM).
+\subsection*{Key Features}
+\begin{enumerate}[label=\alph*.]
+    \item \textbf{Centralized Communication Hub:} Inter-departmental communications flow through a centralized hub.
+    \item \textbf{POS Integration:} Connection to the POS machine for processing orders, storing details for analytics, and transmitting orders to the kitchen.
+    \item \textbf{Analytics Generation:} Derivation of analytics from order data for marketing purposes, sales trends, and management decision-making.
+    \item \textbf{Order Management:} Transmission of orders to the kitchen and tracking until payment receipt is issued.
+    \item \textbf{Staff and Website Integration:} System access for admin, order placement and updates by front of house staff, and online order placements by customers through the website.
+\end{enumerate}
 
-The key is EARLY Validation.
+\subsection*{Architecture}
+The system's scalability is limited, with online ordering capabilities up to 150 orders to match the kitchen's capacity.
 
+\subsection*{User Roles}
+\begin{itemize}
+    \item \textbf{Admin:} Manages system settings, analytics, and oversees operations.
+    \item \textbf{Staff:} Front-of-house and kitchen staff for order management.
+    \item \textbf{Website Users:} Customers placing orders online.
+    \item \textbf{Kitchen:} Receives and accesses orders for preparation.
+\end{itemize}
+
+\subsection*{Assumptions}
+\begin{itemize}
+    \item Reliable internet connectivity.
+    \item Staff training on system use.
+    \item Data security measures for sensitive information protection.
+    \item Physical restaurant capacity is the limiting factor.
+\end{itemize}
+
+\section*{Solution 2: Web-based Application for Cosy Koala Restaurant}
+
+\subsection*{Overview}
+A web-based application supporting and streamlining daily operations with modules for reservations, order management, kitchen communication, invoicing, payment processing, statistics, and online menu management.
+
+\subsection*{Key Features}
+\begin{enumerate}[label=\alph*.]
+    \item \textbf{Reservations Management:} Online reservations through the website or by restaurant staff.
+    \item \textbf{Order Management:} Orders taken via handheld devices or POS and sent to the kitchen.
+    \item \textbf{Kitchen Communication:} Orders received via a heat printer or device like an iPad, with interaction options.
+    \item \textbf{Invoicing and Payment Processing:} Automatic invoice generation and payment through various methods.
+    \item \textbf{Basic Analytics Generation:} Data analysis for business insights.
+    \item \textbf{Online Menu Management:} Menu availability online for orders.
+\end{enumerate}
+
+\subsection*{Architecture}
+Utilizes a modern, scalable architecture with cloud hosting for reliability and future franchising potential.
+
+\subsection*{User Roles}
+Identical to Solution 1, including Admin, Staff, Website Users, and Kitchen roles.
+
+\subsection*{Technology Stack}
+\begin{itemize}
+    \item Payment Integration with Stripe or PayPal.
+\end{itemize}
+
+\subsection*{Assumptions}
+\begin{itemize}
+    \item Reliable internet connectivity.
+    \item Staff training on the new system.
+    \item Secure handling of customer data in compliance with regulations.
+\end{itemize}
+
+\section*{Solution 3: Modern Supportive Approach}
+
+\subsection*{Overview}
+This solution supports both a local app and web-based applications by adding features such as QR codes, enhanced third-party integration, and creating APIs for the website. It aims to modularize responsibilities based on Front of House, Back of House, and Business Analytics domains.
+
+\subsection*{Key Features}
+\begin{enumerate}[label=\alph*.]
+    \item \textbf{Scalability:} Facilitates future expansions and third-party integrations, ensuring the system adapts to growing business needs.
+    \item \textbf{Web-based API:} Enables seamless updates and integrations for the website, simplifying menu changes, promotions, and content management.
+    \item \textbf{App Augmentation based on dynamic Entities:} Modular design allows for rapid development and adaptation to changing operational needs, like new kitchen functionalities or dedicated coffee section portals.
+    \item \textbf{New, Third-Party Services:} Simplifies the integration of emerging technologies and services, such as advanced printing solutions or automation technologies like restaurant robots.
+    \item \textbf{QR Code Implementation:} Enhances customer service efficiency by facilitating menu access, ordering, and payments directly from the table.
+    \item \textbf{Cloud Service Integration:} A flexible architecture supports easy incorporation of cloud services, enhancing system capabilities and scalability.
+\end{enumerate}
+
+\subsection*{Architecture}
+Adopts a microservice architecture, promoting independent operation and communication among key components: Front of House, Back of House, and Business Analytics, supporting robustness and flexibility.
+
+\subsection*{Assumptions}
+\begin{itemize}
+    \item Adequate budget allocation for feature enhancements and integration of new services.
+    \item Comprehensive staff training on system functionalities to ensure smooth operations.
+    \item Advanced IT acumen within the admin team to manage and optimize the system effectively.
+\end{itemize}
 
 
 \end{document}
